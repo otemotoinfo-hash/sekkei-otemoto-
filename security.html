@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>設備設計 LP - セキュリティ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: linear-gradient(206.78deg, rgb(96, 193, 182) 6.06%, rgb(43, 149, 137) 83.86%);
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    }
+
+    /* ========================================
+       SECURITY SECTION
+    ======================================== */
+    .security-section {
+      background: linear-gradient(206.78deg, rgb(96, 193, 182) 6.06%, rgb(43, 149, 137) 83.86%);
+      padding: 80px 120px 100px;
+    }
+
+    .security-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 52px;
+      align-items: flex-start;
+      max-width: 1200px;
+      padding: 0 32px;
+      margin: 0 auto;
+    }
+
+    /* --- 見出しブロック --- */
+    .security-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .heading-titles {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .security-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #fff;
+      letter-spacing: 1px;
+      line-height: 28px;
+      width: 100%;
+    }
+
+    .security-title {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 48px;
+      color: #fff;
+      letter-spacing: 3.84px;
+      line-height: 1.4;
+      width: 100%;
+    }
+
+    .security-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: 1.44px;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    /* --- セキュリティ項目グリッド --- */
+    .security-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      width: 100%;
+    }
+
+    .security-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #fff;
+      width: calc((100% - 48px) / 3);
+      height: 98px;
+      padding: 33px;
+      display: flex;
+      align-items: flex-start;
+      flex-shrink: 0;
+    }
+
+    .item-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      height: 32px;
+    }
+
+    /* 番号バッジ */
+    .item-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      flex-shrink: 0;
+    }
+
+    .item-num span {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #fff;
+      letter-spacing: 0.6px;
+      line-height: 16px;
+    }
+
+    /* 項目名 */
+    .item-title {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: 0.72px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <section class="security-section">
+    <div class="security-inner">
+
+      <!-- 見出し -->
+      <div class="security-heading">
+
+        <div class="heading-titles">
+          <p class="security-eyebrow">SECURITY</p>
+          <h2 class="security-title">設計データを日本基準で守ります。</h2>
+        </div>
+
+        <div class="security-desc">
+          <p>すべて実際の納品図面のみを掲載しております。機密情報は伏字処理しております。</p>
+          <p>設計データの保護は、私たちにとって最優先事項です。</p>
+        </div>
+
+      </div>
+
+      <!-- セキュリティ項目グリッド（3×3）-->
+      <div class="security-grid">
+
+        <div class="security-item">
+          <div class="item-inner">
+            <div class="item-num"><span>01</span></div>
+            <p class="item-title">NDA即時締結</p>
+          </div>
+        </div>
+
+        <div class="security-item">
+          <div class="item-inner">
+            <div class="item-num"><span>02</span></div>
+            <p class="item-title">権限管理されたクラウド共有</p>
+          </div>
+        </div>
+
+        <div class="security-item">
+          <div class="item-inner">
+            <div class="item-num"><span>03</span></div>
+            <p class="item-title">アクセスログ管理</p>
+          </div>
+        </div>
+
+        <div class="security-item">
+          <div class="item-inner">
+            <div class="item-num"><span>04</span></div>
+            <p class="item-title">データ保管ルール</p>
+          </div>
+        </div>
+
+        <div class="security-item">
+          <div class="item-inner">
+            <div class="item-num"><span>05</span></div>
+            <p class="item-title">データ削除ルール</p>
+          </div>
+        </div>
+
+        <div class="security-item">
+          <div class="item-inner">
+            <div class="item-num"><span>06</span></div>
+            <p class="item-title">私物PC利用禁止</p>
+          </div>
+        </div>
+
+        <div class="security-item">
+          <div class="item-inner">
+            <div class="item-num"><span>07</span></div>
+            <p class="item-title">PC持ち出し禁止</p>
+          </div>
+        </div>
+
+        <div class="security-item">
+          <div class="item-inner">
+            <div class="item-num"><span>08</span></div>
+            <p class="item-title">入退室管理</p>
+          </div>
+        </div>
+
+        <div class="security-item">
+          <div class="item-inner">
+            <div class="item-num"><span>09</span></div>
+            <p class="item-title">セキュリティ教育</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>

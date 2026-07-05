@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>設備設計 LP - サービスレベル</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { background: #fafafa; font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+
+    /* ========================================
+       SERVICE LEVEL SECTION
+    ======================================== */
+    .svlevel-section {
+      background: #fafafa;
+      padding: 80px 120px 100px;
+    }
+
+    .svlevel-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 68px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* --- 見出し --- */
+    .svlevel-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .svlevel-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 1px;
+      line-height: 28px;
+    }
+
+    .svlevel-title {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 48px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 3.84px;
+      line-height: 1.4;
+    }
+
+    /* ========================================
+       3カラム
+    ======================================== */
+    .cols-wrap {
+      display: flex;
+      gap: 12px;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    /* 各カラム（タブ＋カード） */
+    .service-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    /* タブヘッダー */
+    .col-tab {
+      position: relative;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px 8px 0 0;
+      flex-shrink: 0;
+    }
+
+    .col-tab span {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 1.36px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    /* タブ下向き三角矢印 */
+    .col-tab::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 11px solid transparent;
+      border-right: 11px solid transparent;
+      z-index: 2;
+    }
+
+    /* 各カラムの色 */
+    .col-1 .col-tab { background: #08a98b; }
+    .col-1 .col-tab::after { border-top: 11px solid #08a98b; }
+
+    .col-2 .col-tab { background: #0a967d; }
+    .col-2 .col-tab::after { border-top: 11px solid #0a967d; }
+
+    .col-3 .col-tab { background: #017d67; }
+    .col-3 .col-tab::after { border-top: 11px solid #017d67; }
+
+    /* カード本体 */
+    .col-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      background: #fff;
+      border-radius: 0 0 8px 8px;
+      padding: 44px 24px 28px;
+    }
+
+    .col-1 .col-card { border: 4px solid #08a98b; border-top: none; }
+    .col-2 .col-card { border: 4px solid #0a967d; border-top: none; }
+    .col-3 .col-card { border: 4px solid #017d67; border-top: none; padding-left: 28px; padding-right: 28px; }
+
+    /* カードタイトル */
+    .col-title {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 26px;
+      text-align: center;
+      letter-spacing: 1.04px;
+      line-height: 1;
+    }
+
+    .col-1 .col-title { color: #08a98b; }
+    .col-2 .col-title { color: #0a967d; }
+    .col-3 .col-title { color: #017d67; }
+
+    /* タググリッド */
+    .tags-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      width: 100%;
+    }
+
+    .col-tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 9px 17px;
+      background: #fff;
+      border: 1px solid #dedede;
+    }
+
+    .col-tag span {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: 0.56px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .col-1 .col-tag span { color: #08a98b; }
+    .col-2 .col-tag span { color: #0a967d; }
+    .col-3 .col-tag span { color: #017d67; }
+  </style>
+</head>
+<body>
+  <section class="svlevel-section">
+    <div class="svlevel-inner">
+
+      <!-- 見出し -->
+      <div class="svlevel-heading">
+        <p class="svlevel-eyebrow">SERVICES</p>
+        <h2 class="svlevel-title">基礎作図からBIMまで<br>必要な工程だけお任せください!</h2>
+      </div>
+
+      <!-- 3カラム -->
+      <div class="cols-wrap">
+
+        <!-- Column 1: 基礎作図 -->
+        <div class="service-col col-1">
+          <div class="col-tab">
+            <span>まずはお試しで！基礎作図だけ頼みたい</span>
+          </div>
+          <div class="col-card">
+            <p class="col-title">1. 基礎作図</p>
+            <div class="tags-grid">
+              <div class="col-tag"><span>トレース</span></div>
+              <div class="col-tag"><span>竣工図反転</span></div>
+              <div class="col-tag"><span>プロット図</span></div>
+              <div class="col-tag"><span>プロット図</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: 設計補助 -->
+        <div class="service-col col-2">
+          <div class="col-tab">
+            <span>慣れてきたら依頼範囲を広げられる</span>
+          </div>
+          <div class="col-card">
+            <p class="col-title">2. 設計補助</p>
+            <div class="tags-grid">
+              <div class="col-tag"><span>系統図作成</span></div>
+              <div class="col-tag"><span>単線結線図</span></div>
+              <div class="col-tag"><span>負荷計算</span></div>
+              <div class="col-tag"><span>照度計算</span></div>
+              <div class="col-tag"><span>器具配置</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3: 自立作図・BIM -->
+        <div class="service-col col-3">
+          <div class="col-tab">
+            <span>トータルで全部任せたい！</span>
+          </div>
+          <div class="col-card">
+            <p class="col-title">3. 自立作図・BIM</p>
+            <div class="tags-grid">
+              <div class="col-tag"><span>施工図作成</span></div>
+              <div class="col-tag"><span>自立作図</span></div>
+              <div class="col-tag"><span>プロット計画</span></div>
+              <div class="col-tag"><span>BIMモデル作成</span></div>
+              <div class="col-tag"><span>Rebro</span></div>
+              <div class="col-tag"><span>Revit</span></div>
+              <div class="col-tag"><span>干渉チェック</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>

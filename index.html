@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>設備設計 LP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&family=Zen+Kaku+Gothic+New:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #fafafa;
+      overflow-x: hidden;
+    }
+
+    /* ========================================
+       HEADER
+    ======================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      padding: 0 40px;
+      background: #fff;
+      width: 100%;
+    }
+
+    .logo {
+      display: block;
+      height: 80px;
+      width: auto;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      height: 20px;
+    }
+
+    nav a {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #000;
+      text-decoration: none;
+      letter-spacing: 0.7px;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+
+    nav a:hover { opacity: 0.7; }
+
+    .cv-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 68px;
+      padding-left: 82px;
+      padding-right: 38px;
+      background-color: #06C755;
+      border-radius: 8px;
+      text-decoration: none;
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .cv-button:hover { background-color: #05b04c; }
+
+    .cv-button .line-icon {
+      position: absolute;
+      left: calc(82px - 53px);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 39px;
+      object-fit: contain;
+    }
+
+    .cv-button span {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 0.32px;
+      line-height: 1;
+    }
+
+    /* ========================================
+       HERO
+    ======================================== */
+    .hero-section {
+      position: relative;
+      height: calc(100vh - 232px);
+      overflow: hidden;
+      background: #1a1a1a;
+    }
+
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    #bg-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 120px;
+    }
+
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      max-width: 1200px;
+    }
+
+    .hero-badge-wrap { display: flex; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      padding: 8px 20px;
+    }
+
+    .hero-badge-text {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-weight: 700;
+      font-size: 25px;
+      color: #000;
+      letter-spacing: 2px;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    .headline-stack {
+      display: inline-grid;
+      grid-template-columns: max-content;
+      grid-template-rows: max-content;
+      place-items: start;
+      line-height: 0;
+    }
+
+    .headline-line {
+      grid-column: 1;
+      grid-row: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 28px 14px;
+    }
+
+    .headline-line:first-child {
+      margin-top: 0;
+      background: linear-gradient(76.85deg, rgb(20, 143, 0) 0%, rgb(19, 181, 37) 36.035%, rgb(0, 183, 150) 65.55%);
+    }
+
+    .headline-line:last-child {
+      margin-top: 104px;
+      background: linear-gradient(70.59deg, rgb(20, 143, 0) 0%, rgb(19, 181, 37) 36.035%, rgb(0, 183, 150) 65.55%);
+    }
+
+    .headline-text {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-weight: 700;
+      font-size: 64px;
+      color: #fff;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .subtitle-wrap {
+      padding-left: 12px;
+      display: flex;
+    }
+
+    .subtitle {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      color: #fff;
+      letter-spacing: 1.2px;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .subtitle .char-so { letter-spacing: -2.24px; }
+    .subtitle .char-fu { letter-spacing: -3.68px; }
+
+    /* ========================================
+       STATS
+    ======================================== */
+    .stats-section {
+      position: relative;
+      z-index: 10;
+      margin-top: -152px;
+      padding: 60px 120px;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+    }
+
+    .stats-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px 0;
+      width: 100%;
+      max-width: 1200px;
+      height: 212px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.16);
+      overflow: hidden;
+    }
+
+    .stat-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 275px;
+      height: 212px;
+      padding: 28px 20px;
+      background: #fff;
+      flex-shrink: 0;
+    }
+
+    .stat-card:first-child { border-radius: 12px 0 0 12px; }
+    .stat-card:last-child  { border-radius: 0 12px 12px 0; }
+
+    .stat-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 162.656px;
+      padding: 10px 0;
+      background: #0ab394;
+      border-radius: 16px;
+      flex-shrink: 0;
+    }
+
+    .stat-badge-text {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      letter-spacing: 0.56px;
+      text-align: center;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .stat-value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 162.656px;
+      height: 48px;
+      padding-top: 8px;
+      padding-bottom: 4px;
+      flex-shrink: 0;
+    }
+
+    .stat-number {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: #0ab394;
+      text-align: center;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .stat-number.large { font-size: 48px; }
+
+    .stat-number.medium-kanji {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 43px;
+      letter-spacing: 1.72px;
+    }
+
+    .stat-sublabel {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 19px;
+      color: #0ab394;
+      line-height: 1;
+      letter-spacing: 19px;
+      width: 25px;
+      text-align: center;
+    }
+
+    .stat-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      color: #000;
+      letter-spacing: 0.8px;
+      text-align: center;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    /* ========================================
+       PAIN
+    ======================================== */
+    .pain-section { background: #fafafa; padding: 80px 120px 40px; }
+    .pain-inner { display: flex; flex-direction: column; gap: 52px; align-items: center; max-width: 1200px; padding: 0 32px; margin: 0 auto; }
+    .pain-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #000; text-align: center; letter-spacing: 3.84px; line-height: 1.4; white-space: nowrap; }
+    .pain-tags { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; max-width: 1136px; width: 100%; }
+    .pain-tag { display: inline-flex; align-items: center; gap: 8px; height: 54px; padding: 15px 25px; background: #fff; border: 1px solid #00856c; border-radius: 8px; white-space: nowrap; flex-shrink: 0; }
+    .pain-tag-num { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 12px; color: #00856c; letter-spacing: 0.8px; line-height: 16px; }
+    .pain-tag-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 16px; color: #00856c; letter-spacing: 0.8px; line-height: 24px; }
+    .pain-resolve { display: inline-flex; justify-content: center; padding-bottom: 4px; border-bottom: 8px solid #fff600; }
+    .pain-resolve-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 34px; color: #000; text-align: center; letter-spacing: 2.72px; line-height: 1.4; white-space: nowrap; }
+    .wave-border { display: block; width: 100%; height: 67px; background: #fff; }
+
+    /* ========================================
+       SHARED: CTA BUTTON
+    ======================================== */
+    .cta-wrap { display: flex; justify-content: center; }
+    .cta-button { display: flex; align-items: center; justify-content: center; position: relative; width: 448px; height: 72px; background: #fff; border: 1px solid #000; border-radius: 36px; text-decoration: none; cursor: pointer; }
+    .cta-button:hover { background: #f5f5f5; }
+    .cta-button span { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 16px; color: #000; letter-spacing: 0.32px; line-height: 1.6; white-space: nowrap; }
+    .cta-arrow { position: absolute; right: 23px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; object-fit: contain; }
+
+    /* ========================================
+       SHARED: STEP CARDS (flow + portfolio)
+    ======================================== */
+    .steps-wrap { display: flex; gap: 12px; align-items: flex-start; width: 100%; }
+    .step-unit { position: relative; flex-shrink: 0; padding-top: 34px; }
+    .step-badge { position: absolute; top: 0; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; background: #fafafa; padding: 0 12px; z-index: 2; }
+    .badge-step { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14.5px; color: #0ab394; letter-spacing: 0.72px; line-height: 1.3; }
+    .badge-num { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 38px; color: #0ab394; letter-spacing: -0.77px; line-height: 1; }
+    .step-card { width: 272px; height: 293px; background: #fff; border: 4px solid #0ab394; border-radius: 11px; display: flex; flex-direction: column; align-items: center; padding: 48px 30px 30px; gap: 15px; }
+    .step-icon { width: 80px; height: 80px; object-fit: contain; flex-shrink: 0; display: block; }
+    .step-texts { display: flex; flex-direction: column; align-items: center; width: 100%; }
+    .step-label-wrap { display: flex; align-items: center; justify-content: center; width: 100%; padding-bottom: 19px; min-height: 67px; }
+    .step-label { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 16px; color: #0ab394; text-align: center; letter-spacing: 0.64px; line-height: 1.6; }
+    .step-desc-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #000; text-align: center; letter-spacing: 0.56px; line-height: 1.4; }
+
+    /* ========================================
+       SHARED: heading-titles
+    ======================================== */
+    .heading-titles { display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; }
+
+    /* ========================================
+       SERVICE (アウトソーシング)
+    ======================================== */
+    .service-section { background: #fafafa; padding: 55px 120px 100px; }
+    .service-inner { display: flex; flex-direction: column; gap: 52px; align-items: center; max-width: 1200px; padding: 0 32px; margin: 0 auto; }
+    .service-heading { display: flex; flex-direction: column; gap: 32px; align-items: center; width: 100%; }
+    .service-eyebrow { display: inline-flex; align-items: center; justify-content: center; padding: 16px 44px; border-bottom: 2px solid #0ab394; }
+    .service-eyebrow span { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 20px; color: #0ab394; letter-spacing: 0.8px; white-space: nowrap; line-height: 1; }
+    .service-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #000; text-align: center; letter-spacing: 3.84px; line-height: 1.4; }
+    .service-desc-wrap { display: flex; flex-direction: column; gap: 16px; max-width: 768px; width: 100%; }
+    .service-desc { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 16px; color: #000; text-align: center; letter-spacing: 1.28px; line-height: 1.4; }
+    .cards-wrap { display: flex; gap: 12px; width: 100%; max-width: 896px; }
+    .service-section .service-card { flex: 1; display: flex; flex-direction: column; align-items: center; height: 315px; padding: 32px; background: #fff; border: 4px solid #0ab394; border-radius: 8px; }
+    .service-section .card-body { display: flex; flex-direction: column; gap: 16px; align-items: center; width: 100%; }
+    .card-icon { display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; min-width: 80px; min-height: 80px; background: #0ab394; border: 1px solid #e5e7eb; border-radius: 50%; flex-shrink: 0; overflow: hidden; }
+    .card-icon img { width: 40px; height: 40px; object-fit: contain; transform: rotate(180deg) scaleX(-1); }
+    .card-icon img.icon-lightning { width: 28px; height: 40px; }
+    .card-texts { display: flex; flex-direction: column; align-items: center; }
+    .card-title-group { display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center; padding-bottom: 20px; width: 100%; }
+    .card-name { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 28px; color: #000; letter-spacing: 0.9px; line-height: 1; white-space: nowrap; }
+    .card-role { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 14px; color: #0ab394; letter-spacing: 0.56px; line-height: 1; white-space: nowrap; }
+    .card-pain { width: 100%; display: flex; align-items: center; justify-content: center; padding: 16px 0; border: 1px solid #dbdbdb; border-radius: 4px; }
+    .card-pain p { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 14px; color: #000; text-align: center; letter-spacing: 0.56px; line-height: 1.4; }
+    .partner-wrap { display: flex; gap: 29px; align-items: center; width: 100%; max-width: 896px; }
+    .partner-logo-box { flex-shrink: 0; display: flex; align-items: center; justify-content: center; height: 126px; padding: 0 33px; background: #fff; border: 1px solid #eaeaea; }
+    .partner-logo-box img { width: 182px; height: 42px; object-fit: cover; }
+    .partner-text-wrap { display: flex; flex: 1; flex-direction: column; gap: 12px; justify-content: center; }
+    .partner-desc { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 16px; color: #000; letter-spacing: 0.64px; line-height: 1.4; }
+    .partner-link { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .partner-link:hover { opacity: 0.7; }
+    .partner-arrow { width: 32px; height: 32px; transform: rotate(-90deg); flex-shrink: 0; }
+    .partner-link-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 16px; color: #000; letter-spacing: 1.92px; white-space: nowrap; }
+
+    /* ========================================
+       TEAM
+    ======================================== */
+    .team-section { background: #fff; padding: 80px 120px 100px; }
+    .team-inner { display: flex; flex-direction: column; gap: 52px; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .team-heading { display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; }
+    .team-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; color: #000; text-align: center; letter-spacing: 1px; line-height: 28px; }
+    .team-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #000; text-align: center; letter-spacing: 3.84px; line-height: 1.4; }
+    .photo-cards { display: flex; gap: 12px; width: 100%; }
+    .photo-card { flex: 1; display: flex; flex-direction: column; gap: 20px; align-items: center; padding-bottom: 28px; background: #fff; border: 1px solid #c6c6c6; border-radius: 8px; overflow: hidden; min-width: 0; }
+    .photo-card-img { width: 100%; height: 210px; object-fit: cover; display: block; flex-shrink: 0; }
+    .photo-card-label { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 14px; color: #0ab394; text-align: center; letter-spacing: 0.56px; line-height: 1; padding-bottom: 8px; border-bottom: 1px solid #c6c6c6; width: calc(100% - 32px); }
+    .photo-card-body { display: flex; flex-direction: column; gap: 12px; align-items: center; width: 100%; }
+    .photo-card-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 16px; color: #000; text-align: center; letter-spacing: 1.28px; line-height: 1; white-space: nowrap; }
+    .photo-card-desc { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #000; text-align: center; letter-spacing: 0.56px; line-height: 1.4; }
+    .qualifications { display: flex; flex-direction: column; gap: 20px; width: 100%; }
+    .qual-header { background: #0ab394; display: flex; align-items: center; justify-content: center; padding: 16px 12px; width: 100%; }
+    .qual-header-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 20px; color: #fff; text-align: center; letter-spacing: 0.8px; line-height: 1; }
+    .qual-cards { display: flex; gap: 8px; width: 100%; }
+    .qual-card { flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 12px 20px 12px 10px; background: #fff; border-radius: 8px; min-width: 0; }
+    .qual-top { display: flex; flex-direction: row; align-items: center; gap: 16px; }
+    .qual-icon { display: flex; align-items: center; justify-content: center; width: 100px; height: 100px; min-width: 100px; min-height: 100px; background: #fff; border: 1px solid #e5e7eb; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+    .qual-icon img { display: block; }
+    .icon-cad { width: 42px; height: 82px; }
+    .icon-supervisor { width: 42px; height: 79px; }
+    .icon-coordinator { width: 46px; height: 81px; }
+    .qual-name-group { display: flex; flex-direction: column; gap: 8px; }
+    .qual-name { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 16px; color: #000; letter-spacing: 0.64px; line-height: 1; white-space: nowrap; }
+    .qual-sub { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #000; letter-spacing: 0.48px; line-height: 1; white-space: nowrap; }
+    .qual-tags { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px; width: 100%; }
+    .qual-tag { border: 1px solid #dedede; padding: 5px 13px; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #000; text-align: center; letter-spacing: 0.48px; line-height: 1.2; }
+
+    /* ========================================
+       STRENGTHS
+    ======================================== */
+    .strengths-section { background: #fff; padding: 100px 120px 80px; }
+    .strengths-inner { max-width: 1200px; margin: 0 auto; }
+    .strengths-layout { display: flex; align-items: flex-end; justify-content: space-between; gap: 26px; }
+    .left-col { display: flex; flex-direction: column; gap: 40px; width: 360px; flex-shrink: 0; }
+    .left-texts { display: flex; flex-direction: column; gap: 24px; }
+    .strengths-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; color: #000; letter-spacing: 1px; line-height: 28px; white-space: nowrap; }
+    .strengths-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #000; letter-spacing: 3.84px; line-height: 1.4; white-space: nowrap; }
+    .strengths-desc { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 16px; color: #000; letter-spacing: 1.28px; line-height: 1.4; }
+    .strengths-photo { width: 100%; aspect-ratio: 1000 / 667; object-fit: cover; border-radius: 8px; display: block; }
+    .right-col { display: flex; flex-direction: column; gap: 40px; width: 814px; flex-shrink: 0; }
+    .strength-row { display: flex; align-items: center; gap: 48px; padding: 0 20px 20px 28px; border-bottom: 1px solid #c6c6c6; }
+    .row-label { display: flex; flex-direction: column; gap: 8px; width: 328px; flex-shrink: 0; }
+    .row-label-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 28px; color: #000; letter-spacing: 1.12px; line-height: 1; white-space: nowrap; }
+    .row-label-sub { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 16px; color: #000; letter-spacing: 1.28px; line-height: 1.8; white-space: nowrap; }
+    .row-value-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #0ab394; letter-spacing: 0.96px; line-height: 1; white-space: nowrap; }
+    .row-value-num { display: flex; align-items: flex-end; gap: 4px; flex: 1; }
+    .num-prefix { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 32px; color: #0ab394; line-height: 1.5; white-space: nowrap; }
+    .num-main { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 66px; color: #0ab394; letter-spacing: -2.64px; line-height: 1; white-space: nowrap; }
+    .num-suffix { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 53px; color: #0ab394; letter-spacing: 1.06px; line-height: 1; white-space: nowrap; }
+
+    /* ========================================
+       FLOW
+    ======================================== */
+    .flow-section { background: #fafafa; padding: 80px 120px 100px; }
+    .flow-inner { display: flex; flex-direction: column; gap: 52px; align-items: center; max-width: 1200px; padding: 0 32px; margin: 0 auto; }
+    .flow-heading { display: flex; flex-direction: column; gap: 20px; align-items: center; }
+    .flow-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; color: #000; text-align: center; letter-spacing: 1px; line-height: 28px; }
+    .flow-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #000; text-align: center; letter-spacing: 3.84px; line-height: 1.4; white-space: nowrap; }
+    .flow-desc { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 18px; color: #000; text-align: center; letter-spacing: 1.44px; line-height: 1.4; }
+
+    /* ========================================
+       SERVICES (対応可能業務)
+    ======================================== */
+    .services-section { background: linear-gradient(215.57deg, rgb(96,193,182) 6.06%, rgb(43,149,137) 83.86%); padding: 80px 120px 100px; }
+    .services-inner { display: flex; flex-direction: column; gap: 52px; max-width: 1200px; margin: 0 auto; }
+    .services-heading { display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; }
+    .services-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; color: #fff; text-align: center; letter-spacing: 1px; line-height: 28px; }
+    .services-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #fff; text-align: center; letter-spacing: 3.84px; line-height: 1.4; white-space: nowrap; }
+    .cards-grid { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+    .cards-row { display: flex; gap: 8px; align-items: stretch; width: 100%; }
+    .services-section .service-card { flex: 1; display: flex; align-items: center; gap: 36px; padding: 24px; background: #fff; border: 1px solid #e9e9e9; border-radius: 8px; min-width: 0; }
+    .services-section .service-card.half { flex: none; width: calc(50% - 4px); }
+    .card-photo { width: 217px; height: 199px; flex-shrink: 0; border-radius: 8px; overflow: hidden; }
+    .card-photo img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 8px; }
+    .services-section .card-body { display: flex; flex-direction: column; gap: 16px; flex: 1; min-width: 0; }
+    .card-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 18px; color: #000; letter-spacing: 1.44px; line-height: 1.4; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .card-tag { display: inline-flex; align-items: center; height: 26px; padding: 5px 13px; border: 1px solid #dedede; white-space: nowrap; }
+    .card-tag span { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #000; letter-spacing: 0.6px; line-height: 16px; }
+
+    /* ========================================
+       SERVICE LEVEL
+    ======================================== */
+    .svlevel-section { background: #fafafa; padding: 80px 120px 100px; }
+    .svlevel-inner { display: flex; flex-direction: column; gap: 68px; max-width: 1200px; margin: 0 auto; }
+    .svlevel-heading { display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; }
+    .svlevel-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; color: #000; text-align: center; letter-spacing: 1px; line-height: 28px; }
+    .svlevel-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #000; text-align: center; letter-spacing: 3.84px; line-height: 1.4; }
+    .cols-wrap { display: flex; gap: 12px; align-items: stretch; width: 100%; }
+    .service-col { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+    .col-tab { position: relative; height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 8px 8px 0 0; flex-shrink: 0; }
+    .col-tab span { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 17px; color: #fff; text-align: center; letter-spacing: 1.36px; line-height: 1; white-space: nowrap; }
+    .col-tab::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 11px solid transparent; border-right: 11px solid transparent; z-index: 2; }
+    .col-1 .col-tab { background: #08a98b; }
+    .col-1 .col-tab::after { border-top: 11px solid #08a98b; }
+    .col-2 .col-tab { background: #0a967d; }
+    .col-2 .col-tab::after { border-top: 11px solid #0a967d; }
+    .col-3 .col-tab { background: #017d67; }
+    .col-3 .col-tab::after { border-top: 11px solid #017d67; }
+    .col-card { flex: 1; display: flex; flex-direction: column; gap: 24px; background: #fff; border-radius: 0 0 8px 8px; padding: 44px 24px 28px; }
+    .col-1 .col-card { border: 4px solid #08a98b; border-top: none; }
+    .col-2 .col-card { border: 4px solid #0a967d; border-top: none; }
+    .col-3 .col-card { border: 4px solid #017d67; border-top: none; padding-left: 28px; padding-right: 28px; }
+    .col-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 26px; text-align: center; letter-spacing: 1.04px; line-height: 1; }
+    .col-1 .col-title { color: #08a98b; }
+    .col-2 .col-title { color: #0a967d; }
+    .col-3 .col-title { color: #017d67; }
+    .tags-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; width: 100%; }
+    .col-tag { display: flex; align-items: center; justify-content: center; min-height: 38px; padding: 9px 17px; background: #fff; border: 1px solid #dedede; }
+    .col-tag span { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; letter-spacing: 0.56px; line-height: 1; white-space: nowrap; }
+    .col-1 .col-tag span { color: #08a98b; }
+    .col-2 .col-tag span { color: #0a967d; }
+    .col-3 .col-tag span { color: #017d67; }
+
+    /* ========================================
+       SOFTWARE
+    ======================================== */
+    .software-section { background: #fff; padding: 80px 120px 100px; }
+    .software-inner { display: flex; flex-direction: column; gap: 52px; max-width: 1200px; padding: 0 32px; margin: 0 auto; }
+    .software-heading { display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; }
+    .software-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; color: #000; text-align: center; letter-spacing: 1px; line-height: 28px; }
+    .software-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #000; text-align: center; letter-spacing: 3.84px; line-height: 1.4; }
+    .sw-cards { display: flex; flex-wrap: nowrap; width: 100%; }
+    .sw-card { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px 32px 32px; background: #fff; border-top: 1px solid #e9e9e9; border-bottom: 1px solid #e9e9e9; border-left: 1px solid #e9e9e9; border-right: none; }
+    .sw-card:first-child { border-radius: 8px 0 0 8px; }
+    .sw-card:last-child { border-right: 1px solid #e9e9e9; border-radius: 0 8px 8px 0; }
+    .sw-logo { display: flex; align-items: center; justify-content: center; width: 100%; height: 60px; }
+    .sw-logo img { max-width: 100%; height: 60px; object-fit: contain; display: block; }
+    .sw-card:nth-child(1) .sw-logo { overflow: hidden; }
+    .sw-card:nth-child(1) .sw-logo img { width: 100%; height: 100%; object-fit: contain; transform: scale(3); transform-origin: center; }
+    .sw-label { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 16px; color: #000; text-align: center; letter-spacing: 1.28px; line-height: 20px; white-space: nowrap; }
+
+    /* ========================================
+       PORTFOLIO (無料お試し)
+    ======================================== */
+    .portfolio-section { background: #fafafa; padding: 80px 120px 100px; }
+    .portfolio-inner { display: flex; flex-direction: column; gap: 52px; align-items: center; max-width: 1200px; padding: 0 32px; margin: 0 auto; }
+    .portfolio-heading { display: flex; flex-direction: column; gap: 40px; align-items: center; width: 100%; }
+    .portfolio-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; color: #000; text-align: center; letter-spacing: 1px; line-height: 28px; }
+    .portfolio-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #000; text-align: center; letter-spacing: 3.84px; line-height: 1.4; white-space: nowrap; }
+    .portfolio-descs { display: flex; flex-direction: column; gap: 16px; max-width: 768px; width: 100%; }
+    .portfolio-desc { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 18px; color: #000; text-align: center; letter-spacing: 1.44px; line-height: 1.4; }
+
+    /* ========================================
+       PRICING
+    ======================================== */
+    .pricing-section { background: #fff; padding: 80px 120px 100px; }
+    .pricing-inner { display: flex; flex-direction: column; gap: 52px; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .pricing-heading { display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; }
+    .pricing-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; color: #000; text-align: center; letter-spacing: 1px; line-height: 28px; }
+    .pricing-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #000; text-align: center; letter-spacing: 3.84px; line-height: 1.4; }
+    .pricing-content { display: flex; flex-direction: column; gap: 40px; align-items: center; width: 100%; }
+    .price-cards { display: flex; gap: 12px; justify-content: center; }
+    .price-card { position: relative; width: 400px; height: 290px; background: #fff; border-radius: 8px; box-shadow: 0 2px 16px rgba(0,0,0,0.10); overflow: hidden; }
+    .card-header { position: absolute; top: 0; left: 0; right: 0; height: 67px; border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center; }
+    .card-header span { font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 24px; color: #fff; letter-spacing: 2.88px; line-height: 1.6; }
+    .card-sublabel { position: absolute; top: 96px; left: 0; right: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 1.44px; text-align: center; line-height: 1.2; }
+    .card-price { position: absolute; top: 138px; left: 0; right: 0; display: flex; align-items: flex-end; justify-content: center; }
+    .price-num { font-family: 'DIN 2014', 'DIN 2014 Demi', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 600; font-size: 64px; letter-spacing: -1.28px; line-height: 1; }
+    .price-suffix { display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 4px; }
+    .price-tax { font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.22px; line-height: 1; margin-bottom: 2px; }
+    .price-yen-row { display: flex; align-items: baseline; }
+    .price-yen { font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 27px; line-height: 1; }
+    .price-tilde { font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 16px; letter-spacing: 1.3px; line-height: 1.2; }
+    .card-note { position: absolute; top: 238px; left: 0; right: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.64px; text-align: center; line-height: 1.6; }
+    .card-orange .card-header { background: #e24d12; }
+    .card-orange .card-sublabel, .card-orange .price-num, .card-orange .price-suffix, .card-orange .card-note { color: #e24d12; }
+    .card-teal .card-header { background: #0ab394; }
+    .card-teal .card-sublabel, .card-teal .price-num, .card-teal .price-suffix, .card-teal .card-note { color: #0ab394; }
+    .plan-table-wrap { width: 1011px; border: 1px solid #e9e9e9; background: #fff; overflow: hidden; }
+    .plan-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+    .plan-table thead tr { background: #fffee3; border-bottom: 1px solid #dcd6d1; height: 52.5px; }
+    .plan-table th { padding: 16px 20px; font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 14px; color: #000; letter-spacing: 0.7px; line-height: 20px; text-align: left; }
+    .plan-table tbody tr { border-bottom: 1px solid #dcd6d1; height: 63px; }
+    .plan-table tbody tr:last-child { border-bottom: none; }
+    .plan-table td { padding: 16px 20px; font-family: 'Noto Sans JP', sans-serif; font-size: 14px; color: #000; letter-spacing: 0.56px; line-height: 1; }
+    .plan-badge { display: inline-flex; align-items: center; gap: 8px; }
+    .plan-badge-dot { display: inline-block; width: 8px; height: 8px; background: #cb9317; flex-shrink: 0; }
+    .plan-badge span { font-weight: 600; white-space: nowrap; }
+    .plan-price { font-weight: 600; color: #e24d12; text-align: left; }
+    .compare-table-wrap { width: 1011px; border: 1px solid #e9e9e9; background: #fff; overflow: hidden; }
+    .compare-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+    .compare-table thead tr { background: #f3f5f1; height: 53px; }
+    .compare-table th { padding: 16px; font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 14px; color: #000; letter-spacing: 0.7px; line-height: 20px; text-align: left; }
+    .compare-table th.center, .compare-table td.center { text-align: center; }
+    .row-otemoto td { height: 72px; padding: 16px; font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 14px; color: #000; letter-spacing: 0.7px; line-height: 20px; vertical-align: middle; background: #f9fffe; border-top: 4px solid #0ab394; border-bottom: 4px solid #0ab394; }
+    .row-otemoto td:first-child { border-left: 4px solid #0ab394; }
+    .row-otemoto td:last-child { border-right: 4px solid #0ab394; }
+    .otemoto-logo { height: 60px; object-fit: contain; display: block; }
+    .mark-maru { font-size: 33px; color: #0ab394; letter-spacing: 1.66px; line-height: 1; }
+    .row-competitor { border-bottom: 1px solid #e9e9e9; height: 57px; }
+    .row-competitor td { padding: 16px; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #5f5f5f; letter-spacing: 0.7px; line-height: 20px; vertical-align: middle; }
+    .row-competitor td:first-child .competitor-name { font-weight: 600; }
+
+    /* ========================================
+       DRAWINGS
+    ======================================== */
+    .drawings-section { background: #fff; padding: 80px 120px 100px; }
+    .drawings-inner { display: flex; flex-direction: column; gap: 52px; align-items: center; max-width: 1200px; padding: 0 32px; margin: 0 auto; }
+    .drawings-heading { display: flex; flex-direction: column; gap: 40px; align-items: center; width: 100%; }
+    .drawings-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; color: #000; text-align: center; letter-spacing: 1px; line-height: 28px; }
+    .drawings-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #000; text-align: center; letter-spacing: 3.84px; line-height: 1.4; white-space: nowrap; }
+    .drawings-desc { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 18px; color: #000; text-align: center; letter-spacing: 1.44px; line-height: 1.4; max-width: 768px; }
+    .drawings-grid { display: flex; flex-wrap: wrap; gap: 32px 8px; width: 100%; }
+    .drawing-card { flex: 1 0 0; min-width: 0; display: flex; flex-direction: column; }
+    .card-image { height: 260px; overflow: hidden; flex-shrink: 0; }
+    .card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .card-label { background: #fff; border-bottom: 1px solid #c6c6c6; border-left: 1px solid #c6c6c6; border-right: 1px solid #c6c6c6; height: 57px; padding: 16px 16px 17px; display: flex; align-items: center; flex-shrink: 0; }
+    .card-label h3 { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 16px; color: #000; letter-spacing: 0.8px; line-height: 24px; white-space: nowrap; }
+    .nda-note { display: flex; align-items: center; gap: 12px; border: 1px solid #0ab394; width: 347px; height: 54px; padding: 17px 33px; flex-shrink: 0; }
+    .nda-dot { display: block; width: 4px; height: 4px; background: #0ab394; flex-shrink: 0; }
+    .nda-text { font-family: 'Inter', 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 14px; color: #0ab394; letter-spacing: 0.56px; line-height: 1; white-space: nowrap; }
+
+    /* ========================================
+       SECURITY
+    ======================================== */
+    .security-section { background: linear-gradient(206.78deg, rgb(96,193,182) 6.06%, rgb(43,149,137) 83.86%); padding: 80px 120px 100px; }
+    .security-inner { display: flex; flex-direction: column; gap: 52px; align-items: flex-start; max-width: 1200px; padding: 0 32px; margin: 0 auto; }
+    .security-heading { display: flex; flex-direction: column; gap: 40px; align-items: flex-start; width: 100%; }
+    .security-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; color: #fff; letter-spacing: 1px; line-height: 28px; width: 100%; }
+    .security-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #fff; letter-spacing: 3.84px; line-height: 1.4; width: 100%; }
+    .security-desc { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 18px; color: #fff; letter-spacing: 1.44px; line-height: 1.4; white-space: nowrap; }
+    .security-grid { display: flex; flex-wrap: wrap; gap: 24px; width: 100%; }
+    .security-item { background: rgba(255,255,255,0.05); border: 1px solid #fff; width: calc((100% - 48px) / 3); height: 98px; padding: 33px; display: flex; align-items: flex-start; flex-shrink: 0; }
+    .item-inner { display: flex; align-items: center; gap: 16px; height: 32px; }
+    .item-num { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.2); flex-shrink: 0; }
+    .item-num span { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 12px; color: #fff; letter-spacing: 0.6px; line-height: 16px; }
+    .item-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 18px; color: #fff; letter-spacing: 0.72px; line-height: 1; white-space: nowrap; }
+
+    /* ========================================
+       COVERAGE
+    ======================================== */
+    .coverage-section { background: #fafafa; padding: 80px 120px 100px; }
+    .coverage-inner { display: flex; flex-direction: column; gap: 52px; align-items: center; max-width: 1200px; padding: 0 32px; margin: 0 auto; }
+    .coverage-heading { display: flex; flex-direction: column; gap: 40px; align-items: center; }
+    .coverage-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; color: #000; text-align: center; letter-spacing: 1px; line-height: 28px; }
+    .coverage-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #000; text-align: center; letter-spacing: 3.84px; line-height: 1.4; white-space: nowrap; }
+    .coverage-desc { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 18px; color: #000; text-align: center; letter-spacing: 1.44px; line-height: 1.4; }
+    .prefecture-row { display: flex; gap: 4px; align-items: center; width: 100%; }
+    .pref-tag { background: #fff; border: 1px solid #e9e9e9; height: 46px; flex: 1; display: flex; align-items: center; justify-content: center; padding: 13px 25px; }
+    .pref-tag span { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #000; letter-spacing: 0.7px; line-height: 20px; white-space: nowrap; }
+
+    /* ========================================
+       FAQ
+    ======================================== */
+    .faq-section { background: #fff; padding: 80px 120px 100px; }
+    .faq-inner { display: flex; flex-direction: column; gap: 52px; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .faq-heading { display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; }
+    .faq-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; color: #000; text-align: center; letter-spacing: 1px; line-height: 28px; width: 100%; }
+    .faq-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #000; text-align: center; letter-spacing: 3.84px; line-height: 1.4; white-space: nowrap; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; width: 936px; }
+    .faq-item { border: 1px solid #e5e7eb; background: #fff; }
+    .faq-item + .faq-item { margin-top: 16px; }
+    .faq-question { display: flex; align-items: center; gap: 28px; height: 100px; padding: 28px; cursor: pointer; width: 100%; background: none; border: none; text-align: left; }
+    .q-badge { width: 44px; height: 44px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: #f2f6f4; }
+    .q-badge span { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px; color: #0ab394; line-height: 24px; }
+    .faq-item.is-open .q-badge { background: #0ab394; }
+    .faq-item.is-open .q-badge span { color: #fff; }
+    .q-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 18px; color: #000; letter-spacing: 0.9px; line-height: 28px; flex: 1; white-space: nowrap; }
+    .q-toggle { width: 36px; height: 36px; border: 1px solid #e5e7eb; border-radius: 9999px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px; font-weight: 300; color: #555; line-height: 1; transition: transform 0.25s ease; user-select: none; }
+    .faq-item.is-open .q-toggle { transform: rotate(45deg); }
+    .faq-answer { overflow: hidden; max-height: 0; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 28px 0 76px; }
+    .faq-item.is-open .faq-answer { max-height: 200px; padding: 0 28px 28px 76px; }
+    .faq-answer p { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 16px; color: #000; letter-spacing: 0.8px; line-height: 1.4; }
+    .faq-more-btn { display: flex; align-items: center; gap: 12px; border: 1px solid #000; width: 211px; height: 50px; padding: 13px 33px; text-decoration: none; flex-shrink: 0; }
+    .faq-more-btn:hover { background: #f5f5f5; }
+    .faq-more-label { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #000; letter-spacing: 0.7px; line-height: 20px; white-space: nowrap; }
+    .faq-more-arrow { font-family: 'Inter', sans-serif; font-size: 16px; color: #000; line-height: 24px; }
+
+    /* ========================================
+       LINE CTA
+    ======================================== */
+    .line-section { background: #f4fdfc; padding: 80px 0; }
+    .line-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; height: 124px; margin: 0 auto; padding: 0 32px; }
+    .line-left { display: flex; align-items: center; gap: 20px; height: 124px; }
+    .line-icon-circle { width: 104px; height: 104px; background: #fff; border-radius: 9999px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .line-icon-circle img { width: 50.8px; height: 58.5px; object-fit: contain; transform: rotate(180deg) scaleX(-1); }
+    .line-text-block { display: flex; flex-direction: column; gap: 16px; justify-content: center; height: 100%; }
+    .line-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 12px; color: #000; letter-spacing: 0.6px; line-height: 16px; white-space: nowrap; }
+    .line-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 36px; color: #000; letter-spacing: 1.8px; line-height: 40px; white-space: nowrap; }
+    .line-desc { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #000; letter-spacing: 0.7px; line-height: 20px; white-space: nowrap; }
+    .line-cta-btn { position: relative; display: flex; align-items: center; gap: 12px; height: 68px; padding: 0 38px 0 82px; background: #06c755; border-radius: 8px; text-decoration: none; flex-shrink: 0; transition: opacity 0.15s; }
+    .line-cta-btn:hover { opacity: 0.88; }
+    .line-btn-logo { position: absolute; left: 29px; top: 50%; transform: translateY(-50%); width: 40px; height: 39px; object-fit: contain; }
+    .line-btn-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 16px; color: #fff; letter-spacing: 0.32px; line-height: 1; white-space: nowrap; }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+    .footer-section { background: linear-gradient(200.95deg, rgb(96,193,182) 6.06%, rgb(43,149,137) 83.86%); padding: 80px 0; }
+    .footer-inner { display: flex; flex-direction: column; gap: 36px; align-items: flex-start; max-width: 1200px; padding: 0 32px; margin: 0 auto; }
+    .footer-columns { display: flex; flex-wrap: wrap; gap: 32px; width: 100%; }
+    .footer-col { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+    .col-service-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 18px; color: #fff; letter-spacing: 0.9px; line-height: 28px; padding-bottom: 16px; white-space: nowrap; }
+    .col-service-desc { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 22.75px; padding-bottom: 16px; }
+    .col-bullets { display: flex; flex-direction: column; gap: 0; }
+    .col-bullet-item { display: flex; align-items: flex-start; gap: 8px; padding-top: 8px; }
+    .col-bullet-item:first-child { padding-top: 0; }
+    .bullet-dot { display: block; width: 6px; height: 6px; background: #fff; flex-shrink: 0; margin-top: 7px; }
+    .bullet-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #fff; letter-spacing: 0.6px; line-height: 19.5px; white-space: nowrap; }
+    .col-section-head { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; padding-bottom: 16px; }
+    .col-company-name, .col-company-addr { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 22.75px; white-space: nowrap; }
+    .col-company-addr { padding-top: 4px; }
+    .col-line-link { display: flex; align-items: center; gap: 8px; margin-top: 16px; text-decoration: none; }
+    .col-line-link:hover { opacity: 0.8; }
+    .line-link-icon { width: 20px; height: 20px; object-fit: contain; transform: rotate(180deg) scaleX(-1); flex-shrink: 0; }
+    .line-link-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; white-space: nowrap; }
+    .col-links { display: flex; flex-direction: column; }
+    .col-links a { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; text-decoration: none; white-space: nowrap; padding-top: 12px; }
+    .col-links a:first-child { padding-top: 0; }
+    .col-links a:hover { opacity: 0.75; }
+    .footer-partner { display: flex; flex-direction: column; gap: 8px; }
+    .partner-label { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #fff; letter-spacing: 0.6px; line-height: 19.5px; white-space: nowrap; }
+    .partner-card { position: relative; background: #fff; border: 1px solid #fff; width: 320px; height: 98px; display: flex; align-items: center; justify-content: center; padding: 0 33px; }
+    .partner-logo { width: 182px; height: 42px; object-fit: cover; display: block; }
+    .partner-link-icon { position: absolute; bottom: 11px; right: 11px; width: 24px; height: 24px; object-fit: contain; }
+    .footer-copyright { width: 100%; border-top: 1px solid #fff; padding-top: 33px; display: flex; align-items: center; justify-content: center; }
+    .copyright-text { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 12px; color: #fff; letter-spacing: 0.6px; line-height: 16px; text-align: center; white-space: nowrap; }
+
+    /* ========================================
+       GLOBAL OVERFLOW FIX
+    ======================================== */
+    html { overflow-x: hidden; scroll-behavior: smooth; }
+
+    img { max-width: 100%; }
+
+    /* sp-br: スマホのみ表示する改行タグ */
+    .sp-br { display: none; }
+
+    /* ========================================
+       HAMBURGER BUTTON
+    ======================================== */
+    .hamburger-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+    .hamburger-btn span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #000;
+      border-radius: 1px;
+    }
+
+    /* ========================================
+       SP MENU OVERLAY
+    ======================================== */
+    .sp-menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: #2B9589;
+      flex-direction: column;
+    }
+    .sp-menu-overlay.is-open { display: flex; }
+    .sp-menu-inner {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 20px 24px 40px;
+    }
+    .sp-menu-topbar {
+      display: flex;
+      align-items: center;
+      height: 80px;
+      flex-shrink: 0;
+    }
+    .sp-menu-topbar-side {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .sp-menu-topbar-right { justify-content: flex-end; }
+    .sp-menu-topbar-logo {
+      height: 80px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      flex-shrink: 0;
+    }
+    .sp-menu-close {
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: #fff;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .sp-menu-nav {
+      display: flex;
+      flex-direction: column;
+      margin-top: 24px;
+      flex: 1;
+    }
+    .sp-menu-nav a {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.7px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      display: block;
+    }
+    .sp-menu-nav a:first-child { border-top: 1px solid rgba(255, 255, 255, 0.3); }
+    .sp-menu-nav a:hover { opacity: 0.7; }
+    .sp-menu-line-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 32px;
+      flex-shrink: 0;
+    }
+    .sp-menu-line-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      height: 64px;
+      background: #06C755;
+      border-radius: 8px;
+      text-decoration: none;
+      width: 100%;
+    }
+    .sp-menu-line-btn img {
+      width: 34px;
+      height: 33px;
+      object-fit: contain;
+      transform: rotate(180deg) scaleX(-1);
+    }
+    .sp-menu-line-btn span {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 0.32px;
+      line-height: 1;
+    }
+    .sp-menu-line-btn:hover { background: #05b04c; }
+
+    /* ========================================
+       RESPONSIVE — TABLET (≤768px)
+    ======================================== */
+    @media (max-width: 768px) {
+      /* HEADER */
+      .site-header { height: 64px; padding: 0 24px; }
+      .header-right { gap: 24px; }
+      nav { gap: 16px; }
+      nav a { font-size: 12px; }
+      .cv-button { height: 52px; padding-left: 64px; padding-right: 20px; }
+      .cv-button span { font-size: 14px; }
+
+      /* HERO */
+      .hero-section { height: calc(100vh - 64px); }
+      .hero-content { padding: 0 40px; }
+      .hero-badge-text { font-size: 18px; }
+      .headline-text { font-size: 44px; }
+      .headline-line:last-child { margin-top: 72px; }
+      .subtitle { font-size: 20px; }
+
+      /* STATS */
+      .stats-section { margin-top: -80px; padding: 36px 24px; }
+      .stats-bar { height: auto; flex-wrap: wrap; padding: 8px 0; overflow: visible; }
+      .stat-card { width: 50%; height: auto; min-height: 160px; padding: 20px 16px; flex-shrink: 0; border-radius: 0 !important; }
+      .stat-card:first-child { border-radius: 12px 0 0 0 !important; }
+      .stat-card:nth-child(2) { border-radius: 0 12px 0 0 !important; }
+      .stat-card:nth-child(3) { border-radius: 0 0 0 12px !important; }
+      .stat-card:last-child { border-radius: 0 0 12px 0 !important; }
+      .stat-badge { width: 130px; }
+      .stat-value { width: 130px; }
+      .stat-number.large { font-size: 40px; }
+      .stat-number.medium-kanji { font-size: 36px; }
+      .stat-desc { font-size: 16px; }
+
+      /* PAIN */
+      .pain-section { padding: 60px 40px 40px; }
+      .pain-title { font-size: 36px; white-space: normal; }
+      .pain-resolve-text { font-size: 26px; white-space: normal; }
+
+      /* SERVICE */
+      .service-card .card-pain { width: 100%; box-sizing: border-box; }
+      .service-section { padding: 48px 40px 80px; }
+      .service-title { font-size: 36px; }
+      .service-eyebrow span { font-size: 16px; white-space: normal; text-align: center; }
+      .cards-wrap { flex-wrap: wrap; max-width: 100%; }
+      .service-section .service-card { flex: 1 1 calc(50% - 6px); height: auto; min-height: 240px; }
+      .partner-wrap { flex-direction: column; max-width: 100%; }
+      .partner-logo-box { width: 100%; }
+
+      /* TEAM */
+      .team-section { padding: 60px 40px 80px; }
+      .team-title { font-size: 36px; }
+      .photo-cards { flex-wrap: wrap; }
+      .photo-card { flex: 1 1 calc(50% - 6px); min-width: calc(50% - 6px); }
+      .photo-card-title { white-space: normal; }
+      .qual-cards { flex-direction: column; }
+
+      /* STRENGTHS */
+      .strengths-section { padding: 60px 40px 60px; }
+      .strengths-layout { flex-direction: column; }
+      .left-col { width: 100%; }
+      .right-col { width: 100%; }
+      .strengths-title { font-size: 36px; white-space: normal; }
+      .row-label-title { font-size: 22px; }
+      .row-label-sub { white-space: normal; font-size: 14px; }
+      .row-value-text { font-size: 36px; }
+      .num-main { font-size: 48px; }
+      .num-prefix { font-size: 26px; }
+      .num-suffix { font-size: 38px; }
+
+      /* FLOW */
+      .flow-section { padding: 60px 40px 80px; }
+      .flow-title { font-size: 36px; white-space: normal; }
+      .steps-wrap { flex-wrap: wrap; justify-content: center; gap: 24px; }
+      .step-unit { flex: 1 1 calc(50% - 12px); max-width: calc(50% - 12px); }
+      .step-card { width: 100%; }
+      .cta-button { width: 100%; max-width: 400px; }
+
+      /* SERVICES */
+      .services-section { padding: 60px 40px 80px; }
+      .services-title { font-size: 36px; white-space: normal; }
+      .cards-row { flex-direction: column; }
+      .services-section .service-card { flex-direction: column; height: auto; }
+      .services-section .service-card.half { width: 100%; }
+      .card-photo { width: 100%; height: 180px; }
+
+      /* SERVICE LEVEL */
+      .svlevel-section { padding: 60px 40px 80px; }
+      .svlevel-title { font-size: 32px; letter-spacing: 2px; }
+      .cols-wrap { flex-direction: column; gap: 32px; }
+
+      /* SOFTWARE */
+      .software-section { padding: 60px 40px 80px; }
+      .software-title { font-size: 36px; }
+      .sw-cards { flex-wrap: wrap; }
+      .sw-card { flex: 1 1 calc(33.3% - 2px); border: 1px solid #e9e9e9; border-radius: 0; }
+      .sw-card:first-child { border-radius: 8px 0 0 0; }
+      .sw-card:last-child { border-radius: 0 0 8px 8px; }
+
+      /* PORTFOLIO */
+      .portfolio-section { padding: 60px 40px 80px; }
+      .portfolio-title { font-size: 36px; white-space: normal; }
+      .portfolio-desc { font-size: 16px; }
+
+      /* PRICING */
+      .pricing-section { padding: 60px 40px 80px; }
+      .pricing-title { font-size: 36px; }
+      .price-cards { flex-direction: column; align-items: center; }
+      .price-card { width: 100%; max-width: 400px; }
+      .plan-table-wrap { width: 100%; overflow-x: auto; }
+      .compare-table-wrap { width: 100%; overflow-x: auto; }
+
+      /* DRAWINGS */
+      .drawings-section { padding: 60px 40px 80px; }
+      .drawings-title { font-size: 36px; white-space: normal; }
+      .drawing-card { flex: 1 1 calc(50% - 4px); min-width: calc(50% - 4px); }
+      .nda-note { width: 100%; }
+
+      /* SECURITY */
+      .security-section { padding: 60px 40px 80px; }
+      .security-title { font-size: 36px; letter-spacing: 2px; }
+      .security-desc { white-space: normal; }
+      .security-item { width: calc(50% - 12px); }
+
+      /* COVERAGE */
+      .coverage-section { padding: 60px 40px 80px; }
+      .coverage-title { font-size: 36px; white-space: normal; }
+      .prefecture-row { flex-wrap: wrap; }
+      .pref-tag { flex: 1 1 calc(33.3% - 3px); min-width: 80px; padding: 10px; }
+
+      /* FAQ */
+      .faq-section { padding: 60px 40px 80px; }
+      .faq-title { font-size: 36px; white-space: normal; }
+      .faq-list { width: 100%; }
+      .q-text { white-space: normal; }
+
+      /* LINE CTA */
+      .line-section { padding: 60px 24px; }
+      .line-inner { width: 100%; height: auto; flex-direction: column; gap: 28px; align-items: flex-start; }
+      .line-left { height: auto; }
+      .line-title { font-size: 30px; }
+      .line-desc { white-space: normal; }
+      .line-cta-btn { width: 100%; justify-content: center; }
+
+      /* FOOTER */
+      .footer-section { padding: 60px 0; }
+      .footer-inner { padding: 0 24px; }
+      .footer-columns { flex-direction: column; gap: 32px; }
+      .partner-card { width: 100%; }
+      .copyright-text { white-space: normal; }
+
+      /* OVERFLOW FIX — 全 inner コンテナの左右 padding を 0 にしてセクション側の padding に統一 */
+      .pain-inner, .service-inner, .team-inner, .strengths-inner,
+      .flow-inner, .services-inner, .svlevel-inner, .software-inner,
+      .portfolio-inner, .pricing-inner, .drawings-inner, .security-inner,
+      .coverage-inner, .faq-inner, .line-inner { padding-left: 0; padding-right: 0; }
+
+      /* OVERFLOW FIX — 固定幅リセット */
+      .left-col { width: 100%; flex-shrink: 1; }
+      .right-col { width: 100%; flex-shrink: 1; }
+      .row-label { width: auto; flex-shrink: 1; }
+      .cta-button { width: 100%; max-width: 400px; box-sizing: border-box; }
+      .step-unit { flex-shrink: 1; }
+      .step-card { width: 100%; }
+      .card-photo { flex-shrink: 1; }
+      .pain-tag { white-space: normal; flex-shrink: 1; height: auto; }
+      .partner-link-text { white-space: normal; }
+    }
+
+    /* ========================================
+       RESPONSIVE — MOBILE (≤480px)
+    ======================================== */
+    @media (max-width: 480px) {
+      /* sp-br 表示・全テキスト要素の文節改行 */
+      .sp-br { display: inline; }
+      p, h1, h2, h3, h4,
+      .service-eyebrow span, .col-tab span, .q-text,
+      .partner-desc, .faq-answer p { word-break: keep-all; overflow-wrap: break-word; }
+
+      /* HEADER */
+      .site-header { height: 56px; padding: 0 16px; }
+      .logo { height: 56px; }
+      nav { display: none; }
+      .cv-button { display: none; }
+      .hamburger-btn { display: flex; }
+
+      /* HERO */
+      .hero-section { height: calc(100svh - 85px); min-height: 420px; }
+      .hero-content { padding: 0 20px 170px; align-items: flex-end; }
+      .hero-inner { gap: 20px; width: 100%; align-items: center; }
+      .hero-badge-wrap { align-self: flex-start; }
+      .subtitle-wrap { align-self: flex-start; }
+      .hero-badge-text { font-size: 13px; letter-spacing: 1px; }
+      .headline-text { font-size: 30px; }
+      .headline-stack { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; align-self: center; width: fit-content; }
+      .headline-line { padding: 12px 16px 14px; width: fit-content; }
+      .headline-line:last-child { margin-top: 0; }
+      .subtitle { font-size: 14px; letter-spacing: 0.5px; }
+      .subtitle-wrap { margin-top: -8px; }
+
+      /* STATS — カード上半分がhero動画に、下半分が白背景に重なる */
+      .stats-section { margin-top: -170px; padding: 20px 16px; }
+      .stats-bar { height: auto; padding: 0; overflow: hidden; flex-wrap: wrap; gap: 0; background: #fff; }
+      .stat-card { width: 50%; min-height: 150px; padding: 20px 12px; gap: 8px; flex-shrink: 0; background: #fff; box-sizing: border-box; border: 0.5px solid #e9e9e9; }
+      .stat-badge { width: 110px; padding: 7px 0; }
+      .stat-badge-text { font-size: 12px; }
+      .stat-value { width: 110px; height: 36px; }
+      .stat-number.large { font-size: 32px; }
+      .stat-number.medium-kanji { font-size: 28px; }
+      .stat-sublabel { font-size: 15px; }
+      .stat-desc { font-size: 13px; }
+
+      /* PAIN */
+      .pain-section { padding: 40px 20px 32px; }
+      .pain-inner { gap: 28px; }
+      .pain-title { font-size: 26px; letter-spacing: 2px; white-space: normal; }
+      .pain-tags { gap: 10px; }
+      .pain-tag { height: auto; padding: 10px 14px; }
+      .pain-tag-text { font-size: 13px; }
+      .pain-resolve-text { font-size: 18px; letter-spacing: 1.5px; white-space: normal; }
+
+      /* SERVICE */
+      .service-section { padding: 32px 20px 56px; }
+      .service-inner { gap: 28px; }
+      .service-eyebrow { padding: 12px 20px; }
+      .service-eyebrow span { font-size: 13px; line-height: 1.4; }
+      .service-title { font-size: 26px; letter-spacing: 2px; }
+      .service-desc { font-size: 14px; text-align: left; word-break: normal; overflow-wrap: break-word; }
+      .service-desc br { display: none; }
+      .cards-wrap { flex-direction: column; max-width: 100%; }
+      .service-section .service-card { flex: none; width: 100%; height: auto; min-height: 0; }
+      .card-name { font-size: 20px; }
+      .card-role { white-space: normal; }
+      .partner-logo-box img { width: 140px; }
+
+      /* TEAM */
+      .team-section { padding: 40px 20px 56px; }
+      .team-title { font-size: 26px; letter-spacing: 2px; }
+      .photo-cards { flex-direction: column; gap: 16px; }
+      .photo-card { flex: none; width: 100%; }
+      .photo-card-img { height: 200px; }
+      .qual-icon { width: 56px; height: 56px; min-width: 56px; min-height: 56px; }
+      .icon-cad { width: 20px; height: 40px; }
+      .icon-supervisor { width: 21px; height: 40px; }
+      .icon-coordinator { width: 23px; height: 40px; }
+      .qual-tags { grid-template-columns: repeat(2, 1fr); }
+      .qual-tag { display: block; width: 100%; box-sizing: border-box; }
+      .qual-name { white-space: normal; }
+      .qual-sub { white-space: normal; }
+
+      /* STRENGTHS */
+      .strengths-section { padding: 40px 20px 40px; }
+      .strengths-title { font-size: 26px; letter-spacing: 2px; white-space: normal; }
+      .strengths-desc { font-size: 14px; }
+      .right-col { gap: 0; }
+      .strength-row { gap: 8px; padding: 20px 8px 20px; flex-wrap: wrap; }
+      .row-label { width: 100%; gap: 4px; }
+      .row-label-title { font-size: 20px; }
+      .row-label-sub { font-size: 14px; white-space: normal; }
+      .row-value-text { font-size: 32px; }
+      .num-main { font-size: 42px; }
+      .num-prefix { font-size: 32px; }
+      .num-suffix { font-size: 32px; }
+
+      /* FLOW */
+      .flow-section { padding: 40px 20px 56px; }
+      .flow-title { font-size: 26px; letter-spacing: 2px; white-space: normal; }
+      .flow-desc { font-size: 14px; white-space: normal; }
+      .steps-wrap { flex-direction: column; align-items: center; gap: 32px; }
+      .step-unit { flex: none; width: 100%; max-width: 280px; }
+      .step-card { width: 100%; height: auto; min-height: 0; padding: 48px 20px 24px; }
+
+      /* SERVICES */
+      .services-section { padding: 40px 20px 56px; }
+      .services-title { font-size: 26px; letter-spacing: 2px; white-space: normal; }
+      .card-photo { height: 150px; }
+
+      /* SERVICE LEVEL */
+      .svlevel-section { padding: 40px 20px 56px; }
+      .svlevel-title { font-size: 22px; letter-spacing: 1px; }
+      .col-tab span { font-size: 12px; letter-spacing: 0.5px; white-space: normal; padding: 0 8px; }
+      .tags-grid { grid-template-columns: 1fr; }
+
+      /* SOFTWARE */
+      .software-section { padding: 40px 20px 56px; }
+      .software-title { font-size: 22px; letter-spacing: 1px; white-space: normal; }
+      .sw-cards { flex-wrap: wrap; }
+      .sw-card { flex: 1 1 calc(50% - 1px); padding: 16px 16px 24px; }
+      .sw-card:nth-child(odd):last-child { flex: 1 1 100%; border-radius: 0 0 8px 8px; }
+      .sw-logo { height: 100px; }
+      .sw-card:nth-child(1) .sw-logo { padding: 8px 0; overflow: hidden; }
+      .sw-card:nth-child(1) .sw-logo img { width: 100%; height: 100%; object-fit: contain; transform: scale(3); transform-origin: center; }
+      .sw-card:nth-child(2) .sw-logo img { height: 100px; }
+      .sw-card:nth-child(3) .sw-logo { overflow: hidden; }
+      .sw-card:nth-child(3) .sw-logo img { height: 100px; transform: scale(1.3); transform-origin: center; }
+      .sw-card:nth-child(4) .sw-logo img { height: 60px; }
+      .sw-card:nth-child(5) .sw-logo img { height: 100px; }
+
+      /* PORTFOLIO */
+      .portfolio-section { padding: 40px 20px 56px; }
+      .portfolio-title { font-size: 26px; letter-spacing: 2px; white-space: normal; }
+      .portfolio-desc { font-size: 14px; }
+
+      /* PRICING */
+      .pricing-section { padding: 40px 20px 56px; }
+      .pricing-title { font-size: 26px; letter-spacing: 2px; }
+      .price-cards { width: 100%; }
+      .price-card { width: 100%; height: auto; min-height: 260px; }
+      .card-note { top: auto; bottom: 16px; }
+      .plan-table-wrap { width: 100%; overflow-x: auto; }
+      .compare-table-wrap { width: 100%; overflow-x: auto; }
+      .compare-table { min-width: 640px; }
+
+      /* DRAWINGS */
+      .drawings-section { padding: 40px 20px 56px; }
+      .drawings-title { font-size: 26px; letter-spacing: 2px; white-space: normal; }
+      .drawings-desc { font-size: 15px; }
+      .drawings-grid { flex-direction: column; gap: 16px; }
+      .drawing-card { flex: none; min-width: 0; width: 100%; }
+
+      /* SECURITY */
+      .security-section { padding: 40px 20px 56px; }
+      .security-title { font-size: 26px; letter-spacing: 2px; }
+      .security-desc { white-space: normal; }
+      .security-grid { gap: 10px; }
+      .security-item { width: 100%; padding: 20px 16px; height: auto; }
+      .item-title { font-size: 16px; white-space: normal; }
+
+      /* COVERAGE */
+      .coverage-section { padding: 40px 20px 56px; }
+      .coverage-title { font-size: 26px; letter-spacing: 2px; white-space: normal; }
+      .coverage-desc { font-size: 15px; }
+      .prefecture-row { flex-wrap: wrap; gap: 6px; }
+      .pref-tag { flex: 1 1 calc(33.3% - 4px); min-width: 72px; padding: 10px 6px; }
+      .pref-tag span { font-size: 13px; }
+
+      /* FAQ */
+      .faq-section { padding: 40px 20px 56px; }
+      .faq-title { font-size: 26px; letter-spacing: 2px; white-space: normal; }
+      .faq-item + .faq-item { margin-top: 8px; }
+      .faq-question { height: auto; min-height: 72px; padding: 16px 52px 16px 8px; gap: 12px; align-items: center; position: relative; }
+      .faq-question .q-toggle { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); }
+      .faq-item.is-open .faq-question .q-toggle { transform: translateY(-50%) rotate(45deg); }
+      .q-text { white-space: normal; font-size: 15px; line-height: 1.5; }
+      .faq-answer { padding: 0 16px 0 64px; }
+      .faq-item.is-open .faq-answer { padding: 0 16px 20px 64px; }
+      .faq-more-btn { width: 100%; justify-content: center; }
+
+      /* LINE CTA */
+      .line-section { padding: 40px 20px; }
+      .line-left { gap: 16px; flex-wrap: wrap; }
+      .line-text-block { gap: 12px; }
+      .line-title { font-size: 26px; letter-spacing: 1px; }
+      .line-eyebrow { white-space: normal; }
+      .line-desc { white-space: normal; }
+      .line-cta-btn { padding: 0 24px 0 68px; }
+
+      /* FOOTER */
+      .footer-inner { padding: 0 20px; gap: 24px; }
+      .col-service-title { white-space: normal; font-size: 16px; }
+      .bullet-text { white-space: normal; }
+      .col-company-name, .col-company-addr { white-space: normal; }
+      .line-link-text { white-space: normal; }
+      .col-links a { white-space: normal; }
+      .partner-label { white-space: normal; }
+      .copyright-text { white-space: normal; }
+
+      /* OVERFLOW FIX — 全 inner コンテナの左右 padding を 0 にしてセクション側の 20px に統一 */
+      .pain-inner, .service-inner, .team-inner, .strengths-inner,
+      .flow-inner, .services-inner, .svlevel-inner, .software-inner,
+      .portfolio-inner, .pricing-inner, .drawings-inner, .security-inner,
+      .coverage-inner, .faq-inner, .line-inner { padding-left: 0; padding-right: 0; }
+
+      /* OVERFLOW FIX — pain-tag 折り返し */
+      .pain-tag { white-space: normal; flex-shrink: 1; height: auto; padding: 10px 14px; }
+      .pain-tag-text { font-size: 13px; }
+
+      /* OVERFLOW FIX — 固定幅・flex-shrink:0 リセット */
+      .left-col, .right-col { width: 100%; flex-shrink: 1; max-width: 100%; }
+      .row-label { width: auto; max-width: 100%; flex-shrink: 1; }
+      .cta-wrap { width: 100%; }
+      .cta-button { width: 100%; max-width: 100%; box-sizing: border-box; }
+      .step-unit { flex-shrink: 1; max-width: 100%; }
+      .step-card { width: 100%; box-sizing: border-box; }
+      .card-photo { width: 100%; flex-shrink: 1; }
+      .stat-card { flex-shrink: 1; }
+      .stat-badge { width: 100%; max-width: 140px; }
+      .stat-value { width: 100%; max-width: 140px; }
+      .partner-logo-box { width: 100%; padding: 0; }
+      .partner-logo-box img { width: 100%; max-width: 160px; height: auto; }
+      .partner-wrap { align-items: stretch; }
+      .partner-text-wrap { margin: 0 24px; }
+      .partner-desc { text-align: left; word-break: normal; }
+      .partner-desc br { display: none; }
+      .partner-link { align-self: center; }
+      .card-name { white-space: normal; }
+      .partner-link-text { white-space: normal; }
+      .num-prefix, .num-main, .num-suffix { white-space: normal; }
+      .row-value-text { white-space: normal; }
+      .service-desc { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="#">
+      <img class="logo"
+        src="https://www.figma.com/api/mcp/asset/5ede3e86-da63-4844-962d-62b735fd247c"
+        alt="OTEMOTO">
+    </a>
+    <div class="header-right">
+      <nav>
+        <a href="#drawings">実績</a>
+        <a href="#services">サービス</a>
+        <a href="#portfolio">料金</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#" class="cv-button">
+        <img class="line-icon"
+          src="https://www.figma.com/api/mcp/asset/f3aa1383-4676-428b-8559-74c3d7540c04"
+          alt="LINE">
+        <span>LINEで無料相談する</span>
+      </a>
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="hero-video-wrap">
+      <video id="bg-video" autoplay muted playsinline></video>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-inner">
+
+        <div class="hero-badge-wrap">
+          <div class="hero-badge">
+            <span class="hero-badge-text">今すぐ設備設計が必要な建設会社様へ</span>
+          </div>
+        </div>
+
+        <div class="headline-stack">
+          <div class="headline-line">
+            <p class="headline-text">コストを抑えて</p>
+          </div>
+          <div class="headline-line">
+            <p class="headline-text">設計業務を一括サポート</p>
+          </div>
+        </div>
+
+        <div class="subtitle-wrap">
+          <p class="subtitle">
+            Tfas対応｜Rebro対応｜主要5<span class="char-so">ソ</span><span class="char-fu">フ</span>トすべて対応
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="stats-bar">
+
+      <div class="stat-card">
+        <div class="stat-badge"><span class="stat-badge-text">最短対応</span></div>
+        <div class="stat-value">
+          <span class="stat-number large">24h</span>
+        </div>
+        <p class="stat-desc">急な案件も<br>即日着手</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-badge"><span class="stat-badge-text">コスト最適化</span></div>
+        <div class="stat-value">
+          <span class="stat-sublabel">最大</span>
+          <span class="stat-number large">40%</span>
+        </div>
+        <p class="stat-desc">人件費や<br>採用コスト削減</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-badge"><span class="stat-badge-text">安心の日本品質</span></div>
+        <div class="stat-value">
+          <span class="stat-number medium-kanji">高品質</span>
+        </div>
+        <p class="stat-desc">日本人スタッフが<br>全件チェック</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-badge"><span class="stat-badge-text">外国人設備設計士</span></div>
+        <div class="stat-value">
+          <span class="stat-number large">100</span>
+          <span class="stat-sublabel">以上</span>
+        </div>
+        <p class="stat-desc">業務提携先<br>設備設計士の在籍数</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICE (アウトソーシング) -->
+  <section class="service-section">
+    <div class="service-inner">
+      <div class="service-heading">
+        <div class="service-eyebrow"><span>日本品質の電気設備設計を、<br class="sp-br">より柔軟に、より効率的に</span></div>
+        <h2 class="service-title">設備設計の<br>アウトソーシングサービス</h2>
+        <div class="service-desc-wrap">
+          <p class="service-desc">日本国内の設計事務所様・サブコン様・<br class="sp-br">建築会社様向けに、<br>電気設備設計業務の<br class="sp-br">アウトソーシングサービスを提供しております。</p>
+          <p class="service-desc">照明設備、動力設備、受変電設備、弱電設備、防災設備など、<br class="sp-br">幅広い電気設備設計業務に対応し、<br>日本の設計基準・法令・<br class="sp-br">実務フローを理解した設計スタッフが業務を担当いたします。</p>
+        </div>
+      </div>
+      <div class="cards-wrap">
+        <div class="service-card">
+          <div class="card-body">
+            <div class="card-icon"><img src="https://www.figma.com/api/mcp/asset/95a9a030-0e27-474b-9816-277eacc5459e" alt="ゼネコン"></div>
+            <div class="card-texts">
+              <div class="card-title-group"><span class="card-name">ゼネコン</span><span class="card-role">電気設備図面の外注先として</span></div>
+              <div class="card-pain"><p>図面の品質は落とせないが<br>人手が足りない</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="card-body">
+            <div class="card-icon"><img src="https://www.figma.com/api/mcp/asset/d5fe9104-4b16-479b-aeef-1429fdb49c50" alt="サブコン"></div>
+            <div class="card-texts">
+              <div class="card-title-group"><span class="card-name">サブコン</span><span class="card-role">専門工事の設計パートナーとして</span></div>
+              <div class="card-pain"><p>Tfas対応の<br>外部パートナーを探していた</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="card-body">
+            <div class="card-icon"><img class="icon-lightning" src="https://www.figma.com/api/mcp/asset/fa2fef6a-eff7-447c-addf-31ad8d1e3bf6" alt="電気設備専門"></div>
+            <div class="card-texts">
+              <div class="card-title-group"><span class="card-name">電気設備専門</span><span class="card-role">設計業務の柔軟なリソースとして</span></div>
+              <div class="card-pain"><p>繁忙期だけでも<br>設計を任せたい</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="partner-wrap">
+        <a href="https://plus358.com/" target="_blank" rel="noopener noreferrer" class="partner-logo-box"><img src="https://www.figma.com/api/mcp/asset/993d5b57-6372-44c5-8f5d-9685f56c1841" alt="Plus358"></a>
+        <div class="partner-text-wrap">
+          <p class="partner-desc">CAD外注・設計図面作成のパートナー企業として業務提携。<br class="sp-br">電気設備・建築分野における作図業務を中心に、<br class="sp-br">高品質な図面作成を支援しています。</p>
+          <a href="https://plus358.com/" target="_blank" rel="noopener noreferrer" class="partner-link">
+            <img class="partner-arrow" src="https://www.figma.com/api/mcp/asset/b731e729-4ac9-45b9-8c83-8b015043f026" alt="">
+            <span class="partner-link-text">サイトを見る</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team-section">
+    <div class="team-inner">
+      <div class="team-heading">
+        <p class="team-eyebrow">OUR TEAM</p>
+        <h2 class="team-title">担当人材・品質体制</h2>
+      </div>
+      <div class="photo-cards">
+        <div class="photo-card">
+          <img class="photo-card-img" src="/Users/ootsujiayana/★WORK/O/OTEMOTO/設備設計-LP/素材/card-image-01.png" alt="電気設備施工図の作成">
+          <span class="photo-card-label">提供内容</span>
+          <div class="photo-card-body"><p class="photo-card-title">電気設備施工図の作成</p><p class="photo-card-desc">Tfas・Rebro・BIM対応</p></div>
+        </div>
+        <div class="photo-card">
+          <img class="photo-card-img" src="/Users/ootsujiayana/★WORK/O/OTEMOTO/設備設計-LP/素材/card-image-02.png" alt="日本人監修者による図面チェック">
+          <span class="photo-card-label">担当人材</span>
+          <div class="photo-card-body"><p class="photo-card-title">日本人監修者による図面チェック</p><p class="photo-card-desc">専門訓練済みのプロ集団</p></div>
+        </div>
+        <div class="photo-card">
+          <img class="photo-card-img" src="/Users/ootsujiayana/★WORK/O/OTEMOTO/設備設計-LP/素材/card-image-03.png" alt="フィリピン人CADオペレーター">
+          <span class="photo-card-label">品質保証</span>
+          <div class="photo-card-body"><p class="photo-card-title">フィリピン人CADオペレーター</p><p class="photo-card-desc">建築士・電気工事会社が事業監修</p></div>
+        </div>
+        <div class="photo-card">
+          <img class="photo-card-img" src="/Users/ootsujiayana/★WORK/O/OTEMOTO/設備設計-LP/素材/card-image-04.png" alt="通訳コーディネーター常駐">
+          <span class="photo-card-label">コミュニケーション</span>
+          <div class="photo-card-body"><p class="photo-card-title">通訳コーディネーター常駐</p><p class="photo-card-desc">日本語指示を正確に伝達</p></div>
+        </div>
+      </div>
+      <div class="qualifications">
+        <div class="qual-header"><span class="qual-header-text">スタッフ保有資格</span></div>
+        <div class="qual-cards">
+          <div class="qual-card">
+            <div class="qual-top">
+              <div class="qual-icon"><img class="icon-cad" src="https://www.figma.com/api/mcp/asset/fedf4c7b-3065-42a2-9723-f9fc34eb483f" alt="CADオペレーター"></div>
+              <div class="qual-name-group"><span class="qual-name">CADオペレーター</span><span class="qual-sub">電気CAD専門訓練修了</span></div>
+            </div>
+            <div class="qual-tags"><span class="qual-tag">Tfas</span><span class="qual-tag">Rebro</span><span class="qual-tag">AutoCAD</span><span class="qual-tag">Revit</span></div>
+          </div>
+          <div class="qual-card">
+            <div class="qual-top">
+              <div class="qual-icon"><img class="icon-supervisor" src="https://www.figma.com/api/mcp/asset/b3f143d4-06fa-4368-924a-f229b63ca69a" alt="日本人監修者"></div>
+              <div class="qual-name-group"><span class="qual-name">日本人監修者</span><span class="qual-sub">建築士・電気工事士</span></div>
+            </div>
+            <div class="qual-tags"><span class="qual-tag">品質チェック</span><span class="qual-tag">図面監修</span><span class="qual-tag">技術指導</span></div>
+          </div>
+          <div class="qual-card">
+            <div class="qual-top">
+              <div class="qual-icon"><img class="icon-coordinator" src="https://www.figma.com/api/mcp/asset/9f25bd54-b94f-4c4b-9554-5f81ab075df9" alt="通訳コーディネーター"></div>
+              <div class="qual-name-group"><span class="qual-name">通訳コーディネーター</span><span class="qual-sub">電気設備専門用語対応</span></div>
+            </div>
+            <div class="qual-tags"><span class="qual-tag">進行管理</span><span class="qual-tag">技術通訳</span><span class="qual-tag">日英バイリンガル</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-wrap">
+        <a href="#" class="cta-button"><span>無料で相談する</span><img class="cta-arrow" src="https://www.figma.com/api/mcp/asset/b65351e5-ac5e-48eb-8577-8f1a8d0e0fbb" alt=""></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN -->
+  <section class="pain-section">
+    <div class="pain-inner">
+      <h2 class="pain-title">このような<br>お悩みありませんか？</h2>
+      <div class="pain-tags">
+        <div class="pain-tag"><span class="pain-tag-num">01</span><span class="pain-tag-text">設計人材の採用・定着・リソース不足</span></div>
+        <div class="pain-tag"><span class="pain-tag-num">02</span><span class="pain-tag-text">残業の常態化</span></div>
+        <div class="pain-tag"><span class="pain-tag-num">03</span><span class="pain-tag-text">図面作成の外注・納期対応</span></div>
+        <div class="pain-tag"><span class="pain-tag-num">04</span><span class="pain-tag-text">負荷計算に追われる</span></div>
+        <div class="pain-tag"><span class="pain-tag-num">05</span><span class="pain-tag-text">固定費を増やさず繁忙期対応</span></div>
+        <div class="pain-tag"><span class="pain-tag-num">06</span><span class="pain-tag-text">若手育成に時間が取られている</span></div>
+      </div>
+      <div class="pain-resolve">
+        <p class="pain-resolve-text">その課題、OTEMOTOで解決できます！</p>
+      </div>
+    </div>
+  </section>
+  <svg class="wave-border" viewBox="0 0 1440 67" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0L1440 0L712.5 67Z" fill="#FAFAFA"/>
+  </svg>
+
+  <!-- STRENGTHS -->
+  <section class="strengths-section">
+    <div class="strengths-inner">
+      <div class="strengths-layout">
+        <div class="left-col">
+          <div class="left-texts">
+            <p class="strengths-eyebrow">STRENGTHS</p>
+            <h2 class="strengths-title">当社の強み</h2>
+            <p class="strengths-desc">電気設備設計士、CADオペレーター、<br>建築士、BIM対応スタッフが<br>チーム体制で案件をサポートします。</p>
+          </div>
+          <img class="strengths-photo" src="/Users/ootsujiayana/★WORK/O/OTEMOTO/設備設計-LP/素材/card-image-05.png" alt="当社の強み">
+        </div>
+        <div class="right-col">
+          <div class="strength-row">
+            <div class="row-label"><span class="row-label-title">国内同等</span><span class="row-label-sub">経験スタッフが全件チェック</span></div>
+            <span class="row-value-text">安心の日本品質</span>
+          </div>
+          <div class="strength-row">
+            <div class="row-label"><span class="row-label-title">コスト最適化</span><span class="row-label-sub">経験スタッフが全件チェック</span></div>
+            <div class="row-value-num"><span class="num-prefix">最大</span><span class="num-main">40%</span><span class="num-suffix">削減</span></div>
+          </div>
+          <div class="strength-row">
+            <div class="row-label"><span class="row-label-title">スピード対応</span><span class="row-label-sub">急な案件増加・繁忙期も柔軟対応</span></div>
+            <div class="row-value-num"><span class="num-prefix">最短</span><span class="num-main">24h</span><span class="num-suffix">対応</span></div>
+          </div>
+          <div class="strength-row">
+            <div class="row-label"><span class="row-label-title">通訳常駐</span><span class="row-label-sub">打合せ・図面確認・修正まで日本語で完結</span></div>
+            <span class="row-value-text">すべて日本語対応</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <svg class="wave-border" style="background: #fafafa;" viewBox="0 0 1440 67" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0L1440 0L712.5 67Z" fill="#fff"/>
+  </svg>
+
+  <!-- FLOW -->
+  <section class="flow-section">
+    <div class="flow-inner">
+      <div class="flow-heading">
+        <p class="flow-eyebrow">FLOW</p>
+        <h2 class="flow-title">契約構造</h2>
+        <p class="flow-desc">ご契約・進行管理は<br>すべて当社が一括対応します。</p>
+      </div>
+      <div class="steps-wrap">
+        <div class="step-unit">
+          <div class="step-badge"><span class="badge-step">STEP</span><span class="badge-num">01</span></div>
+          <div class="step-card">
+            <img class="step-icon" src="https://www.figma.com/api/mcp/asset/5b02378a-4c9c-4768-af72-71df20ff3835" alt="お問い合わせ">
+            <div class="step-texts"><div class="step-label-wrap"><p class="step-label">メール・フォームから<br>お問い合わせ</p></div><p class="step-desc-text">ご質問・ご相談がありましたら<br>お気軽にご連絡ください。</p></div>
+          </div>
+        </div>
+        <div class="step-unit">
+          <div class="step-badge"><span class="badge-step">STEP</span><span class="badge-num">02</span></div>
+          <div class="step-card">
+            <img class="step-icon" src="https://www.figma.com/api/mcp/asset/f944b9db-da09-4e56-88b7-8c8ab746c6a1" alt="ご契約">
+            <div class="step-texts"><div class="step-label-wrap"><p class="step-label">ご契約・お申込み</p></div><p class="step-desc-text">契約内容をご確認いただき、<br>オンラインで手続きが完了。</p></div>
+          </div>
+        </div>
+        <div class="step-unit">
+          <div class="step-badge"><span class="badge-step">STEP</span><span class="badge-num">03</span></div>
+          <div class="step-card">
+            <img class="step-icon" src="https://www.figma.com/api/mcp/asset/aa12223f-64c2-4641-b42c-52f3bba24afe" alt="人材供給">
+            <div class="step-texts"><div class="step-label-wrap"><p class="step-label">当社が人材供給<br>進行管理</p></div><p class="step-desc-text">要件に応じて適切な人材を<br>アサインし、進行を管理。</p></div>
+          </div>
+        </div>
+        <div class="step-unit">
+          <div class="step-badge"><span class="badge-step">STEP</span><span class="badge-num">04</span></div>
+          <div class="step-card">
+            <img class="step-icon" src="https://www.figma.com/api/mcp/asset/9ad20067-9d78-41be-bcc5-1c7dc03d099b" alt="作図">
+            <div class="step-texts"><div class="step-label-wrap"><p class="step-label">担当オペレーターが作図</p></div><p class="step-desc-text">専門スタッフが図面を作成し、<br>品質チェックまで対応します。</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-wrap">
+        <a href="#" class="cta-button"><span>無料で相談する</span><img class="cta-arrow" src="https://www.figma.com/api/mcp/asset/fbe93579-0530-415b-ab40-827484f808f0" alt=""></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES (対応可能業務) -->
+  <section class="services-section" id="services">
+    <div class="services-inner">
+      <div class="services-heading">
+        <p class="services-eyebrow">SERVICES</p>
+        <h2 class="services-title">対応可能業務</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="cards-row">
+          <div class="service-card">
+            <div class="card-photo"><img src="https://www.figma.com/api/mcp/asset/e9294b48-d117-41f2-8327-929a9d9ba367" alt="電気設備設計"></div>
+            <div class="card-body"><p class="card-title">電気設備設計</p><div class="card-tags"><div class="card-tag"><span>照明設備</span></div><div class="card-tag"><span>動力設備</span></div><div class="card-tag"><span>受変電設備</span></div><div class="card-tag"><span>電灯・コンセント</span></div><div class="card-tag"><span>非常用電源</span></div><div class="card-tag"><span>太陽光発電</span></div><div class="card-tag"><span>EV充電</span></div></div></div>
+          </div>
+          <div class="service-card">
+            <div class="card-photo"><img src="https://www.figma.com/api/mcp/asset/7e3c8835-6ad1-4767-8b9e-8035f4afd3b0" alt="弱電設備設計"></div>
+            <div class="card-body"><p class="card-title">弱電設備設計</p><div class="card-tags"><div class="card-tag"><span>LAN設備</span></div><div class="card-tag"><span>監視カメラ</span></div><div class="card-tag"><span>入退室管理</span></div><div class="card-tag"><span>インターホン</span></div><div class="card-tag"><span>テレビ共聴</span></div><div class="card-tag"><span>放送設備</span></div></div></div>
+          </div>
+        </div>
+        <div class="cards-row">
+          <div class="service-card">
+            <div class="card-photo"><img src="https://www.figma.com/api/mcp/asset/c5678c9d-90af-471c-8727-589402978b04" alt="防災設備設計"></div>
+            <div class="card-body"><p class="card-title">防災設備設計</p><div class="card-tags"><div class="card-tag"><span>自動火災報知</span></div><div class="card-tag"><span>非常放送</span></div><div class="card-tag"><span>誘導灯設備</span></div><div class="card-tag"><span>防排煙連動</span></div></div></div>
+          </div>
+          <div class="service-card">
+            <div class="card-photo"><img src="https://www.figma.com/api/mcp/asset/2f7af272-dbaa-4356-bc6d-16ace147612a" alt="再生可能エネルギー"></div>
+            <div class="card-body"><p class="card-title">再生可能エネルギー</p><div class="card-tags"><div class="card-tag"><span>太陽光発電設備</span></div><div class="card-tag"><span>EV充電設備</span></div><div class="card-tag"><span>蓄電設備</span></div><div class="card-tag"><span>エネルギー管理</span></div></div></div>
+          </div>
+        </div>
+        <div class="cards-row">
+          <div class="service-card half">
+            <div class="card-photo"><img src="https://www.figma.com/api/mcp/asset/93ccdd76-84dd-451a-adef-b4fde43ea199" alt="CAD・図面作成"></div>
+            <div class="card-body"><p class="card-title">CAD・図面作成</p><div class="card-tags"><div class="card-tag"><span>基本設計図</span></div><div class="card-tag"><span>実施設計図</span></div><div class="card-tag"><span>施工図</span></div><div class="card-tag"><span>竣工図</span></div><div class="card-tag"><span>系統図</span></div><div class="card-tag"><span>プロット図</span></div><div class="card-tag"><span>単線結線図</span></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE LEVEL -->
+  <section class="svlevel-section">
+    <div class="svlevel-inner">
+      <div class="svlevel-heading">
+        <p class="svlevel-eyebrow">SERVICES</p>
+        <h2 class="svlevel-title">基礎作図からBIMまで<br>必要な工程だけお任せください!</h2>
+      </div>
+      <div class="cols-wrap">
+        <div class="service-col col-1">
+          <div class="col-tab"><span>まずはお試しで！基礎作図だけ頼みたい</span></div>
+          <div class="col-card">
+            <p class="col-title">1. 基礎作図</p>
+            <div class="tags-grid"><div class="col-tag"><span>トレース</span></div><div class="col-tag"><span>竣工図反転</span></div><div class="col-tag"><span>プロット図</span></div><div class="col-tag"><span>プロット図</span></div></div>
+          </div>
+        </div>
+        <div class="service-col col-2">
+          <div class="col-tab"><span>慣れてきたら依頼範囲を広げられる</span></div>
+          <div class="col-card">
+            <p class="col-title">2. 設計補助</p>
+            <div class="tags-grid"><div class="col-tag"><span>系統図作成</span></div><div class="col-tag"><span>単線結線図</span></div><div class="col-tag"><span>負荷計算</span></div><div class="col-tag"><span>照度計算</span></div><div class="col-tag"><span>器具配置</span></div></div>
+          </div>
+        </div>
+        <div class="service-col col-3">
+          <div class="col-tab"><span>トータルで全部任せたい！</span></div>
+          <div class="col-card">
+            <p class="col-title">3. 自立作図・BIM</p>
+            <div class="tags-grid"><div class="col-tag"><span>施工図作成</span></div><div class="col-tag"><span>自立作図</span></div><div class="col-tag"><span>プロット計画</span></div><div class="col-tag"><span>BIMモデル作成</span></div><div class="col-tag"><span>Rebro</span></div><div class="col-tag"><span>Revit</span></div><div class="col-tag"><span>干渉チェック</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOFTWARE -->
+  <section class="software-section">
+    <div class="software-inner">
+      <div class="software-heading">
+        <p class="software-eyebrow">SOFTWARE</p>
+        <h2 class="software-title">主要5ソフトすべて対応<br>御社の環境にそのまま入ります。</h2>
+      </div>
+      <div class="sw-cards">
+        <div class="sw-card"><div class="sw-logo"><img src="https://www.figma.com/api/mcp/asset/71fb3e0f-ae47-4b59-880a-768ace467e01" alt="CADWe'll Tfas"></div><p class="sw-label">設備CAD標準</p></div>
+        <div class="sw-card"><div class="sw-logo"><img src="https://www.figma.com/api/mcp/asset/9993474d-2f52-4111-8803-c72f4c3818db" alt="Rebro"></div><p class="sw-label">BIM対応設備CAD</p></div>
+        <div class="sw-card"><div class="sw-logo"><img src="https://www.figma.com/api/mcp/asset/c31b5b14-dd12-48d5-b358-a3cc0ba105a1" alt="AutoCAD"></div><p class="sw-label">汎用CAD</p></div>
+        <div class="sw-card"><div class="sw-logo"><img src="https://www.figma.com/api/mcp/asset/49d039e7-25f2-408c-9067-a3a18b0a7855" alt="Jw_cad"></div><p class="sw-label">建築CAD</p></div>
+        <div class="sw-card"><div class="sw-logo"><img src="https://www.figma.com/api/mcp/asset/b52dd340-81b7-494b-bae4-d4837638c59b" alt="Revit"></div><p class="sw-label">Autodesk BIM</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO (無料お試し) -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="portfolio-inner">
+      <div class="portfolio-heading">
+        <div class="heading-titles">
+          <p class="portfolio-eyebrow">PORTFOLIO</p>
+          <h2 class="portfolio-title">無料でお試しサービス</h2>
+        </div>
+        <div class="portfolio-descs">
+          <p class="portfolio-desc">「外注は試してみないと分からない」だから最初の3案件は無料です。<br>実案件で品質・スピード・やり取りのすべてをご確認ください。</p>
+          <p class="portfolio-desc">3案件のフィードバックを通じて<br class="sp-br">御社のルール・仕様を整理し、<br class="sp-br">本稼働時には<br>「ゼロから指示しなくても伝わる」<br class="sp-br">状態を作ります。</p>
+        </div>
+      </div>
+      <div class="steps-wrap">
+        <div class="step-unit">
+          <div class="step-badge"><span class="badge-step">STEP</span><span class="badge-num">01</span></div>
+          <div class="step-card"><img class="step-icon" src="https://www.figma.com/api/mcp/asset/cf219655-3393-401a-9292-b36d8e90a271" alt=""><div class="step-texts"><div class="step-label-wrap"><p class="step-label">3案件を無料で依頼</p></div><p class="step-desc-text">実際の案件を3件<br>無料でお試し</p></div></div>
+        </div>
+        <div class="step-unit">
+          <div class="step-badge"><span class="badge-step">STEP</span><span class="badge-num">02</span></div>
+          <div class="step-card"><img class="step-icon" src="https://www.figma.com/api/mcp/asset/d7aeb5fa-aac0-442e-8376-86cc0468ba40" alt=""><div class="step-texts"><div class="step-label-wrap"><p class="step-label">フィードバックで<br>作図ルールを整理</p></div><p class="step-desc-text">設計基準をヒアリングし反映</p></div></div>
+        </div>
+        <div class="step-unit">
+          <div class="step-badge"><span class="badge-step">STEP</span><span class="badge-num">03</span></div>
+          <div class="step-card"><img class="step-icon" src="https://www.figma.com/api/mcp/asset/b1182cd2-2615-4eb1-939c-3613d6c874a7" alt=""><div class="step-texts"><div class="step-label-wrap"><p class="step-label">御社専用マニュアル構築</p></div><p class="step-desc-text">知見を基に<br>専用マニュアルを作成</p></div></div>
+        </div>
+        <div class="step-unit">
+          <div class="step-badge"><span class="badge-step">STEP</span><span class="badge-num">04</span></div>
+          <div class="step-card"><img class="step-icon" src="https://www.figma.com/api/mcp/asset/9b61577b-1d31-49e5-976b-2019fa3c5e0c" alt=""><div class="step-texts"><div class="step-label-wrap"><p class="step-label">本稼働</p></div><p class="step-desc-text">品質保証のもと<br>本格サポート開始</p></div></div>
+        </div>
+      </div>
+      <div class="cta-wrap">
+        <a href="#" class="cta-button"><span>無料で相談する</span><img class="cta-arrow" src="https://www.figma.com/api/mcp/asset/6b1410aa-e4ae-4328-b268-7f06eed74e44" alt=""></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section">
+    <div class="pricing-inner">
+      <div class="pricing-heading">
+        <p class="pricing-eyebrow">PRICING</p>
+        <h2 class="pricing-title">料金の目安</h2>
+      </div>
+      <div class="pricing-content">
+        <div class="price-cards">
+          <div class="price-card card-orange">
+            <div class="card-header"><span>業界最安値</span></div>
+            <p class="card-sublabel">1名あたり時給</p>
+            <div class="card-price"><span class="price-num">2,100</span><div class="price-suffix"><span class="price-tax">(税込)</span><div class="price-yen-row"><span class="price-yen">円</span><span class="price-tilde">〜</span></div></div></div>
+            <p class="card-note">小規模スタート(２名以上のご契約)</p>
+          </div>
+          <div class="price-card card-teal">
+            <div class="card-header"><span>月額契約</span></div>
+            <p class="card-sublabel">1名あたり月額</p>
+            <div class="card-price"><span class="price-num">336,000</span><div class="price-suffix"><span class="price-tax">(税込)</span><div class="price-yen-row"><span class="price-yen">円</span><span class="price-tilde">〜</span></div></div></div>
+            <p class="card-note">継続案件・専任チーム制</p>
+          </div>
+        </div>
+        <div class="plan-table-wrap">
+          <table class="plan-table">
+            <colgroup><col style="width:33.3%"><col style="width:33.3%"><col style="width:33.4%"></colgroup>
+            <thead><tr><th>プラン</th><th>内容</th><th class="right">料金目安</th></tr></thead>
+            <tbody>
+              <tr><td><div class="plan-badge"><span class="plan-badge-dot"></span><span>トライアル</span></div></td><td>小規模・短期（3案件無料）</td><td class="plan-price">無料</td></tr>
+              <tr><td><div class="plan-badge"><span class="plan-badge-dot"></span><span>月額契約</span></div></td><td>継続案件・専任チーム制</td><td class="plan-price">月額336,000円</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="compare-table-wrap">
+          <table class="compare-table">
+            <colgroup><col style="width:240px"><col><col><col><col><col></colgroup>
+            <thead><tr><th></th><th>時給</th><th>月額（1名）</th><th class="center">Tfas・Rebro対応</th><th class="center">日本人監修</th><th class="center">小規模スタート</th></tr></thead>
+            <tbody>
+              <tr class="row-otemoto"><td><img class="otemoto-logo" src="https://www.figma.com/api/mcp/asset/2ddd78ad-7995-4a14-a4c5-30ceef60b7fe" alt="OTEMOTO"></td><td>2,100円</td><td>336,000円</td><td class="center"><span class="mark-maru">◎</span></td><td class="center"><span class="mark-maru">◎</span></td><td class="center"><span class="mark-maru">◎</span></td></tr>
+              <tr class="row-competitor"><td><span class="competitor-name">競合A（フィリピン）</span></td><td>2,625円</td><td>約420,000円</td><td class="center">✕</td><td class="center">不明</td><td class="center">△</td></tr>
+              <tr class="row-competitor"><td><span class="competitor-name">競合B（ベトナム）</span></td><td>2,150円</td><td>344,000円</td><td class="center">○</td><td class="center">不明</td><td class="center">✕</td></tr>
+              <tr class="row-competitor"><td><span class="competitor-name">国内正社員</span></td><td>約2,190円</td><td>約350,000円</td><td class="center">○</td><td class="center">該当外</td><td class="center">✕</td></tr>
+              <tr class="row-competitor" style="border-bottom:none"><td><span class="competitor-name">国内フリーランス</span></td><td>約4,000円</td><td>575,000〜640,000円</td><td class="center">△</td><td class="center">該当外</td><td class="center">△</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-button"><span>無料で相談する</span><img class="cta-arrow" src="https://www.figma.com/api/mcp/asset/7c49e5cb-15b7-41a7-9df5-e7528f96c8f2" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRAWINGS -->
+  <section class="drawings-section" id="drawings">
+    <div class="drawings-inner">
+      <div class="drawings-heading">
+        <div class="heading-titles">
+          <p class="drawings-eyebrow">PORTFOLIO</p>
+          <h2 class="drawings-title">実際の納品図面</h2>
+        </div>
+        <p class="drawings-desc">すべて実際の納品図面のみを掲載しております。機密情報は伏字処理しております。</p>
+      </div>
+      <div class="drawings-grid">
+        <div class="drawing-card"><div class="card-image"><img src="https://www.figma.com/api/mcp/asset/76d6b5a1-4861-4720-b92a-b587f3b71f63" alt="電灯コンセント図"></div><div class="card-label"><h3>電灯コンセント図</h3></div></div>
+        <div class="drawing-card"><div class="card-image"><img src="https://www.figma.com/api/mcp/asset/9e516d6d-0de5-4afb-8d53-bd6fa7fb1e82" alt="単線結線図"></div><div class="card-label"><h3>単線結線図</h3></div></div>
+        <div class="drawing-card"><div class="card-image"><img src="https://www.figma.com/api/mcp/asset/54c1fc34-9e2b-481b-97de-2bbcb4c38c5f" alt="幹線系統図"></div><div class="card-label"><h3>幹線系統図</h3></div></div>
+        <div class="drawing-card"><div class="card-image"><img src="https://www.figma.com/api/mcp/asset/05f85161-404e-40d2-aea9-87dcbb39d87c" alt="負荷計算書"></div><div class="card-label"><h3>負荷計算書</h3></div></div>
+      </div>
+      <div class="nda-note"><span class="nda-dot"></span><span class="nda-text">NDA締結後に実績図面を開示いたします</span></div>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section class="security-section">
+    <div class="security-inner">
+      <div class="security-heading">
+        <div class="heading-titles">
+          <p class="security-eyebrow">SECURITY</p>
+          <h2 class="security-title">設計データを日本基準で守ります。</h2>
+        </div>
+        <div class="security-desc">
+          <p>すべて実際の納品図面のみを掲載しております。機密情報は伏字処理しております。</p>
+          <p>設計データの保護は、私たちにとって最優先事項です。</p>
+        </div>
+      </div>
+      <div class="security-grid">
+        <div class="security-item"><div class="item-inner"><div class="item-num"><span>01</span></div><p class="item-title">NDA即時締結</p></div></div>
+        <div class="security-item"><div class="item-inner"><div class="item-num"><span>02</span></div><p class="item-title">権限管理されたクラウド共有</p></div></div>
+        <div class="security-item"><div class="item-inner"><div class="item-num"><span>03</span></div><p class="item-title">アクセスログ管理</p></div></div>
+        <div class="security-item"><div class="item-inner"><div class="item-num"><span>04</span></div><p class="item-title">データ保管ルール</p></div></div>
+        <div class="security-item"><div class="item-inner"><div class="item-num"><span>05</span></div><p class="item-title">データ削除ルール</p></div></div>
+        <div class="security-item"><div class="item-inner"><div class="item-num"><span>06</span></div><p class="item-title">私物PC利用禁止</p></div></div>
+        <div class="security-item"><div class="item-inner"><div class="item-num"><span>07</span></div><p class="item-title">PC持ち出し禁止</p></div></div>
+        <div class="security-item"><div class="item-inner"><div class="item-num"><span>08</span></div><p class="item-title">入退室管理</p></div></div>
+        <div class="security-item"><div class="item-inner"><div class="item-num"><span>09</span></div><p class="item-title">セキュリティ教育</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE -->
+  <section class="coverage-section">
+    <div class="coverage-inner">
+      <div class="coverage-heading">
+        <div class="heading-titles">
+          <p class="coverage-eyebrow">COVERAGE</p>
+          <h2 class="coverage-title">全国どこでも対応</h2>
+        </div>
+        <p class="coverage-desc">オンライン打ち合わせにて、<br>全国の案件に対応しております。</p>
+      </div>
+      <div class="prefecture-row">
+        <div class="pref-tag"><span>東京</span></div>
+        <div class="pref-tag"><span>神奈川</span></div>
+        <div class="pref-tag"><span>千葉</span></div>
+        <div class="pref-tag"><span>埼玉</span></div>
+        <div class="pref-tag"><span>愛知</span></div>
+        <div class="pref-tag"><span>大阪</span></div>
+        <div class="pref-tag"><span>京都</span></div>
+        <div class="pref-tag"><span>兵庫</span></div>
+        <div class="pref-tag"><span>福岡</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="faq-inner">
+      <div class="faq-heading">
+        <p class="faq-eyebrow">FAQ</p>
+        <h2 class="faq-title">よくあるご質問</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item is-open">
+          <button class="faq-question" aria-expanded="true"><div class="q-badge"><span>Q</span></div><span class="q-text">対応CADソフトは何ですか?</span><div class="q-toggle">+</div></button>
+          <div class="faq-answer"><p>Tfas、Rebro、AutoCAD、Jw_cad、Revitなど主要ソフトに対応。御社ルールに合わせて作図します。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><div class="q-badge"><span>Q</span></div><span class="q-text">品質はどう管理されていますか?</span><div class="q-toggle">+</div></button>
+          <div class="faq-answer"><p>日本人電気設計者が全件品質管理。3段階チェック体制で設計ミスを防止します。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><div class="q-badge"><span>Q</span></div><span class="q-text">機密保持はどうなっていますか?</span><div class="q-toggle">+</div></button>
+          <div class="faq-answer"><p>NDA即時締結。クラウド共有＋アクセスログ管理＋セキュリティ教育を徹底しています。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><div class="q-badge"><span>Q</span></div><span class="q-text">修正対応はどうなっていますか?</span><div class="q-toggle">+</div></button>
+          <div class="faq-answer"><p>初回・2回目修正は無料。継続案件は専用ルールで対応します。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><div class="q-badge"><span>Q</span></div><span class="q-text">納期はどの程度ですか?</span><div class="q-toggle">+</div></button>
+          <div class="faq-answer"><p>案件規模によりますが、最短24時間で対応可能です。まずはご相談ください。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><div class="q-badge"><span>Q</span></div><span class="q-text">料金体系はどうなっていますか?</span><div class="q-toggle">+</div></button>
+          <div class="faq-answer"><p>図面1枚からお見積もり制。まずは3案件無料トライアルからお試しください。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><div class="q-badge"><span>Q</span></div><span class="q-text">実際に図面を作成しているのは<br class="sp-br">どのような体制ですか?</span><div class="q-toggle">+</div></button>
+          <div class="faq-answer"><p>専門訓練済みCADオペレーターが作図、日本人監修者が品質チェックを担当します。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><div class="q-badge"><span>Q</span></div><span class="q-text">少人数や小規模案件からでも<br class="sp-br">依頼できますか?</span><div class="q-toggle">+</div></button>
+          <div class="faq-answer"><p>3案件無料トライアルからお試しいただけます。</p></div>
+        </div>
+      </div>
+      <a href="faq.html" class="faq-more-btn"><span class="faq-more-label">全てのFAQを見る</span><span class="faq-more-arrow">→</span></a>
+    </div>
+  </section>
+
+  <!-- LINE CTA -->
+  <section class="line-section">
+    <div class="line-inner">
+      <div class="line-left">
+        <div class="line-icon-circle">
+          <img src="https://www.figma.com/api/mcp/asset/418bcc47-8da9-40f2-8e7b-551e06dbd634" alt="">
+        </div>
+        <div class="line-text-block">
+          <p class="line-eyebrow">LINE CONSULTATION</p>
+          <h2 class="line-title">LINEで無料相談</h2>
+          <div class="line-desc">
+            <p>「この案件は依頼できるのか?」<br class="sp-br">「費用感を知りたい」<br class="sp-br">「まずは一部だけお願いしたい」</p>
+            <p>そのようなご相談も歓迎。まずはLINEよりお問い合わせください。</p>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="line-cta-btn">
+        <img class="line-btn-logo" src="https://www.figma.com/api/mcp/asset/f8c34320-4934-4bda-98c3-2747cab459d3" alt="LINE">
+        <span class="line-btn-text">LINEで無料相談する</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-section">
+    <div class="footer-inner">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h3 class="col-service-title">電気設備設計パートナー</h3>
+          <p class="col-service-desc">電気設備設計図作成・CAD外注代行<br>各種申請代行サービス</p>
+          <div class="col-bullets">
+            <div class="col-bullet-item"><span class="bullet-dot"></span><span class="bullet-text">事業監修：日本人建築士 / 電気工事会社</span></div>
+            <div class="col-bullet-item"><span class="bullet-dot"></span><span class="bullet-text">体制：専門オペレーター + 日本人品質管理</span></div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="col-section-head">運営</h4>
+          <p class="col-company-name">OTEMOTO株式会社</p>
+          <p class="col-company-addr">愛知県西尾市新村町郷東5番地</p>
+          <a href="#" class="col-line-link">
+            <img class="line-link-icon" src="https://www.figma.com/api/mcp/asset/163c73c9-c159-4f99-8173-e3878ee1104f" alt="LINE">
+            <span class="line-link-text">LINEでお問い合わせ</span>
+          </a>
+        </div>
+        <div class="footer-col">
+          <h4 class="col-section-head">リンク</h4>
+          <div class="col-links">
+            <a href="#">よくある質問</a>
+            <a href="#">会社概要</a>
+            <a href="#">品質保証</a>
+            <a href="#">実績紹介</a>
+            <a href="#">プライバシーポリシー</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-partner">
+        <p class="partner-label">業務提携 : CAD外注・設計図面作成のパートナー企業</p>
+        <a href="https://plus358.com/" target="_blank" rel="noopener noreferrer" class="partner-card">
+          <img class="partner-logo" src="https://www.figma.com/api/mcp/asset/c277fef3-e251-44dd-92b7-421436be6f15" alt="Plus358">
+          <img class="partner-link-icon" src="https://www.figma.com/api/mcp/asset/2f1313ea-6bb9-4fcc-b6dd-986d213d69b8" alt="">
+        </a>
+      </div>
+      <div class="footer-copyright">
+        <p class="copyright-text">© 2026 OTEMOTO株式会社 All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SP MENU OVERLAY -->
+  <div class="sp-menu-overlay" id="sp-menu-overlay" aria-hidden="true">
+    <div class="sp-menu-inner">
+      <div class="sp-menu-topbar">
+        <div class="sp-menu-topbar-side"></div>
+        <img class="sp-menu-topbar-logo"
+          src="https://www.figma.com/api/mcp/asset/5ede3e86-da63-4844-962d-62b735fd247c"
+          alt="OTEMOTO">
+        <div class="sp-menu-topbar-side sp-menu-topbar-right">
+          <button class="sp-menu-close" id="sp-menu-close" aria-label="メニューを閉じる">✕</button>
+        </div>
+      </div>
+      <nav class="sp-menu-nav">
+        <a href="#drawings">実際の納品図面</a>
+        <a href="#services">対応可能業務</a>
+        <a href="#portfolio">無料でお試しサービス</a>
+        <a href="#faq">よくあるご質問</a>
+      </nav>
+      <div class="sp-menu-line-card">
+        <a href="#" class="sp-menu-line-btn">
+          <img src="https://www.figma.com/api/mcp/asset/f3aa1383-4676-428b-8559-74c3d7540c04" alt="LINE">
+          <span>LINEで無料相談する</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const playlist = [
+      'file:///Users/ootsujiayana/★WORK/O/OTEMOTO/設備設計-LP/素材/movi-1.mp4',
+      'file:///Users/ootsujiayana/★WORK/O/OTEMOTO/設備設計-LP/素材/movi-2.mp4'
+    ];
+    let current = 0;
+    const video = document.getElementById('bg-video');
+
+    function loadVideo(index) {
+      video.src = playlist[index];
+      video.load();
+      video.play();
+    }
+
+    video.addEventListener('ended', () => {
+      current = (current + 1) % playlist.length;
+      loadVideo(current);
+    });
+
+    loadVideo(0);
+  </script>
+
+  <script>
+    document.querySelectorAll('a[href="https://plus358.com/"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const w = window.open('https://plus358.com/', '_blank');
+        if (!w) { window.location.href = 'https://plus358.com/'; }
+      });
+    });
+
+    (function() {
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const spMenuOverlay = document.getElementById('sp-menu-overlay');
+      const spMenuClose = document.getElementById('sp-menu-close');
+
+      function openMenu() {
+        spMenuOverlay.classList.add('is-open');
+        spMenuOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        spMenuOverlay.classList.remove('is-open');
+        spMenuOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      hamburgerBtn.addEventListener('click', openMenu);
+      spMenuClose.addEventListener('click', closeMenu);
+      spMenuOverlay.addEventListener('click', function(e) {
+        if (e.target === spMenuOverlay) closeMenu();
+      });
+      document.querySelectorAll('.sp-menu-nav a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
+
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('is-open');
+        document.querySelectorAll('.faq-item').forEach(el => {
+          el.classList.remove('is-open');
+          el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

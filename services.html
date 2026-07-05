@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>設備設計 LP - 対応可能業務</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      background: linear-gradient(215.57deg, rgb(96, 193, 182) 6.06%, rgb(43, 149, 137) 83.86%);
+    }
+
+    /* ========================================
+       SERVICES SECTION
+    ======================================== */
+    .services-section {
+      background: linear-gradient(215.57deg, rgb(96, 193, 182) 6.06%, rgb(43, 149, 137) 83.86%);
+      padding: 80px 120px 100px;
+    }
+
+    .services-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 52px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* --- 見出し --- */
+    .services-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .services-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 1px;
+      line-height: 28px;
+    }
+
+    .services-title {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 48px;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 3.84px;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    /* --- カードグリッド --- */
+    .cards-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .cards-row {
+      display: flex;
+      gap: 8px;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    /* 各カード */
+    .service-card {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid #e9e9e9;
+      border-radius: 8px;
+      min-width: 0;
+    }
+
+    /* 5枚目カード（左半分だけ）*/
+    .service-card.half {
+      flex: none;
+      width: calc(50% - 4px);
+    }
+
+    /* 写真エリア */
+    .card-photo {
+      width: 217px;
+      height: 199px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* テキストエリア */
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .card-title {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: #000;
+      letter-spacing: 1.44px;
+      line-height: 1.4;
+    }
+
+    /* タグ群 */
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .card-tag {
+      display: inline-flex;
+      align-items: center;
+      height: 26px;
+      padding: 5px 13px;
+      border: 1px solid #dedede;
+      white-space: nowrap;
+    }
+
+    .card-tag span {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #000;
+      letter-spacing: 0.6px;
+      line-height: 16px;
+    }
+  </style>
+</head>
+<body>
+  <section class="services-section">
+    <div class="services-inner">
+
+      <!-- 見出し -->
+      <div class="services-heading">
+        <p class="services-eyebrow">SERVICES</p>
+        <h2 class="services-title">対応可能業務</h2>
+      </div>
+
+      <!-- カードグリッド -->
+      <div class="cards-grid">
+
+        <!-- Row 1 -->
+        <div class="cards-row">
+
+          <!-- 電気設備設計 -->
+          <div class="service-card">
+            <div class="card-photo">
+              <img src="https://www.figma.com/api/mcp/asset/e9294b48-d117-41f2-8327-929a9d9ba367" alt="電気設備設計">
+            </div>
+            <div class="card-body">
+              <p class="card-title">電気設備設計</p>
+              <div class="card-tags">
+                <div class="card-tag"><span>照明設備</span></div>
+                <div class="card-tag"><span>動力設備</span></div>
+                <div class="card-tag"><span>受変電設備</span></div>
+                <div class="card-tag"><span>電灯・コンセント</span></div>
+                <div class="card-tag"><span>非常用電源</span></div>
+                <div class="card-tag"><span>太陽光発電</span></div>
+                <div class="card-tag"><span>EV充電</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 弱電設備設計 -->
+          <div class="service-card">
+            <div class="card-photo">
+              <img src="https://www.figma.com/api/mcp/asset/7e3c8835-6ad1-4767-8b9e-8035f4afd3b0" alt="弱電設備設計">
+            </div>
+            <div class="card-body">
+              <p class="card-title">弱電設備設計</p>
+              <div class="card-tags">
+                <div class="card-tag"><span>LAN設備</span></div>
+                <div class="card-tag"><span>監視カメラ</span></div>
+                <div class="card-tag"><span>入退室管理</span></div>
+                <div class="card-tag"><span>インターホン</span></div>
+                <div class="card-tag"><span>テレビ共聴</span></div>
+                <div class="card-tag"><span>放送設備</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Row 2 -->
+        <div class="cards-row">
+
+          <!-- 防災設備設計 -->
+          <div class="service-card">
+            <div class="card-photo">
+              <img src="https://www.figma.com/api/mcp/asset/c5678c9d-90af-471c-8727-589402978b04" alt="防災設備設計">
+            </div>
+            <div class="card-body">
+              <p class="card-title">防災設備設計</p>
+              <div class="card-tags">
+                <div class="card-tag"><span>自動火災報知</span></div>
+                <div class="card-tag"><span>非常放送</span></div>
+                <div class="card-tag"><span>誘導灯設備</span></div>
+                <div class="card-tag"><span>防排煙連動</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 再生可能エネルギー -->
+          <div class="service-card">
+            <div class="card-photo">
+              <img src="https://www.figma.com/api/mcp/asset/2f7af272-dbaa-4356-bc6d-16ace147612a" alt="再生可能エネルギー">
+            </div>
+            <div class="card-body">
+              <p class="card-title">再生可能エネルギー</p>
+              <div class="card-tags">
+                <div class="card-tag"><span>太陽光発電設備</span></div>
+                <div class="card-tag"><span>EV充電設備</span></div>
+                <div class="card-tag"><span>蓄電設備</span></div>
+                <div class="card-tag"><span>エネルギー管理</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Row 3（左半分のみ）-->
+        <div class="cards-row">
+
+          <!-- CAD・図面作成 -->
+          <div class="service-card half">
+            <div class="card-photo">
+              <img src="https://www.figma.com/api/mcp/asset/93ccdd76-84dd-451a-adef-b4fde43ea199" alt="CAD・図面作成">
+            </div>
+            <div class="card-body">
+              <p class="card-title">CAD・図面作成</p>
+              <div class="card-tags">
+                <div class="card-tag"><span>基本設計図</span></div>
+                <div class="card-tag"><span>実施設計図</span></div>
+                <div class="card-tag"><span>施工図</span></div>
+                <div class="card-tag"><span>竣工図</span></div>
+                <div class="card-tag"><span>系統図</span></div>
+                <div class="card-tag"><span>プロット図</span></div>
+                <div class="card-tag"><span>単線結線図</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>設備設計 LP - お悩み</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { background: #fafafa; font-family: 'Noto Sans JP', sans-serif; }
+
+    /* ========================================
+       PAIN SECTION
+    ======================================== */
+    .pain-section {
+      background: #fafafa;
+      padding: 80px 120px 40px;
+    }
+
+    .pain-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 52px;
+      align-items: center;
+      max-width: 1200px;
+      padding: 0 32px;
+      margin: 0 auto;
+    }
+
+    /* --- 見出し --- */
+    .pain-title {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 48px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 3.84px;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    /* --- タグ群 --- */
+    .pain-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      max-width: 1136px;
+      width: 100%;
+    }
+
+    .pain-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 54px;
+      padding: 15px 25px;
+      background: #fff;
+      border: 1px solid #00856c;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .pain-tag-num {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      color: #00856c;
+      letter-spacing: 0.8px;
+      line-height: 16px;
+    }
+
+    .pain-tag-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: #00856c;
+      letter-spacing: 0.8px;
+      line-height: 24px;
+    }
+
+    /* --- 解決メッセージ --- */
+    .pain-resolve {
+      display: inline-flex;
+      justify-content: center;
+      padding-bottom: 4px;
+      border-bottom: 8px solid #fff600;
+    }
+
+    /* --- 波線ボーダー --- */
+    .wave-border {
+      display: block;
+      width: 100%;
+      height: 67px;
+      flex-shrink: 0;
+      background: #ffffff; /* 白背景：グレーの波がくっきり見える */
+    }
+
+    /* --- 波直後のセクション --- */
+    .next-section {
+      background: #ffffff;
+      width: 100%;
+      height: 80px; /* 白背景の確認用 */
+    }
+
+    .pain-resolve-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 34px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 2.72px;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <section class="pain-section">
+    <div class="pain-inner">
+
+      <!-- 見出し -->
+      <h2 class="pain-title">このような<br>お悩みありませんか？</h2>
+
+      <!-- タグ群 -->
+      <div class="pain-tags">
+        <div class="pain-tag">
+          <span class="pain-tag-num">01</span>
+          <span class="pain-tag-text">設計人材の採用・定着・リソース不足</span>
+        </div>
+        <div class="pain-tag">
+          <span class="pain-tag-num">02</span>
+          <span class="pain-tag-text">残業の常態化</span>
+        </div>
+        <div class="pain-tag">
+          <span class="pain-tag-num">03</span>
+          <span class="pain-tag-text">図面作成の外注・納期対応</span>
+        </div>
+        <div class="pain-tag">
+          <span class="pain-tag-num">04</span>
+          <span class="pain-tag-text">負荷計算に追われる</span>
+        </div>
+        <div class="pain-tag">
+          <span class="pain-tag-num">05</span>
+          <span class="pain-tag-text">固定費を増やさず繁忙期対応</span>
+        </div>
+        <div class="pain-tag">
+          <span class="pain-tag-num">06</span>
+          <span class="pain-tag-text">若手育成に時間が取られている</span>
+        </div>
+      </div>
+
+      <!-- 解決メッセージ -->
+      <div class="pain-resolve">
+        <p class="pain-resolve-text">その課題、OTEMOTOで解決できます！</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 波線ボーダー（pain セクション直後） -->
+  <svg class="wave-border" viewBox="0 0 1440 67" preserveAspectRatio="none"
+       fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0L1440 0L712.5 67Z" fill="#FAFAFA"/>
+  </svg>
+
+  <!-- 波直後の白背景セクション -->
+  <div class="next-section"></div>
+
+</body>
+</html>

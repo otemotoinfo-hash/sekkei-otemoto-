@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>設備設計 LP - 実際の納品図面</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { background: #fff; font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+
+    /* ========================================
+       DRAWINGS SECTION
+    ======================================== */
+    .drawings-section {
+      background: #fff;
+      padding: 80px 120px 100px;
+    }
+
+    .drawings-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 52px;
+      align-items: center;
+      max-width: 1200px;
+      padding: 0 32px;
+      margin: 0 auto;
+    }
+
+    /* --- 見出しブロック --- */
+    .drawings-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .heading-titles {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .drawings-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 1px;
+      line-height: 28px;
+    }
+
+    .drawings-title {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 48px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 3.84px;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    .drawings-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 1.44px;
+      line-height: 1;
+      max-width: 768px;
+    }
+
+    /* --- カードグリッド --- */
+    .drawings-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px 8px;
+      width: 100%;
+    }
+
+    .drawing-card {
+      flex: 1 0 0;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 画像エリア */
+    .card-image {
+      height: 260px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ラベルエリア */
+    .card-label {
+      background: #fff;
+      border-bottom: 1px solid #c6c6c6;
+      border-left: 1px solid #c6c6c6;
+      border-right: 1px solid #c6c6c6;
+      height: 57px;
+      padding: 16px 16px 17px;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .card-label h3 {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #000;
+      letter-spacing: 0.8px;
+      line-height: 24px;
+      white-space: nowrap;
+    }
+
+    /* --- NDA注記ボックス --- */
+    .nda-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid #0ab394;
+      width: 347px;
+      height: 54px;
+      padding: 17px 33px;
+      flex-shrink: 0;
+    }
+
+    .nda-dot {
+      display: block;
+      width: 4px;
+      height: 4px;
+      background: #0ab394;
+      flex-shrink: 0;
+    }
+
+    .nda-text {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #0ab394;
+      letter-spacing: 0.56px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <section class="drawings-section">
+    <div class="drawings-inner">
+
+      <!-- 見出し -->
+      <div class="drawings-heading">
+
+        <div class="heading-titles">
+          <p class="drawings-eyebrow">PORTFOLIO</p>
+          <h2 class="drawings-title">実際の納品図面</h2>
+        </div>
+
+        <p class="drawings-desc">すべて実際の納品図面のみを掲載しております。機密情報は伏字処理しております。</p>
+
+      </div>
+
+      <!-- 図面カード4枚 -->
+      <div class="drawings-grid">
+
+        <!-- 電灯コンセント図 -->
+        <div class="drawing-card">
+          <div class="card-image">
+            <img src="https://www.figma.com/api/mcp/asset/76d6b5a1-4861-4720-b92a-b587f3b71f63" alt="電灯コンセント図">
+          </div>
+          <div class="card-label">
+            <h3>電灯コンセント図</h3>
+          </div>
+        </div>
+
+        <!-- 単線結線図 -->
+        <div class="drawing-card">
+          <div class="card-image">
+            <img src="https://www.figma.com/api/mcp/asset/9e516d6d-0de5-4afb-8d53-bd6fa7fb1e82" alt="単線結線図">
+          </div>
+          <div class="card-label">
+            <h3>単線結線図</h3>
+          </div>
+        </div>
+
+        <!-- 幹線系統図 -->
+        <div class="drawing-card">
+          <div class="card-image">
+            <img src="https://www.figma.com/api/mcp/asset/54c1fc34-9e2b-481b-97de-2bbcb4c38c5f" alt="幹線系統図">
+          </div>
+          <div class="card-label">
+            <h3>幹線系統図</h3>
+          </div>
+        </div>
+
+        <!-- 負荷計算書 -->
+        <div class="drawing-card">
+          <div class="card-image">
+            <img src="https://www.figma.com/api/mcp/asset/05f85161-404e-40d2-aea9-87dcbb39d87c" alt="負荷計算書">
+          </div>
+          <div class="card-label">
+            <h3>負荷計算書</h3>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- NDA注記 -->
+      <div class="nda-note">
+        <span class="nda-dot"></span>
+        <span class="nda-text">NDA締結後に実績図面を開示いたします</span>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>

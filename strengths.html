@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>設備設計 LP - 強み</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { background: #fff; font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+
+    /* ========================================
+       STRENGTHS SECTION
+    ======================================== */
+    .strengths-section {
+      background: #fff;
+      padding: 100px 120px 80px;
+    }
+
+    .strengths-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* 左右2カラム・下揃え */
+    .strengths-layout {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 26px;
+    }
+
+    /* ========================================
+       LEFT COLUMN
+    ======================================== */
+    .left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 360px;
+      flex-shrink: 0;
+    }
+
+    .left-texts {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .strengths-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #000;
+      letter-spacing: 1px;
+      line-height: 28px;
+      white-space: nowrap;
+    }
+
+    .strengths-title {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 48px;
+      color: #000;
+      letter-spacing: 3.84px;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    .strengths-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: #000;
+      letter-spacing: 1.28px;
+      line-height: 1.6;
+    }
+
+    .strengths-photo {
+      width: 100%;
+      aspect-ratio: 1000 / 667;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+
+    /* ========================================
+       RIGHT COLUMN
+    ======================================== */
+    .right-col {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 814px;
+      flex-shrink: 0;
+    }
+
+    /* 各行 */
+    .strength-row {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      padding: 0 20px 20px 28px;
+      border-bottom: 1px solid #c6c6c6;
+    }
+
+    /* 左ラベル */
+    .row-label {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 328px;
+      flex-shrink: 0;
+    }
+
+    .row-label-title {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      color: #000;
+      letter-spacing: 1.12px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .row-label-sub {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: #000;
+      letter-spacing: 1.28px;
+      line-height: 1.8;
+      white-space: nowrap;
+    }
+
+    /* 右値：テキスト系 */
+    .row-value-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 48px;
+      color: #0ab394;
+      letter-spacing: 0.96px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    /* 右値：数値系（最大40%削減・最短24h対応）*/
+    .row-value-num {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .num-prefix {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 32px;
+      color: #0ab394;
+      line-height: 1.5;
+      white-space: nowrap;
+    }
+
+    .num-main {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 66px;
+      color: #0ab394;
+      letter-spacing: -2.64px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .num-suffix {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 53px;
+      color: #0ab394;
+      letter-spacing: 1.06px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <section class="strengths-section">
+    <div class="strengths-inner">
+      <div class="strengths-layout">
+
+        <!-- 左カラム -->
+        <div class="left-col">
+          <div class="left-texts">
+            <p class="strengths-eyebrow">STRENGTHS</p>
+            <h2 class="strengths-title">当社の強み</h2>
+            <p class="strengths-desc">電気設備設計士、CADオペレーター、<br>建築士、BIM対応スタッフが<br>チーム体制で案件をサポートします。</p>
+          </div>
+          <img class="strengths-photo"
+            src="https://www.figma.com/api/mcp/asset/7f77bcac-9717-4e95-8495-17fad2a0f47f"
+            alt="当社の強み">
+        </div>
+
+        <!-- 右カラム -->
+        <div class="right-col">
+
+          <!-- 国内同等 -->
+          <div class="strength-row">
+            <div class="row-label">
+              <span class="row-label-title">国内同等</span>
+              <span class="row-label-sub">経験スタッフが全件チェック</span>
+            </div>
+            <span class="row-value-text">安心の日本品質</span>
+          </div>
+
+          <!-- コスト最適化 -->
+          <div class="strength-row">
+            <div class="row-label">
+              <span class="row-label-title">コスト最適化</span>
+              <span class="row-label-sub">経験スタッフが全件チェック</span>
+            </div>
+            <div class="row-value-num">
+              <span class="num-prefix">最大</span>
+              <span class="num-main">40%</span>
+              <span class="num-suffix">削減</span>
+            </div>
+          </div>
+
+          <!-- スピード対応 -->
+          <div class="strength-row">
+            <div class="row-label">
+              <span class="row-label-title">スピード対応</span>
+              <span class="row-label-sub">急な案件増加・繁忙期も柔軟対応</span>
+            </div>
+            <div class="row-value-num">
+              <span class="num-prefix">最短</span>
+              <span class="num-main">24h</span>
+              <span class="num-suffix">対応</span>
+            </div>
+          </div>
+
+          <!-- 通訳常駐 -->
+          <div class="strength-row">
+            <div class="row-label">
+              <span class="row-label-title">通訳常駐</span>
+              <span class="row-label-sub">打合せ・図面確認・修正まで日本語で完結</span>
+            </div>
+            <span class="row-value-text">すべて日本語対応</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

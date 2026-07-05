@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>設備設計 LP - ソフトウェア対応</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { background: #fff; font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+
+    /* ========================================
+       SOFTWARE SECTION
+    ======================================== */
+    .software-section {
+      background: #fff;
+      padding: 80px 120px 100px;
+    }
+
+    .software-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 52px;
+      max-width: 1200px;
+      padding: 0 32px;
+      margin: 0 auto;
+    }
+
+    /* --- 見出し --- */
+    .software-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .software-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 1px;
+      line-height: 28px;
+    }
+
+    .software-title {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 48px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 3.84px;
+      line-height: 1.4;
+    }
+
+    /* --- ソフトカード列 --- */
+    .sw-cards {
+      display: flex;
+      flex-wrap: nowrap;
+      width: 100%;
+    }
+
+    .sw-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 32px 32px;
+      background: #fff;
+      border-top: 1px solid #e9e9e9;
+      border-bottom: 1px solid #e9e9e9;
+      border-left: 1px solid #e9e9e9;
+      border-right: none;
+    }
+
+    .sw-card:first-child {
+      border-radius: 8px 0 0 8px;
+    }
+
+    .sw-card:last-child {
+      border-right: 1px solid #e9e9e9;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* ロゴ画像エリア */
+    .sw-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 60px;
+    }
+
+    .sw-logo img {
+      max-width: 100%;
+      height: 60px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ラベル */
+    .sw-label {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 1.28px;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <section class="software-section">
+    <div class="software-inner">
+
+      <!-- 見出し -->
+      <div class="software-heading">
+        <p class="software-eyebrow">SOFTWARE</p>
+        <h2 class="software-title">主要5ソフトすべて対応<br>御社の環境にそのまま入ります。</h2>
+      </div>
+
+      <!-- ソフトカード5枚 -->
+      <div class="sw-cards">
+
+        <!-- CADWe'll Tfas -->
+        <div class="sw-card">
+          <div class="sw-logo">
+            <img src="https://www.figma.com/api/mcp/asset/71fb3e0f-ae47-4b59-880a-768ace467e01" alt="CADWe'll Tfas">
+          </div>
+          <p class="sw-label">設備CAD標準</p>
+        </div>
+
+        <!-- Rebro -->
+        <div class="sw-card">
+          <div class="sw-logo">
+            <img src="https://www.figma.com/api/mcp/asset/9993474d-2f52-4111-8803-c72f4c3818db" alt="Rebro">
+          </div>
+          <p class="sw-label">BIM対応設備CAD</p>
+        </div>
+
+        <!-- AutoCAD -->
+        <div class="sw-card">
+          <div class="sw-logo">
+            <img src="https://www.figma.com/api/mcp/asset/c31b5b14-dd12-48d5-b358-a3cc0ba105a1" alt="AutoCAD">
+          </div>
+          <p class="sw-label">汎用CAD</p>
+        </div>
+
+        <!-- Jw_cad -->
+        <div class="sw-card">
+          <div class="sw-logo">
+            <img src="https://www.figma.com/api/mcp/asset/49d039e7-25f2-408c-9067-a3a18b0a7855" alt="Jw_cad">
+          </div>
+          <p class="sw-label">建築CAD</p>
+        </div>
+
+        <!-- Revit -->
+        <div class="sw-card">
+          <div class="sw-logo">
+            <img src="https://www.figma.com/api/mcp/asset/b52dd340-81b7-494b-bae4-d4837638c59b" alt="Revit">
+          </div>
+          <p class="sw-label">Autodesk BIM</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>

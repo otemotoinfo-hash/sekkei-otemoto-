@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>設備設計 LP - サービス</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      background: #fafafa;
+    }
+
+    /* ========================================
+       SERVICE SECTION
+    ======================================== */
+    .service-section {
+      background: #fafafa;
+      padding: 184px 120px 100px;
+    }
+
+    .service-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 52px;
+      align-items: center;
+      max-width: 1200px;
+      padding: 0 32px;
+      margin: 0 auto;
+    }
+
+    /* --- 見出しブロック --- */
+    .service-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .service-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 44px;
+      border-bottom: 2px solid #0ab394;
+    }
+
+    .service-eyebrow span {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #0ab394;
+      letter-spacing: 0.8px;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .service-title {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 48px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 3.84px;
+      line-height: 1.4;
+    }
+
+    .service-desc-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 768px;
+      width: 100%;
+    }
+
+    .service-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 1.28px;
+      line-height: 1.4;
+    }
+
+    /* --- 3カード --- */
+    .cards-wrap {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+      max-width: 896px;
+    }
+
+    .service-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 315px;
+      padding: 32px;
+      background: #fff;
+      border: 4px solid #0ab394;
+      border-radius: 8px;
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* アイコン丸 */
+    .card-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      min-width: 80px;
+      min-height: 80px;
+      background: #0ab394;
+      border: 1px solid #e5e7eb;
+      border-radius: 50%;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .card-icon img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      transform: rotate(180deg) scaleX(-1);
+    }
+
+    /* 雷アイコンのみ viewBox 比率（23.6111×33.3333）に合わせて縦長に */
+    .card-icon img.icon-lightning {
+      width: 28px;
+      height: 40px;
+    }
+
+    /* カードテキスト */
+    .card-texts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 20px;
+      width: 100%;
+    }
+
+    .card-name {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      color: #000;
+      letter-spacing: 0.9px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .card-role {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #0ab394;
+      letter-spacing: 0.56px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .card-pain {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 0;
+      border: 1px solid #dbdbdb;
+      border-radius: 4px;
+    }
+
+    .card-pain p {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 0.56px;
+      line-height: 1.6;
+    }
+
+    /* --- パートナー企業 --- */
+    .partner-wrap {
+      display: flex;
+      gap: 29px;
+      align-items: center;
+      width: 100%;
+      max-width: 896px;
+    }
+
+    .partner-logo-box {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 126px;
+      padding: 0 33px;
+      background: #fff;
+      border: 1px solid #eaeaea;
+    }
+
+    .partner-logo-box img {
+      width: 182px;
+      height: 42px;
+      object-fit: cover;
+    }
+
+    .partner-text-wrap {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .partner-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: #000;
+      letter-spacing: 0.64px;
+      line-height: 1.6;
+    }
+
+    .partner-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .partner-link:hover { opacity: 0.7; }
+
+    .partner-arrow {
+      width: 32px;
+      height: 32px;
+      transform: rotate(-90deg);
+      flex-shrink: 0;
+    }
+
+    .partner-link-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: #000;
+      letter-spacing: 1.92px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <section class="service-section">
+    <div class="service-inner">
+
+      <!-- 見出しブロック -->
+      <div class="service-heading">
+        <div class="service-eyebrow">
+          <span>日本品質の電気設備設計を、より柔軟に、より効率的に</span>
+        </div>
+        <h2 class="service-title">設備設計の<br>アウトソーシングサービス</h2>
+        <div class="service-desc-wrap">
+          <p class="service-desc">日本国内の設計事務所様・サブコン様・建築会社様向けに、<br>電気設備設計業務のアウトソーシングサービスを提供しております。</p>
+          <p class="service-desc">照明設備、動力設備、受変電設備、弱電設備、防災設備など、幅広い電気設備設計業務に対応し、<br>日本の設計基準・法令・実務フローを理解した設計スタッフが業務を担当いたします。</p>
+        </div>
+      </div>
+
+      <!-- 3カード -->
+      <div class="cards-wrap">
+
+        <!-- ゼネコン -->
+        <div class="service-card">
+          <div class="card-body">
+            <div class="card-icon">
+              <img src="https://www.figma.com/api/mcp/asset/95a9a030-0e27-474b-9816-277eacc5459e" alt="ゼネコンアイコン">
+            </div>
+            <div class="card-texts">
+              <div class="card-title-group">
+                <span class="card-name">ゼネコン</span>
+                <span class="card-role">電気設備図面の外注先として</span>
+              </div>
+              <div class="card-pain">
+                <p>図面の品質は落とせないが<br>人手が足りない</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- サブコン -->
+        <div class="service-card">
+          <div class="card-body">
+            <div class="card-icon">
+              <img src="https://www.figma.com/api/mcp/asset/d5fe9104-4b16-479b-aeef-1429fdb49c50" alt="サブコンアイコン">
+            </div>
+            <div class="card-texts">
+              <div class="card-title-group">
+                <span class="card-name">サブコン</span>
+                <span class="card-role">専門工事の設計パートナーとして</span>
+              </div>
+              <div class="card-pain">
+                <p>Tfas対応の<br>外部パートナーを探していた</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 電気設備専門 -->
+        <div class="service-card">
+          <div class="card-body">
+            <div class="card-icon">
+              <img class="icon-lightning" src="https://www.figma.com/api/mcp/asset/fa2fef6a-eff7-447c-addf-31ad8d1e3bf6" alt="電気設備専門アイコン">
+            </div>
+            <div class="card-texts">
+              <div class="card-title-group">
+                <span class="card-name">電気設備専門</span>
+                <span class="card-role">設計業務の柔軟なリソースとして</span>
+              </div>
+              <div class="card-pain">
+                <p>繁忙期だけでも<br>設計を任せたい</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- パートナー企業 -->
+      <div class="partner-wrap">
+        <div class="partner-logo-box">
+          <img src="https://www.figma.com/api/mcp/asset/993d5b57-6372-44c5-8f5d-9685f56c1841" alt="Plus358">
+        </div>
+        <div class="partner-text-wrap">
+          <p class="partner-desc">CAD外注・設計図面作成のパートナー企業として業務提携。電気設備・建築分野における作図業務を中心に、高品質な図面作成を支援しています。</p>
+          <a href="#" class="partner-link">
+            <img class="partner-arrow"
+              src="https://www.figma.com/api/mcp/asset/b731e729-4ac9-45b9-8c83-8b015043f026"
+              alt="arrow">
+            <span class="partner-link-text">サイトを見る</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>

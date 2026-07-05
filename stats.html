@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>設備設計 LP - 統計バー</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Noto+Sans+JP:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    /* 外枠コンテナ */
+    .stats-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px 0;
+      width: 100%;
+      max-width: 1152px;
+      height: 184px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.16);
+      overflow: visible;
+    }
+
+    /* 各カード */
+    .stat-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 275px;
+      height: 212px;
+      padding: 28px 20px;
+      background: #fff;
+      backdrop-filter: blur(2px);
+      flex-shrink: 0;
+    }
+
+    .stat-card:first-child {
+      border-radius: 12px 0 0 12px;
+    }
+
+    .stat-card:last-child {
+      border-radius: 0 12px 12px 0;
+    }
+
+    /* バッジ */
+    .badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 162.656px;
+      padding: 10px 0;
+      background: #0ab394;
+      border-radius: 16px;
+      flex-shrink: 0;
+    }
+
+    .badge-text {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      letter-spacing: 0.56px;
+      text-align: center;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    /* 大きな数値エリア */
+    .stat-value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 162.656px;
+      height: 48px;
+      padding-top: 8px;
+      padding-bottom: 4px;
+      flex-shrink: 0;
+    }
+
+    .stat-number {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: #0ab394;
+      text-align: center;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .stat-number.large {
+      font-size: 48px;
+    }
+
+    .stat-number.medium-kanji {
+      font-size: 43px;
+      letter-spacing: 1.72px;
+    }
+
+    /* 「最大」「以上」などの小さいラベル */
+    .stat-sublabel {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 19px;
+      color: #0ab394;
+      line-height: 1;
+      letter-spacing: 19px;
+      width: 25px;
+      text-align: center;
+    }
+
+    /* 説明テキスト */
+    .stat-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      color: #000;
+      letter-spacing: 0.8px;
+      text-align: center;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="stats-bar">
+
+    <!-- 1: 最短対応 / 24h -->
+    <div class="stat-card">
+      <div class="badge">
+        <span class="badge-text">最短対応</span>
+      </div>
+      <div class="stat-value">
+        <span class="stat-number large">24h</span>
+      </div>
+      <p class="stat-desc">急な案件も<br>即日着手</p>
+    </div>
+
+    <!-- 2: コスト最適化 / 最大40% -->
+    <div class="stat-card">
+      <div class="badge">
+        <span class="badge-text">コスト最適化</span>
+      </div>
+      <div class="stat-value">
+        <span class="stat-sublabel">最大</span>
+        <span class="stat-number large">40%</span>
+      </div>
+      <p class="stat-desc">人件費や<br>採用コスト削減</p>
+    </div>
+
+    <!-- 3: 安心の日本品質 / 高品質 -->
+    <div class="stat-card">
+      <div class="badge">
+        <span class="badge-text">安心の日本品質</span>
+      </div>
+      <div class="stat-value">
+        <span class="stat-number medium-kanji">高品質</span>
+      </div>
+      <p class="stat-desc">日本人スタッフが<br>全件チェック</p>
+    </div>
+
+    <!-- 4: 外国人設備設計士 / 100以上 -->
+    <div class="stat-card">
+      <div class="badge">
+        <span class="badge-text">外国人設備設計士</span>
+      </div>
+      <div class="stat-value">
+        <span class="stat-number large">100</span>
+        <span class="stat-sublabel">以上</span>
+      </div>
+      <p class="stat-desc">業務提携先<br>設備設計士の在籍数</p>
+    </div>
+
+  </div>
+</body>
+</html>

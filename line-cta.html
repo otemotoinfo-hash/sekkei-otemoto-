@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>設備設計 LP - LINE無料相談</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { background: #f4fdfc; font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+
+    /* ========================================
+       LINE CTA SECTION
+    ======================================== */
+    .line-section {
+      background: #f4fdfc;
+      padding: 80px 0;
+    }
+
+    /* 内側コンテナ：左右レイアウト */
+    .line-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 1024px;
+      height: 124px;
+      margin: 0 auto;
+    }
+
+    /* --- 左側：アイコン＋テキスト --- */
+    .line-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      height: 124px;
+    }
+
+    /* LINE アイコン円 */
+    .line-icon-circle {
+      width: 104px;
+      height: 104px;
+      background: #fff;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .line-icon-circle img {
+      width: 50.8px;
+      height: 58.5px;
+      object-fit: contain;
+      transform: rotate(180deg) scaleX(-1);
+    }
+
+    /* テキストブロック */
+    .line-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .line-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #000;
+      letter-spacing: 0.6px;
+      line-height: 16px;
+      white-space: nowrap;
+    }
+
+    .line-title {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 36px;
+      color: #000;
+      letter-spacing: 1.8px;
+      line-height: 40px;
+      white-space: nowrap;
+    }
+
+    .line-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #000;
+      letter-spacing: 0.7px;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+
+    /* --- 右側：CTAボタン --- */
+    .line-cta-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 68px;
+      padding: 0 38px 0 82px;
+      background: #06c755;
+      border-radius: 8px;
+      text-decoration: none;
+      flex-shrink: 0;
+      transition: opacity 0.15s;
+    }
+
+    .line-cta-btn:hover { opacity: 0.88; }
+
+    /* LINEロゴ（絶対配置） */
+    .line-btn-logo {
+      position: absolute;
+      left: 29px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 39px;
+      object-fit: contain;
+    }
+
+    .line-btn-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 0.32px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <section class="line-section">
+    <div class="line-inner">
+
+      <!-- 左：アイコン＋テキスト -->
+      <div class="line-left">
+
+        <div class="line-icon-circle">
+          <img src="https://www.figma.com/api/mcp/asset/418bcc47-8da9-40f2-8e7b-551e06dbd634" alt="">
+        </div>
+
+        <div class="line-text-block">
+          <p class="line-eyebrow">LINE CONSULTATION</p>
+          <h2 class="line-title">LINEで無料相談</h2>
+          <div class="line-desc">
+            <p>「この案件は依頼できるのか?」「費用感を知りたい」「まずは一部だけお願いしたい」</p>
+            <p>そのようなご相談も歓迎。まずはLINEよりお問い合わせください。</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 右：CTAボタン -->
+      <a href="#" class="line-cta-btn">
+        <img class="line-btn-logo"
+          src="https://www.figma.com/api/mcp/asset/f8c34320-4934-4bda-98c3-2747cab459d3"
+          alt="LINE">
+        <span class="line-btn-text">LINEで無料相談する</span>
+      </a>
+
+    </div>
+  </section>
+</body>
+</html>

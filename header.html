@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>設備設計 LP - ヘッダー</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&family=Inter&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      padding: 0 40px;
+      background: #fff;
+      width: 100%;
+    }
+
+    .logo {
+      display: block;
+      height: 80px;
+      width: auto;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      height: 20px;
+    }
+
+    nav a {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #000;
+      text-decoration: none;
+      letter-spacing: 0.7px;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    .cv-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      height: 68px;
+      padding-left: 82px;
+      padding-right: 38px;
+      background-color: #06C755;
+      border-radius: 8px;
+      text-decoration: none;
+      position: relative;
+      cursor: pointer;
+      border: none;
+      white-space: nowrap;
+    }
+
+    .cv-button:hover {
+      background-color: #05b04c;
+    }
+
+    .cv-button .line-icon {
+      position: absolute;
+      left: calc(82px - 53px);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 39px;
+      object-fit: contain;
+    }
+
+    .cv-button span {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 0.32px;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#">
+      <img
+        class="logo"
+        src="https://www.figma.com/api/mcp/asset/5ede3e86-da63-4844-962d-62b735fd247c"
+        alt="OTEMOTO"
+      >
+    </a>
+
+    <div class="header-right">
+      <nav>
+        <a href="#">実績</a>
+        <a href="#">サービス</a>
+        <a href="#">料金</a>
+        <a href="#">FAQ</a>
+        <a href="#">ブログ</a>
+      </nav>
+
+      <a href="#" class="cv-button">
+        <img
+          class="line-icon"
+          src="https://www.figma.com/api/mcp/asset/f3aa1383-4676-428b-8559-74c3d7540c04"
+          alt="LINE"
+        >
+        <span>LINEで無料相談する</span>
+      </a>
+    </div>
+  </header>
+</body>
+</html>
