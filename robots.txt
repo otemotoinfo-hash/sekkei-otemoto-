@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Disallow: /coverage.html
+Disallow: /drawings.html
+Disallow: /flow.html
+Disallow: /footer.html
+Disallow: /header.html
+Disallow: /hero.html
+Disallow: /line-cta.html
+Disallow: /pain.html
+Disallow: /portfolio.html
+Disallow: /pricing.html
+Disallow: /security.html
+Disallow: /service-level.html
+Disallow: /service.html
+Disallow: /services.html
+Disallow: /software.html
+Disallow: /stats.html
+Disallow: /strengths.html
+Disallow: /team.html
+
+Sitemap: https://otemotoinfo-hash.github.io/sekkei-otemoto-/sitemap.xml
