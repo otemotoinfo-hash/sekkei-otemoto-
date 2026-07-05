@@ -159,9 +159,238 @@
       line-height: 1;
       white-space: nowrap;
     }
+  
+    /* ========================================
+       HEADER (shared)
+    ======================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      padding: 0 40px;
+      background: #fff;
+      width: 100%;
+    }
+    .logo { display: block; height: 80px; width: auto; }
+    .header-right { display: flex; align-items: center; gap: 60px; }
+    nav { display: flex; align-items: center; gap: 32px; height: 20px; }
+    nav a {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #000;
+      text-decoration: none;
+      letter-spacing: 0.7px;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+    nav a:hover { opacity: 0.7; }
+    nav a.active { color: #0ab394; font-weight: 600; }
+    .cv-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 68px;
+      padding-left: 82px;
+      padding-right: 38px;
+      background-color: #06C755;
+      border-radius: 8px;
+      text-decoration: none;
+      position: relative;
+      white-space: nowrap;
+    }
+    .cv-button:hover { background-color: #05b04c; }
+    .cv-button .line-icon {
+      position: absolute;
+      left: calc(82px - 53px);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 39px;
+      object-fit: contain;
+    }
+    .cv-button span {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 0.32px;
+      line-height: 1;
+    }
+    .hamburger-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+    .hamburger-btn span { display: block; width: 22px; height: 2px; background: #000; border-radius: 1px; }
+
+    /* ========================================
+       SP MENU OVERLAY (shared)
+    ======================================== */
+    .sp-menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: #2B9589;
+      flex-direction: column;
+    }
+    .sp-menu-overlay.is-open { display: flex; }
+    .sp-menu-inner { display: flex; flex-direction: column; height: 100%; padding: 20px 24px 40px; }
+    .sp-menu-topbar { display: flex; align-items: center; height: 80px; flex-shrink: 0; }
+    .sp-menu-topbar-side { flex: 1; display: flex; align-items: center; }
+    .sp-menu-topbar-right { justify-content: flex-end; }
+    .sp-menu-topbar-logo { height: 80px; width: auto; filter: brightness(0) invert(1); flex-shrink: 0; }
+    .sp-menu-close {
+      width: 40px; height: 40px; background: none; border: none; font-size: 26px;
+      cursor: pointer; color: #fff; line-height: 1; display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0;
+    }
+    .sp-menu-nav { display: flex; flex-direction: column; margin-top: 24px; flex: 1; }
+    .sp-menu-nav a {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.7px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      display: block;
+    }
+    .sp-menu-nav a:first-child { border-top: 1px solid rgba(255, 255, 255, 0.3); }
+    .sp-menu-nav a:hover { opacity: 0.7; }
+    .sp-menu-line-card { background: #fff; border-radius: 16px; padding: 20px; margin-top: 32px; flex-shrink: 0; }
+    .sp-menu-line-btn {
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      height: 64px; background: #06C755; border-radius: 8px; text-decoration: none; width: 100%;
+    }
+    .sp-menu-line-btn img { width: 34px; height: 33px; object-fit: contain; }
+    .sp-menu-line-btn span {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 0.32px;
+      line-height: 1;
+    }
+    .sp-menu-line-btn:hover { background: #05b04c; }
+
+    /* ========================================
+       FOOTER (shared)
+    ======================================== */
+    .footer-section { background: linear-gradient(200.95deg, rgb(96,193,182) 6.06%, rgb(43,149,137) 83.86%); padding: 80px 0; }
+    .footer-inner { display: flex; flex-direction: column; gap: 36px; align-items: flex-start; max-width: 1200px; padding: 0 32px; margin: 0 auto; }
+    .footer-columns { display: flex; flex-wrap: wrap; gap: 32px; width: 100%; }
+    .footer-col { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+    .col-service-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 18px; color: #fff; letter-spacing: 0.9px; line-height: 28px; padding-bottom: 16px; white-space: nowrap; }
+    .col-service-desc { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 22.75px; padding-bottom: 16px; }
+    .col-bullets { display: flex; flex-direction: column; gap: 0; }
+    .col-bullet-item { display: flex; align-items: flex-start; gap: 8px; padding-top: 8px; }
+    .col-bullet-item:first-child { padding-top: 0; }
+    .bullet-dot { display: block; width: 6px; height: 6px; background: #fff; flex-shrink: 0; margin-top: 7px; }
+    .bullet-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #fff; letter-spacing: 0.6px; line-height: 19.5px; white-space: nowrap; }
+    .col-section-head { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; padding-bottom: 16px; }
+    .col-company-name, .col-company-addr { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 22.75px; white-space: nowrap; }
+    .col-company-addr { padding-top: 4px; }
+    .col-line-link { display: flex; align-items: center; gap: 8px; margin-top: 16px; text-decoration: none; }
+    .col-line-link:hover { opacity: 0.8; }
+    .line-link-icon { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
+    .line-link-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; white-space: nowrap; }
+    .col-links { display: flex; flex-direction: column; }
+    .col-links a { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; text-decoration: none; white-space: nowrap; padding-top: 12px; }
+    .col-links a:first-child { padding-top: 0; }
+    .col-links a:hover { opacity: 0.75; }
+    .footer-partner { display: flex; flex-direction: column; gap: 8px; }
+    .partner-label { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #fff; letter-spacing: 0.6px; line-height: 19.5px; white-space: nowrap; }
+    .partner-card { position: relative; background: #fff; border: 1px solid #fff; width: 320px; height: 98px; display: flex; align-items: center; justify-content: center; padding: 0 33px; }
+    .partner-logo { width: 182px; height: 42px; object-fit: cover; display: block; }
+    .partner-link-icon { position: absolute; bottom: 11px; right: 11px; width: 24px; height: 24px; object-fit: contain; }
+    .footer-copyright { width: 100%; border-top: 1px solid #fff; padding-top: 33px; display: flex; align-items: center; justify-content: center; }
+    .copyright-text { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 12px; color: #fff; letter-spacing: 0.6px; line-height: 16px; text-align: center; white-space: nowrap; }
+
+    /* ========================================
+       RESPONSIVE — HEADER/FOOTER (shared, tablet ≤768px)
+    ======================================== */
+    @media (max-width: 768px) {
+      .site-header { height: 64px; padding: 0 24px; }
+      .header-right { gap: 24px; }
+      nav { gap: 16px; }
+      nav a { font-size: 12px; }
+      .cv-button { height: 52px; padding-left: 64px; padding-right: 20px; }
+      .cv-button span { font-size: 14px; }
+
+      .footer-section { padding: 60px 0; }
+      .footer-inner { padding: 0 24px; }
+      .footer-columns { flex-direction: column; gap: 32px; }
+      .partner-card { width: 100%; }
+      .copyright-text { white-space: normal; }
+    }
+
+    /* ========================================
+       RESPONSIVE — HEADER/FOOTER (shared, mobile ≤480px)
+    ======================================== */
+    @media (max-width: 480px) {
+      .site-header { height: 56px; padding: 0 16px; }
+      .logo { height: 56px; }
+      nav { display: none; }
+      .cv-button { display: none; }
+      .hamburger-btn { display: flex; }
+
+      .footer-inner { padding: 0 20px; gap: 24px; }
+      .col-service-title { white-space: normal; font-size: 16px; }
+      .bullet-text { white-space: normal; }
+      .col-company-name, .col-company-addr { white-space: normal; }
+      .line-link-text { white-space: normal; }
+      .col-links a { white-space: normal; }
+      .partner-label { white-space: normal; }
+      .copyright-text { white-space: normal; }
+      .partner-card { width: 100%; }
+    }
   </style>
 </head>
 <body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html">
+      <img class="logo"
+        src="./images/logo-otemoto.png"
+        alt="OTEMOTO">
+    </a>
+    <div class="header-right">
+      <nav>
+        <a href="index.html#drawings">実際の納品図面</a>
+        <a href="index.html#services">対応可能業務</a>
+        <a href="index.html#portfolio">無料でお試しサービス</a>
+        <a href="faq.html">よくあるご質問</a>
+      </nav>
+      <a href="index.html" class="cv-button">
+        <img class="line-icon"
+          src="./images/icon-line-header.png"
+          alt="LINE">
+        <span>LINEで無料相談する</span>
+      </a>
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
   <section class="drawings-section">
     <div class="drawings-inner">
 
@@ -230,5 +459,106 @@
 
     </div>
   </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-section">
+    <div class="footer-inner">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h3 class="col-service-title">電気設備設計パートナー</h3>
+          <p class="col-service-desc">電気設備設計図作成・CAD外注代行<br>各種申請代行サービス</p>
+          <div class="col-bullets">
+            <div class="col-bullet-item"><span class="bullet-dot"></span><span class="bullet-text">事業監修：日本人建築士 / 電気工事会社</span></div>
+            <div class="col-bullet-item"><span class="bullet-dot"></span><span class="bullet-text">体制：専門オペレーター + 日本人品質管理</span></div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="col-section-head">運営</h4>
+          <p class="col-company-name">OTEMOTO株式会社</p>
+          <p class="col-company-addr">愛知県西尾市新村町郷東5番地</p>
+          <a href="index.html" class="col-line-link">
+            <img class="line-link-icon" src="./images/icon-line-footer.png" alt="LINE">
+            <span class="line-link-text">LINEでお問い合わせ</span>
+          </a>
+        </div>
+        <div class="footer-col">
+          <h4 class="col-section-head">リンク</h4>
+          <div class="col-links">
+            <a href="faq.html">よくある質問</a>
+            <a href="index.html">会社概要</a>
+            <a href="index.html">品質保証</a>
+            <a href="index.html">実績紹介</a>
+            <a href="privacy.html">プライバシーポリシー</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-partner">
+        <p class="partner-label">業務提携 : CAD外注・設計図面作成のパートナー企業</p>
+        <a href="https://plus358.com/" target="_blank" rel="noopener noreferrer" class="partner-card">
+          <img class="partner-logo" src="./images/partner-plus358-logo.png" alt="Plus358">
+          <img class="partner-link-icon" src="./images/icon-link-simple.png" alt="">
+        </a>
+      </div>
+      <div class="footer-copyright">
+        <p class="copyright-text">© 2026 OTEMOTO株式会社 All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SP MENU OVERLAY -->
+  <div class="sp-menu-overlay" id="sp-menu-overlay" aria-hidden="true">
+    <div class="sp-menu-inner">
+      <div class="sp-menu-topbar">
+        <div class="sp-menu-topbar-side"></div>
+        <img class="sp-menu-topbar-logo"
+          src="./images/logo-otemoto.png"
+          alt="OTEMOTO">
+        <div class="sp-menu-topbar-side sp-menu-topbar-right">
+          <button class="sp-menu-close" id="sp-menu-close" aria-label="メニューを閉じる">✕</button>
+        </div>
+      </div>
+      <nav class="sp-menu-nav">
+        <a href="index.html#drawings">実際の納品図面</a>
+        <a href="index.html#services">対応可能業務</a>
+        <a href="index.html#portfolio">無料でお試しサービス</a>
+        <a href="faq.html">よくあるご質問</a>
+      </nav>
+      <div class="sp-menu-line-card">
+        <a href="index.html" class="sp-menu-line-btn">
+          <img src="./images/icon-line-header.png" alt="LINE">
+          <span>LINEで無料相談する</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const spMenuOverlay = document.getElementById('sp-menu-overlay');
+      const spMenuClose = document.getElementById('sp-menu-close');
+
+      function openMenu() {
+        spMenuOverlay.classList.add('is-open');
+        spMenuOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        spMenuOverlay.classList.remove('is-open');
+        spMenuOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      hamburgerBtn.addEventListener('click', openMenu);
+      spMenuClose.addEventListener('click', closeMenu);
+      spMenuOverlay.addEventListener('click', function(e) {
+        if (e.target === spMenuOverlay) closeMenu();
+      });
+      document.querySelectorAll('.sp-menu-nav a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
+  </script>
+
 </body>
 </html>

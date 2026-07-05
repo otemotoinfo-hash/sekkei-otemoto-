@@ -93,6 +93,130 @@
       line-height: 1;
     }
 
+    .hamburger-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+    .hamburger-btn span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #000;
+      border-radius: 1px;
+    }
+
+    /* ========================================
+       SP MENU OVERLAY
+    ======================================== */
+    .sp-menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: #2B9589;
+      flex-direction: column;
+    }
+    .sp-menu-overlay.is-open { display: flex; }
+    .sp-menu-inner {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 20px 24px 40px;
+    }
+    .sp-menu-topbar {
+      display: flex;
+      align-items: center;
+      height: 80px;
+      flex-shrink: 0;
+    }
+    .sp-menu-topbar-side {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .sp-menu-topbar-right { justify-content: flex-end; }
+    .sp-menu-topbar-logo {
+      height: 80px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      flex-shrink: 0;
+    }
+    .sp-menu-close {
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: #fff;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .sp-menu-nav {
+      display: flex;
+      flex-direction: column;
+      margin-top: 24px;
+      flex: 1;
+    }
+    .sp-menu-nav a {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.7px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      display: block;
+    }
+    .sp-menu-nav a:first-child { border-top: 1px solid rgba(255, 255, 255, 0.3); }
+    .sp-menu-nav a:hover { opacity: 0.7; }
+    .sp-menu-line-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 32px;
+      flex-shrink: 0;
+    }
+    .sp-menu-line-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      height: 64px;
+      background: #06C755;
+      border-radius: 8px;
+      text-decoration: none;
+      width: 100%;
+    }
+    .sp-menu-line-btn img {
+      width: 34px;
+      height: 33px;
+      object-fit: contain;
+    }
+    .sp-menu-line-btn span {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 0.32px;
+      line-height: 1;
+    }
+    .sp-menu-line-btn:hover { background: #05b04c; }
+
     /* ========================================
        PAGE HERO
     ======================================== */
@@ -482,9 +606,8 @@
       .site-header { height: 56px; padding: 0 16px; }
       .logo { height: 56px; }
       nav { display: none; }
-      .cv-button { height: 44px; padding-left: 52px; padding-right: 14px; }
-      .cv-button span { font-size: 13px; }
-      .cv-button .line-icon { left: 10px; width: 32px; height: 31px; }
+      .cv-button { display: none; }
+      .hamburger-btn { display: flex; }
 
       .page-hero { padding: 36px 20px 32px; }
       .page-title { font-size: 26px; letter-spacing: 2px; }
@@ -524,23 +647,27 @@
   <header class="site-header">
     <a href="index.html">
       <img class="logo"
-        src="https://www.figma.com/api/mcp/asset/5ede3e86-da63-4844-962d-62b735fd247c"
+        src="./images/logo-otemoto.png"
         alt="OTEMOTO">
     </a>
     <div class="header-right">
       <nav>
-        <a href="#">実績</a>
-        <a href="#">サービス</a>
-        <a href="#">料金</a>
-        <a href="faq.html" class="active">FAQ</a>
-        <a href="#">ブログ</a>
+        <a href="index.html#drawings">実際の納品図面</a>
+        <a href="index.html#services">対応可能業務</a>
+        <a href="index.html#portfolio">無料でお試しサービス</a>
+        <a href="faq.html" class="active">よくあるご質問</a>
       </nav>
       <a href="#line-cta" class="cv-button">
         <img class="line-icon"
-          src="https://www.figma.com/api/mcp/asset/f3aa1383-4676-428b-8559-74c3d7540c04"
+          src="./images/icon-line-header.png"
           alt="LINE">
         <span>LINEで無料相談する</span>
       </a>
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
@@ -864,6 +991,33 @@
     </div>
   </footer>
 
+  <!-- SP MENU OVERLAY -->
+  <div class="sp-menu-overlay" id="sp-menu-overlay" aria-hidden="true">
+    <div class="sp-menu-inner">
+      <div class="sp-menu-topbar">
+        <div class="sp-menu-topbar-side"></div>
+        <img class="sp-menu-topbar-logo"
+          src="./images/logo-otemoto.png"
+          alt="OTEMOTO">
+        <div class="sp-menu-topbar-side sp-menu-topbar-right">
+          <button class="sp-menu-close" id="sp-menu-close" aria-label="メニューを閉じる">✕</button>
+        </div>
+      </div>
+      <nav class="sp-menu-nav">
+        <a href="index.html#drawings">実際の納品図面</a>
+        <a href="index.html#services">対応可能業務</a>
+        <a href="index.html#portfolio">無料でお試しサービス</a>
+        <a href="faq.html">よくあるご質問</a>
+      </nav>
+      <div class="sp-menu-line-card">
+        <a href="#line-cta" class="sp-menu-line-btn">
+          <img src="./images/icon-line-header.png" alt="LINE">
+          <span>LINEで無料相談する</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <script>
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -881,6 +1035,32 @@
         }
       });
     });
+
+    (function() {
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const spMenuOverlay = document.getElementById('sp-menu-overlay');
+      const spMenuClose = document.getElementById('sp-menu-close');
+
+      function openMenu() {
+        spMenuOverlay.classList.add('is-open');
+        spMenuOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        spMenuOverlay.classList.remove('is-open');
+        spMenuOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      hamburgerBtn.addEventListener('click', openMenu);
+      spMenuClose.addEventListener('click', closeMenu);
+      spMenuOverlay.addEventListener('click', function(e) {
+        if (e.target === spMenuOverlay) closeMenu();
+      });
+      document.querySelectorAll('.sp-menu-nav a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
   </script>
 
 </body>

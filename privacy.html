@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー | OTEMOTO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&family=Zen+Kaku+Gothic+New:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #fafafa;
+      overflow-x: hidden;
+    }
+
+    /* ========================================
+       HEADER
+    ======================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      padding: 0 40px;
+      background: #fff;
+      width: 100%;
+    }
+
+    .logo {
+      display: block;
+      height: 80px;
+      width: auto;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      height: 20px;
+    }
+
+    nav a {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #000;
+      text-decoration: none;
+      letter-spacing: 0.7px;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+
+    nav a:hover { opacity: 0.7; }
+
+    .cv-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 68px;
+      padding-left: 82px;
+      padding-right: 38px;
+      background-color: #06C755;
+      border-radius: 8px;
+      text-decoration: none;
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .cv-button:hover { background-color: #05b04c; }
+
+    .cv-button .line-icon {
+      position: absolute;
+      left: calc(82px - 53px);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 39px;
+      object-fit: contain;
+    }
+
+    .cv-button span {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 0.32px;
+      line-height: 1;
+    }
+
+    .hamburger-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+    .hamburger-btn span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #000;
+      border-radius: 1px;
+    }
+
+    /* ========================================
+       SP MENU OVERLAY
+    ======================================== */
+    .sp-menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: #2B9589;
+      flex-direction: column;
+    }
+    .sp-menu-overlay.is-open { display: flex; }
+    .sp-menu-inner {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 20px 24px 40px;
+    }
+    .sp-menu-topbar {
+      display: flex;
+      align-items: center;
+      height: 80px;
+      flex-shrink: 0;
+    }
+    .sp-menu-topbar-side {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .sp-menu-topbar-right { justify-content: flex-end; }
+    .sp-menu-topbar-logo {
+      height: 80px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      flex-shrink: 0;
+    }
+    .sp-menu-close {
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: #fff;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .sp-menu-nav {
+      display: flex;
+      flex-direction: column;
+      margin-top: 24px;
+      flex: 1;
+    }
+    .sp-menu-nav a {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.7px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      display: block;
+    }
+    .sp-menu-nav a:first-child { border-top: 1px solid rgba(255, 255, 255, 0.3); }
+    .sp-menu-nav a:hover { opacity: 0.7; }
+    .sp-menu-line-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 32px;
+      flex-shrink: 0;
+    }
+    .sp-menu-line-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      height: 64px;
+      background: #06C755;
+      border-radius: 8px;
+      text-decoration: none;
+      width: 100%;
+    }
+    .sp-menu-line-btn img {
+      width: 34px;
+      height: 33px;
+      object-fit: contain;
+    }
+    .sp-menu-line-btn span {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 0.32px;
+      line-height: 1;
+    }
+    .sp-menu-line-btn:hover { background: #05b04c; }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+    .footer-section { background: linear-gradient(200.95deg, rgb(96,193,182) 6.06%, rgb(43,149,137) 83.86%); padding: 80px 0; }
+    .footer-inner { display: flex; flex-direction: column; gap: 36px; align-items: flex-start; max-width: 1200px; padding: 0 32px; margin: 0 auto; }
+    .footer-columns { display: flex; flex-wrap: wrap; gap: 32px; width: 100%; }
+    .footer-col { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+    .col-service-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 18px; color: #fff; letter-spacing: 0.9px; line-height: 28px; padding-bottom: 16px; white-space: nowrap; }
+    .col-service-desc { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 22.75px; padding-bottom: 16px; }
+    .col-bullets { display: flex; flex-direction: column; gap: 0; }
+    .col-bullet-item { display: flex; align-items: flex-start; gap: 8px; padding-top: 8px; }
+    .col-bullet-item:first-child { padding-top: 0; }
+    .bullet-dot { display: block; width: 6px; height: 6px; background: #fff; flex-shrink: 0; margin-top: 7px; }
+    .bullet-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #fff; letter-spacing: 0.6px; line-height: 19.5px; white-space: nowrap; }
+    .col-section-head { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; padding-bottom: 16px; }
+    .col-company-name, .col-company-addr { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 22.75px; white-space: nowrap; }
+    .col-company-addr { padding-top: 4px; }
+    .col-line-link { display: flex; align-items: center; gap: 8px; margin-top: 16px; text-decoration: none; }
+    .col-line-link:hover { opacity: 0.8; }
+    .line-link-icon { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
+    .line-link-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; white-space: nowrap; }
+    .col-links { display: flex; flex-direction: column; }
+    .col-links a { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; text-decoration: none; white-space: nowrap; padding-top: 12px; }
+    .col-links a:first-child { padding-top: 0; }
+    .col-links a:hover { opacity: 0.75; }
+    .footer-partner { display: flex; flex-direction: column; gap: 8px; }
+    .partner-label { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #fff; letter-spacing: 0.6px; line-height: 19.5px; white-space: nowrap; }
+    .partner-card { position: relative; background: #fff; border: 1px solid #fff; width: 320px; height: 98px; display: flex; align-items: center; justify-content: center; padding: 0 33px; }
+    .partner-logo { width: 182px; height: 42px; object-fit: cover; display: block; }
+    .partner-link-icon { position: absolute; bottom: 11px; right: 11px; width: 24px; height: 24px; object-fit: contain; }
+    .footer-copyright { width: 100%; border-top: 1px solid #fff; padding-top: 33px; display: flex; align-items: center; justify-content: center; }
+    .copyright-text { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 12px; color: #fff; letter-spacing: 0.6px; line-height: 16px; text-align: center; white-space: nowrap; }
+
+    /* ========================================
+       PRIVACY POLICY CONTENT
+    ======================================== */
+    .privacy-section { background: #fff; padding: 80px 0 100px; }
+    .privacy-inner { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+    .privacy-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; color: #000; text-align: center; letter-spacing: 1px; line-height: 28px; }
+    .privacy-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 48px; color: #000; text-align: center; letter-spacing: 3.84px; line-height: 1.4; margin-top: 12px; }
+    .privacy-updated { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 14px; color: #666; text-align: center; letter-spacing: 0.7px; line-height: 20px; margin-top: 24px; }
+    .privacy-lead { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 16px; color: #000; letter-spacing: 0.64px; line-height: 1.9; margin-top: 48px; }
+    .privacy-articles { display: flex; flex-direction: column; gap: 48px; margin-top: 56px; }
+    .privacy-article-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 22px; color: #0ab394; letter-spacing: 0.88px; line-height: 1.5; display: flex; align-items: baseline; gap: 10px; }
+    .privacy-article-num { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 18px; color: #0ab394; }
+    .privacy-article-body { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #000; letter-spacing: 0.6px; line-height: 1.9; margin-top: 16px; }
+    .privacy-article-body p + p { margin-top: 12px; }
+    .privacy-article-body ul { margin-top: 12px; padding-left: 22px; }
+    .privacy-article-body li { margin-top: 8px; }
+    .privacy-article-body li:first-child { margin-top: 0; }
+    .privacy-contact-box { margin-top: 16px; padding: 24px 28px; background: #fafafa; border: 1px solid #e5e7eb; border-radius: 8px; }
+    .privacy-contact-box p { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #000; letter-spacing: 0.6px; line-height: 1.9; }
+    .privacy-contact-box p + p { margin-top: 6px; }
+
+    /* ========================================
+       RESPONSIVE — TABLET (≤768px)
+    ======================================== */
+    @media (max-width: 768px) {
+      .site-header { height: 64px; padding: 0 24px; }
+      .header-right { gap: 24px; }
+      nav { gap: 16px; }
+      nav a { font-size: 12px; }
+      .cv-button { height: 52px; padding-left: 64px; padding-right: 20px; }
+      .cv-button span { font-size: 14px; }
+
+      .footer-section { padding: 60px 0; }
+      .footer-inner { padding: 0 24px; }
+      .footer-columns { flex-direction: column; gap: 32px; }
+      .partner-card { width: 100%; }
+      .copyright-text { white-space: normal; }
+
+      .privacy-section { padding: 56px 0 72px; }
+      .privacy-title { font-size: 36px; }
+      .privacy-inner { padding: 0 24px; }
+    }
+
+    /* ========================================
+       RESPONSIVE — MOBILE (≤480px)
+    ======================================== */
+    @media (max-width: 480px) {
+      .site-header { height: 56px; padding: 0 16px; }
+      .logo { height: 56px; }
+      nav { display: none; }
+      .cv-button { display: none; }
+      .hamburger-btn { display: flex; }
+
+      .footer-inner { padding: 0 20px; gap: 24px; }
+      .col-service-title { white-space: normal; font-size: 16px; }
+      .bullet-text { white-space: normal; }
+      .col-company-name, .col-company-addr { white-space: normal; }
+      .line-link-text { white-space: normal; }
+      .col-links a { white-space: normal; }
+      .partner-label { white-space: normal; }
+      .copyright-text { white-space: normal; }
+
+      .privacy-section { padding: 40px 0 56px; }
+      .privacy-inner { padding: 0 20px; }
+      .privacy-title { font-size: 26px; letter-spacing: 2px; }
+      .privacy-eyebrow { font-size: 16px; }
+      .privacy-lead { font-size: 14px; margin-top: 32px; }
+      .privacy-articles { margin-top: 40px; gap: 36px; }
+      .privacy-article-title { font-size: 18px; }
+      .privacy-article-body { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html">
+      <img class="logo"
+        src="./images/logo-otemoto.png"
+        alt="OTEMOTO">
+    </a>
+    <div class="header-right">
+      <nav>
+        <a href="index.html#drawings">実績</a>
+        <a href="index.html#services">サービス</a>
+        <a href="index.html#portfolio">料金</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+      <a href="#" class="cv-button">
+        <img class="line-icon"
+          src="./images/icon-line-header.png"
+          alt="LINE">
+        <span>LINEで無料相談する</span>
+      </a>
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PRIVACY POLICY -->
+  <section class="privacy-section">
+    <div class="privacy-inner">
+      <p class="privacy-eyebrow">PRIVACY POLICY</p>
+      <h1 class="privacy-title">プライバシーポリシー</h1>
+      <p class="privacy-updated">制定日：2026年7月5日</p>
+
+      <p class="privacy-lead">
+        OTEMOTO株式会社（以下「当社」といいます。）は、電気設備設計アウトソーシングサービス（以下「本サービス」といいます。）の提供にあたり、お客様の個人情報の重要性を認識し、個人情報の保護に関する法律その他の関係法令を遵守し、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます。）を定め、適切な取扱い及び保護に努めます。
+      </p>
+
+      <div class="privacy-articles">
+        <div class="privacy-article">
+          <h2 class="privacy-article-title"><span class="privacy-article-num">01</span>個人情報の取り扱いについて</h2>
+          <div class="privacy-article-body">
+            <p>当社は、本サービスの提供にあたりお預かりする個人情報について、取得目的の範囲内で適正に取り扱い、厳重に管理いたします。</p>
+            <p>個人情報の取得にあたっては、適法かつ公正な手段によって行い、利用目的をできる限り特定した上で、その目的の達成に必要な範囲を超えて個人情報を取り扱うことはいたしません。</p>
+          </div>
+        </div>
+
+        <div class="privacy-article">
+          <h2 class="privacy-article-title"><span class="privacy-article-num">02</span>個人情報の収集・利用目的について</h2>
+          <div class="privacy-article-body">
+            <p>当社は、以下の目的の範囲内で個人情報を収集・利用いたします。</p>
+            <ul>
+              <li>お問い合わせ・お見積もり・ご相談への対応のため</li>
+              <li>本サービス（電気設備設計アウトソーシングサービス）のご提供、契約の履行及び進行管理のため</li>
+              <li>本サービスに関する案件の受発注、図面データ等の受け渡し及び品質管理のため</li>
+              <li>本サービスに関するご案内、お知らせ、資料の送付のため</li>
+              <li>本サービスの品質向上及び新サービスの検討・開発のため</li>
+              <li>利用規約等に違反する行為への対応のため</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="privacy-article">
+          <h2 class="privacy-article-title"><span class="privacy-article-num">03</span>個人情報の第三者漏洩について</h2>
+          <div class="privacy-article-body">
+            <p>当社は、以下の場合を除き、あらかじめご本人の同意を得ることなく、個人情報を第三者に提供・開示することはありません。また、個人情報の紛失、破壊、改ざん及び漏洩を防止するため、必要かつ適切な安全管理措置を講じます。</p>
+            <ul>
+              <li>法令に基づく場合</li>
+              <li>人の生命、身体又は財産の保護のために必要がある場合であって、ご本人の同意を得ることが困難であるとき</li>
+              <li>国の機関若しくは地方公共団体又はその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、ご本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</li>
+              <li>本サービスの遂行上必要な範囲において、業務委託先（CADオペレーター、監修者等の業務提携先を含みます。）に対して開示する場合（この場合、当社は委託先に対する必要かつ適切な監督を行います。）</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="privacy-article">
+          <h2 class="privacy-article-title"><span class="privacy-article-num">04</span>個人情報の共同利用について</h2>
+          <div class="privacy-article-body">
+            <p>当社は、本サービスの提供にあたり、業務提携先との間で、以下のとおり個人情報を共同利用する場合があります。</p>
+            <ul>
+              <li>共同利用する項目：ご担当者様のお名前、ご連絡先（電話番号・メールアドレス等）、所属会社名、案件に関する情報</li>
+              <li>共同利用する者の範囲：当社及び当社が業務提携するCAD外注・設計図面作成のパートナー企業</li>
+              <li>共同利用の目的：本サービスの円滑な提供、案件の進行管理及び品質管理のため</li>
+              <li>共同利用における管理責任者：OTEMOTO株式会社</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="privacy-article">
+          <h2 class="privacy-article-title"><span class="privacy-article-num">05</span>個人情報の開示・訂正・削除について</h2>
+          <div class="privacy-article-body">
+            <p>当社は、ご本人から自己の個人情報について開示、訂正、追加、削除、利用停止等のご請求があった場合には、ご本人であることを確認の上、法令に従い遅滞なく対応いたします。</p>
+            <p>ご請求にあたっては、本ポリシー内「8. お問い合わせ」記載の窓口までご連絡ください。なお、法令上当社が開示等の義務を負わない場合は、その旨をご説明いたします。</p>
+          </div>
+        </div>
+
+        <div class="privacy-article">
+          <h2 class="privacy-article-title"><span class="privacy-article-num">06</span>Cookieの利用について</h2>
+          <div class="privacy-article-body">
+            <p>当社サイトでは、お客様に快適にご利用いただくため、また利用状況を把握しサービス改善に役立てるため、Cookie（クッキー）及び類似の技術を使用する場合があります。</p>
+            <p>Cookieにより取得する情報には、個人を特定する情報は含まれません。お客様は、ブラウザの設定によりCookieの受け取りを拒否することができますが、その場合、本サイトの一部機能がご利用いただけなくなることがあります。</p>
+          </div>
+        </div>
+
+        <div class="privacy-article">
+          <h2 class="privacy-article-title"><span class="privacy-article-num">07</span>プライバシーポリシーの変更について</h2>
+          <div class="privacy-article-body">
+            <p>当社は、法令の変更及び本サービス内容の変更等に応じて、本ポリシーの内容を予告なく変更することがあります。変更後の内容は、本ページに掲載した時点から効力を生じるものとします。</p>
+            <p>重要な変更を行う場合には、本サイト上での掲示その他適切な方法により周知いたします。</p>
+          </div>
+        </div>
+
+        <div class="privacy-article">
+          <h2 class="privacy-article-title"><span class="privacy-article-num">08</span>お問い合わせ</h2>
+          <div class="privacy-article-body">
+            <p>本ポリシーに関するお問い合わせ、個人情報の開示等のご請求は、下記までお願いいたします。</p>
+            <div class="privacy-contact-box">
+              <p>OTEMOTO株式会社</p>
+              <p>愛知県西尾市新村町郷東5番地</p>
+              <p>お問い合わせ窓口：LINE公式アカウントまたはお問い合わせフォームより承ります。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-section">
+    <div class="footer-inner">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h3 class="col-service-title">電気設備設計パートナー</h3>
+          <p class="col-service-desc">電気設備設計図作成・CAD外注代行<br>各種申請代行サービス</p>
+          <div class="col-bullets">
+            <div class="col-bullet-item"><span class="bullet-dot"></span><span class="bullet-text">事業監修：日本人建築士 / 電気工事会社</span></div>
+            <div class="col-bullet-item"><span class="bullet-dot"></span><span class="bullet-text">体制：専門オペレーター + 日本人品質管理</span></div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="col-section-head">運営</h4>
+          <p class="col-company-name">OTEMOTO株式会社</p>
+          <p class="col-company-addr">愛知県西尾市新村町郷東5番地</p>
+          <a href="#" class="col-line-link">
+            <img class="line-link-icon" src="./images/icon-line-footer.png" alt="LINE">
+            <span class="line-link-text">LINEでお問い合わせ</span>
+          </a>
+        </div>
+        <div class="footer-col">
+          <h4 class="col-section-head">リンク</h4>
+          <div class="col-links">
+            <a href="index.html#faq">よくある質問</a>
+            <a href="index.html">会社概要</a>
+            <a href="index.html">品質保証</a>
+            <a href="index.html#drawings">実績紹介</a>
+            <a href="privacy.html">プライバシーポリシー</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-partner">
+        <p class="partner-label">業務提携 : CAD外注・設計図面作成のパートナー企業</p>
+        <a href="https://plus358.com/" target="_blank" rel="noopener noreferrer" class="partner-card">
+          <img class="partner-logo" src="./images/partner-plus358-logo.png" alt="Plus358">
+          <img class="partner-link-icon" src="./images/icon-link-simple.png" alt="">
+        </a>
+      </div>
+      <div class="footer-copyright">
+        <p class="copyright-text">© 2026 OTEMOTO株式会社 All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SP MENU OVERLAY -->
+  <div class="sp-menu-overlay" id="sp-menu-overlay" aria-hidden="true">
+    <div class="sp-menu-inner">
+      <div class="sp-menu-topbar">
+        <div class="sp-menu-topbar-side"></div>
+        <img class="sp-menu-topbar-logo"
+          src="./images/logo-otemoto.png"
+          alt="OTEMOTO">
+        <div class="sp-menu-topbar-side sp-menu-topbar-right">
+          <button class="sp-menu-close" id="sp-menu-close" aria-label="メニューを閉じる">✕</button>
+        </div>
+      </div>
+      <nav class="sp-menu-nav">
+        <a href="index.html#drawings">実際の納品図面</a>
+        <a href="index.html#services">対応可能業務</a>
+        <a href="index.html#portfolio">無料でお試しサービス</a>
+        <a href="index.html#faq">よくあるご質問</a>
+      </nav>
+      <div class="sp-menu-line-card">
+        <a href="#" class="sp-menu-line-btn">
+          <img src="./images/icon-line-header.png" alt="LINE">
+          <span>LINEで無料相談する</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('a[href="https://plus358.com/"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const w = window.open('https://plus358.com/', '_blank');
+        if (!w) { window.location.href = 'https://plus358.com/'; }
+      });
+    });
+
+    (function() {
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const spMenuOverlay = document.getElementById('sp-menu-overlay');
+      const spMenuClose = document.getElementById('sp-menu-close');
+
+      function openMenu() {
+        spMenuOverlay.classList.add('is-open');
+        spMenuOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        spMenuOverlay.classList.remove('is-open');
+        spMenuOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      hamburgerBtn.addEventListener('click', openMenu);
+      spMenuClose.addEventListener('click', closeMenu);
+      spMenuOverlay.addEventListener('click', function(e) {
+        if (e.target === spMenuOverlay) closeMenu();
+      });
+      document.querySelectorAll('.sp-menu-nav a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
+  </script>
+
+</body>
+</html>
