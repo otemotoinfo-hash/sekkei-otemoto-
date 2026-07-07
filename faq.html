@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>よくあるご質問｜電気設備設計CAD外注・アウトソーシングのOTEMOTO</title>
-  <meta name="description" content="電気設備設計のCAD外注・アウトソーシングに関するよくある質問集です。対応CADソフトや品質管理体制、料金プラン、納期、セキュリティ対策など、設計事務所・サブコン・建築会社様からいただく質問に詳しくお答えします。">
+  <meta name="description" content="電気設備設計のCAD外注・アウトソーシングに関する125問のよくある質問集です。サービス範囲、対応CADソフト、料金プラン、納期、品質管理、セキュリティ対策、海外体制まで、ゼネコン・サブコン・設計事務所様からいただく質問に詳しくお答えします。">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://otemotoinfo-hash.github.io/sekkei-otemoto-/faq.html">
+  <link rel="canonical" href="https://design-otemoto.jp/faq.html">
 
   <!-- OGP -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="よくあるご質問｜電気設備設計CAD外注・アウトソーシングのOTEMOTO">
-  <meta property="og:description" content="電気設備設計のCAD外注・アウトソーシングに関するよくある質問集です。対応CADソフトや品質管理体制、料金プラン、納期、セキュリティ対策など、設計事務所・サブコン・建築会社様からいただく質問に詳しくお答えします。">
-  <meta property="og:url" content="https://otemotoinfo-hash.github.io/sekkei-otemoto-/faq.html">
+  <meta property="og:description" content="電気設備設計のCAD外注・アウトソーシングに関する125問のよくある質問集です。サービス範囲、対応CADソフト、料金プラン、納期、品質管理、セキュリティ対策、海外体制まで、ゼネコン・サブコン・設計事務所様からいただく質問に詳しくお答えします。">
+  <meta property="og:url" content="https://design-otemoto.jp/faq.html">
   <meta property="og:site_name" content="OTEMOTO">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:image" content="https://otemotoinfo-hash.github.io/sekkei-otemoto-/images/card-photo-electrical-design.jpg">
@@ -20,7 +20,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="よくあるご質問｜電気設備設計CAD外注・アウトソーシングのOTEMOTO">
-  <meta name="twitter:description" content="電気設備設計のCAD外注・アウトソーシングに関するよくある質問集です。対応CADソフトや品質管理体制、料金プラン、納期、セキュリティ対策など、設計事務所・サブコン・建築会社様からいただく質問に詳しくお答えします。">
+  <meta name="twitter:description" content="電気設備設計のCAD外注・アウトソーシングに関する125問のよくある質問集です。サービス範囲、対応CADソフト、料金プラン、納期、品質管理、セキュリティ対策、海外体制まで、ゼネコン・サブコン・設計事務所様からいただく質問に詳しくお答えします。">
   <meta name="twitter:image" content="https://otemotoinfo-hash.github.io/sekkei-otemoto-/images/card-photo-electrical-design.jpg">
 
   <!-- Favicon -->
@@ -68,7 +68,7 @@
 
     .header-right { display: flex; align-items: center; gap: 60px; }
 
-    nav { display: flex; align-items: center; gap: 32px; }
+    .header-right nav { display: flex; align-items: center; gap: 32px; }
 
     nav a {
       font-family: 'Inter', sans-serif;
@@ -606,7 +606,7 @@
     @media (max-width: 768px) {
       .site-header { height: 64px; padding: 0 24px; }
       .header-right { gap: 24px; }
-      nav { gap: 16px; }
+      .header-right nav { gap: 16px; }
       nav a { font-size: 12px; }
       .cv-button { height: 52px; padding-left: 64px; padding-right: 20px; }
       .cv-button span { font-size: 14px; }
@@ -632,7 +632,7 @@
     @media (max-width: 480px) {
       .site-header { height: 56px; padding: 0 16px; }
       .logo { height: 56px; }
-      nav { display: none; }
+      .header-right nav { display: none; }
       .cv-button { display: none; }
       .hamburger-btn { display: flex; }
 
@@ -666,6 +666,150 @@
       .copyright-text { white-space: normal; }
       .partner-card { width: 100%; }
     }
+
+    /* ========================================
+       FAQ TOC (カテゴリジャンプナビ)
+    ======================================== */
+    .faq-toc {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 40px;
+    }
+    .faq-toc-inner { max-width: 960px; margin: 0 auto; }
+    .faq-toc-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #888;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .faq-toc-links { display: flex; flex-wrap: wrap; gap: 8px 10px; }
+    .faq-toc-links a {
+      display: inline-block;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 12px;
+      color: #0ab394;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      padding: 6px 12px;
+      border: 1px solid #d5efe9;
+      border-radius: 20px;
+      background: #f9fffe;
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+    .faq-toc-links a:hover { background: #0ab394; color: #fff; }
+
+    /* ========================================
+       MORE FAQ 区切り見出し
+    ======================================== */
+    .faq-more-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-top: 8px;
+      padding-bottom: 24px;
+      border-top: 1px dashed #dcdcdc;
+      margin-top: 8px;
+    }
+    .faq-more-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #0ab394;
+      letter-spacing: 2px;
+      margin-top: 24px;
+    }
+    .faq-more-title {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      color: #000;
+      letter-spacing: 1px;
+    }
+    .faq-more-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 14px;
+      color: #555;
+      letter-spacing: 0.5px;
+      line-height: 1.7;
+    }
+
+    /* ========================================
+       カテゴリ内リード文
+    ======================================== */
+    .category-lead {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 14px;
+      color: #666;
+      letter-spacing: 0.5px;
+      line-height: 1.8;
+      padding: 16px 20px 4px;
+    }
+
+    /* ========================================
+       FAQ回答内の箇条書き・表
+    ======================================== */
+    .faq-answer .faq-list {
+      list-style: none;
+      padding: 0;
+      margin: 4px 0;
+    }
+    .faq-answer .faq-list li {
+      position: relative;
+      padding-left: 18px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 15px;
+      color: #333;
+      letter-spacing: 0.5px;
+      line-height: 1.8;
+    }
+    .faq-answer .faq-list li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 10px;
+      width: 5px;
+      height: 5px;
+      background: #0ab394;
+      border-radius: 50%;
+    }
+    .faq-answer .faq-table-wrap {
+      overflow-x: auto;
+      margin: 8px 0;
+    }
+    .faq-answer table.faq-table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 360px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.4px;
+    }
+    .faq-answer table.faq-table th,
+    .faq-answer table.faq-table td {
+      border: 1px solid #e5e7eb;
+      padding: 8px 12px;
+      text-align: left;
+      color: #333;
+    }
+    .faq-answer table.faq-table th {
+      background: #f2f6f4;
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* ========================================
+       RESPONSIVE additions
+    ======================================== */
+    @media (max-width: 768px) {
+      .faq-toc { padding: 16px 24px; }
+    }
+    @media (max-width: 480px) {
+      .faq-toc { padding: 14px 16px; }
+      .faq-toc-links a { font-size: 11px; padding: 5px 10px; }
+      .faq-more-title { font-size: 20px; }
+    }
+
   </style>
 
   <!-- Structured Data: FAQPage -->
@@ -679,7 +823,7 @@
       "name": "対応CADソフトは何ですか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tfas、Rebro、AutoCAD、Jw_cad、Revitなど主要ソフトに対応しています。その他のソフトについてもご相談ください。御社のルールや設定ファイルに合わせて作図いたします。"
+        "text": "Tfas、Rebro、AutoCAD、Jw_cad、Revitなど主要ソフトに対応しています。"
       }
     },
     {
@@ -687,7 +831,7 @@
       "name": "実際に図面を作成しているのはどのような体制ですか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "専門訓練を受けたCADオペレーターが作図を担当し、日本人の電気設計監修者が品質チェックを行う二段階体制です。納品前に必ず日本人が確認するため、品質基準が統一されています。"
+        "text": "専門訓練を受けたCADオペレーターが作図を担当し、日本人の電気設計監修者が品質チェックを行う二段階体制です。"
       }
     },
     {
@@ -695,7 +839,7 @@
       "name": "少人数・小規模案件からでも依頼できますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、1案件からお受けしています。まずは3案件まで無料でお試しいただけるトライアルをご用意しています。小規模なご依頼でもお気軽にご相談ください。"
+        "text": "はい、1案件からお受けしています。"
       }
     },
     {
@@ -703,7 +847,7 @@
       "name": "どのような図面に対応していますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "電灯コンセント図、単線結線図、幹線系統図、負荷計算書など電気設備設計に関わる図面全般に対応しています。詳しくはお問い合わせの際にご確認ください。"
+        "text": "電灯コンセント図、単線結線図、幹線系統図、負荷計算書など電気設備設計に関わる図面全般に対応しています。"
       }
     },
     {
@@ -711,7 +855,7 @@
       "name": "打ち合わせやファイルのやり取りはどのように行いますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "オンライン打ち合わせ（Zoom / Teams等）と、クラウドストレージを使ったファイル共有で完結します。全国どこからでもご依頼いただけます。時差があるため、納期に余裕を持ったご依頼をお勧めします。"
+        "text": "オンライン打ち合わせ（Zoom / Teams等）と、クラウドストレージを使ったファイル共有で完結します。"
       }
     },
     {
@@ -719,7 +863,7 @@
       "name": "BIMやRevitを使った設計にも対応できますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、Revit・BIMに対応したCADオペレーターが在籍しております。他CADとの連携が必要な案件や、BIMモデルからの図面作成にも対応可能です。"
+        "text": "はい、Revit・BIMに対応したCADオペレーターが在籍しております。"
       }
     },
     {
@@ -727,7 +871,7 @@
       "name": "施工図以外の申請図面の作成代行も依頼できますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、施工図に加えて各種申請図面の作成代行にも対応しております。案件内容によって対応可否が異なりますので、まずはお気軽にご相談ください。"
+        "text": "はい、施工図に加えて各種申請図面の作成代行にも対応しております。"
       }
     },
     {
@@ -735,7 +879,7 @@
       "name": "品質はどう管理されていますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "日本人電気設計者が全件品質管理を行っています。作図 → 内部チェック → 日本人監修の3段階チェック体制で設計ミスを防止。納品後に問題が発覚した場合も迅速に対応します。"
+        "text": "日本人電気設計者が全件品質管理を行っています。"
       }
     },
     {
@@ -743,7 +887,7 @@
       "name": "機密保持はどうなっていますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "NDA（秘密保持契約）を即時締結します。ファイル共有は権限管理されたクラウドに限定し、アクセスログを管理。スタッフへのセキュリティ教育も徹底しており、私物PCの使用や持ち出しも禁止しています。"
+        "text": "NDA（秘密保持契約）を即時締結します。"
       }
     },
     {
@@ -751,7 +895,7 @@
       "name": "修正対応はどうなっていますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "初回・2回目の修正は無料で対応します。継続案件については専用ルールを設けており、安心してご依頼いただけます。修正内容によっては別途ご相談させていただく場合があります。"
+        "text": "初回・2回目の修正は無料で対応します。"
       }
     },
     {
@@ -759,7 +903,7 @@
       "name": "スタッフのスキルレベルはどの程度ですか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "全スタッフが電気CAD専門訓練を修了しており、Tfas・Rebro・AutoCADなど複数ソフトに対応できます。日本人電気設計者による監修が入るため、国内基準に沿った作図品質を保証しています。"
+        "text": "全スタッフが電気CAD専門訓練を修了しており、Tfas・Rebro・AutoCADなど複数ソフトに対応できます。"
       }
     },
     {
@@ -767,7 +911,7 @@
       "name": "これまでにどのような案件の実績がありますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "電灯コンセント図、単線結線図、幹線系統図、負荷計算書など電気設備設計全般で豊富な実績があります。ゼネコン・サブコン・電気設備専門会社など幅広いお客様の設計事務所様にご利用いただいています。"
+        "text": "電灯コンセント図、単線結線図、幹線系統図、負荷計算書など電気設備設計全般で豊富な実績があります。"
       }
     },
     {
@@ -775,7 +919,7 @@
       "name": "料金体系はどうなっていますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "図面1枚からお見積もり制となっています。1名あたりの時給は2,100円〜（税込）。月額契約の場合は1名あたり336,000円〜（税込）です。まずは3案件無料のトライアルからお試しいただけます。"
+        "text": "図面1枚からお見積もり制となっています。"
       }
     },
     {
@@ -783,7 +927,7 @@
       "name": "契約形態はどのようなものがありますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "スポット（案件ごと）と月額契約（専任チーム制）の2種類をご用意しています。継続案件が多い場合は月額契約のほうがコストを抑えられます。詳しくはご相談ください。"
+        "text": "スポット（案件ごと）と月額契約（専任チーム制）の2種類をご用意しています。"
       }
     },
     {
@@ -791,7 +935,7 @@
       "name": "支払い方法と支払いサイクルを教えてください。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "銀行振込にて月末締め翌月末払いとなっています。請求書を毎月発行します。詳細はご契約時にご案内します。"
+        "text": "銀行振込にて月末締め翌月末払いとなっています。"
       }
     },
     {
@@ -799,7 +943,7 @@
       "name": "途中でプランを変更または解約できますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "月額契約は1ヶ月前のご連絡でいつでも解約・変更が可能です。繁忙期だけスポット契約に切り替えるなど柔軟な対応をしております。"
+        "text": "月額契約は1ヶ月前のご連絡でいつでも解約・変更が可能です。"
       }
     },
     {
@@ -807,7 +951,7 @@
       "name": "お見積もりは無料ですか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、お見積もりは無料です。図面1枚からでもお気軽にご相談いただけます。まずは3案件無料のトライアルもご利用いただけます。"
+        "text": "はい、お見積もりは無料です。"
       }
     },
     {
@@ -815,7 +959,7 @@
       "name": "納期はどの程度ですか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "案件の規模によりますが、最短24時間での対応が可能です。通常は図面1〜3枚で2〜3営業日が目安です。スケジュールの詳細はご依頼時にご確認ください。"
+        "text": "案件の規模によりますが、最短24時間での対応が可能です。"
       }
     },
     {
@@ -823,7 +967,7 @@
       "name": "急ぎの案件にも対応できますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "最短24時間対応が可能ですが、依頼のタイミングや込み具合によります。急ぎの場合は事前にLINEでご相談いただくと、対応可否を素早くご回答できます。"
+        "text": "最短24時間対応が可能ですが、依頼のタイミングや込み具合によります。"
       }
     },
     {
@@ -831,7 +975,7 @@
       "name": "全国どこでも対応できますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい。オンライン打ち合わせとクラウドでのファイル共有により、全国どこからでもご依頼いただけます。東京・神奈川・大阪・愛知など主要エリアに加え、地方の案件も多数対応実績があります。"
+        "text": "はい。"
       }
     },
     {
@@ -839,7 +983,7 @@
       "name": "海外オペレーターとの時差はどの程度ありますか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "拠点の時差は日本時間と約2〜3時間です。日本のビジネス時間内に連絡・指示をいただければ、当日または翌日対応が可能です。緊急連絡はLINEでいつでも受け付けています。"
+        "text": "拠点の時差は日本時間と約2〜3時間です。"
       }
     },
     {
@@ -847,7 +991,831 @@
       "name": "深夜や早朝の緊急対応は可能ですか?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "案件内容やタイミングによりますが、LINEでご相談いただければ柔軟に対応を検討いたします。緊急のご依頼はまずお気軽にご連絡ください。"
+        "text": "案件内容やタイミングによりますが、LINEでご相談いただければ柔軟に対応を検討いたします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "電気設備設計とは具体的にどのような業務を指しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "電気設備設計とは、建物内の照明・動力・受変電・電灯コンセント・非常用電源など、電気設備全般の設計図面を作成する業務です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "照明設備や動力設備の設計にも対応していますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "照明設備・動力設備の設計に対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "受変電設備の設計は依頼できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "受変電設備の設計にも対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "弱電設備設計（LAN・監視カメラなど）は依頼できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LAN設備、監視カメラ、入退室管理、インターホン、テレビ共聴、放送設備といった弱電設備設計に対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "防災設備設計（自動火災報知設備など）は依頼できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "自動火災報知設備、非常放送設備、誘導灯設備、防排煙連動といった防災設備の設計に対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "太陽光発電やEV充電設備など再生可能エネルギー関連の設計も対応していますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "太陽光発電設備、EV充電設備、蓄電設備、エネルギー管理システムといった再生可能エネルギー関連の設計に対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "基本設計図・実施設計図・竣工図といった各段階の図面作成に対応していますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "基本設計図から実施設計図、施工図、竣工図まで、設計の各段階の図面作成に対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ゼネコンからの電気設備図面の外注依頼にも対応していますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ゼネコンからの電気設備図面の外注依頼に対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "サブコン（専門工事会社）からの設計依頼は可能ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "サブコン（専門工事会社）からの設計依頼にも対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "電気設備専門会社からのスポット的な設計依頼にも対応していますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "電気設備専門会社からのスポット的な設計依頼にも対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "設計事務所からの継続的な外注依頼は可能ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "設計事務所からの継続的な外注依頼にも対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "実際の納品図面のサンプルを見ることはできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NDA（秘密保持契約）締結後に、実績図面を開示しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "施工図・竣工図の実績はどのくらいありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "施工図・竣工図を含む電気設備設計全般で豊富な実績があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "在籍している設計士の人数はどのくらいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "100名以上の外国人設計士（CADオペレーター）が在籍しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "業務提携先はありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CAD外注・設計図面作成のパートナー企業として、Plus358社と業務提携しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "全国のどのエリアの案件実績がありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "東京・神奈川・千葉・埼玉・愛知・大阪・京都・兵庫・福岡など、全国のエリアで対応実績があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "依頼から納品までの基本的な流れを教えてください",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "依頼の流れは、問い合わせ→契約・お申込み→人材供給・進行管理→作図・品質チェック→納品という順序で進みます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "問い合わせはどのような方法で行えますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "メール・フォーム、またはLINEからお問い合わせいただけます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "契約手続きはオンラインだけで完結しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "契約手続きはオンラインで完結します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "依頼後、実際に作図を担当するのはどのようなスタッフですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "専門訓練を修了したCADオペレーターが作図を担当し、日本人監修者が品質チェックを行います。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "初めての依頼でも希望通りの仕上がりにできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "初めての依頼でも、ヒアリングとフィードバックを重ねることで希望通りの仕上がりに近づけていきます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "依頼内容の指示はどの言語で行えばよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "依頼内容の指示は日本語で行っていただけます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "進行中の案件の進捗はどのように確認できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "進行中の案件については、担当窓口を通じて進捗を確認できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "複数の案件を同時に依頼することはできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "体制に応じて、複数の案件を同時に依頼することが可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "依頼した図面の修正指示はどのように伝えればよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "修正指示は日本語でお伝えいただければ、通訳コーディネーターを介して正確に反映されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "依頼時に必ず用意しなければならない書類はありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "必須の書類フォーマットは定められていません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "既存の竣工図や設計基準がなくても依頼できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "既存の竣工図や設計基準がない状態からでも依頼は可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "御社独自の作図ルールに合わせてもらうことはできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "御社独自の作図ルールに合わせて対応可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "手書きの指示やラフな指定だけでも作図を進めてもらえますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "手書きの指示やラフな指定からでも作図を進めることが可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "負荷計算や照度計算を依頼する際、条件はどの程度詳しく伝える必要がありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "負荷計算・照度計算は設計補助業務の一部として依頼可能で、必要な条件はヒアリングを通じて確認します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "依頼内容が途中で固まっていく形でも対応してもらえますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "依頼内容が進行中に固まっていく形でも対応可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "図面のフォーマットやレイヤー構成の指定はできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "御社のルールや設定ファイルに合わせた作図に対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "スポット契約と月額契約はどちらを選べばよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "単発・小規模な依頼はスポット契約、継続的な依頼は月額契約（専任チーム制）が適しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2名未満（1名）でも時給契約は可能ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "時給プランの小規模スタートは2名以上のご契約が前提となっています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "月額契約の専任チーム制とはどのような体制ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "月額契約の専任チーム制とは、継続案件向けに専任のオペレーターチームを確保する契約形態です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "見積り依頼から回答までどのくらいの期間がかかりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "見積り回答までの具体的な期間は案件内容によって異なるため、個別のご相談時にご案内します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "繁忙期だけスポット契約に切り替えることはできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "繁忙期だけスポット契約に切り替えることが可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "図面の枚数が多い場合、納期はどう変わりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "図面の枚数が多い案件は、通常の目安（2〜3枚で2〜3営業日）より納期が長くなる傾向があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "地方の案件でも現地訪問は必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "オンライン打ち合わせとクラウド共有により、現地訪問なしで進行できる体制です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "繁忙期で依頼が集中している場合でも納期は守られますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "繁忙期の急な案件増加にも柔軟に対応できる体制を整えています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "日本人監修者とはどのような役割の人ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "日本人監修者は、建築士や電気工事会社の資格・経歴を持つスタッフが担当する品質チェック役です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "作図した図面はどのようなチェック工程を経て納品されますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "作図 → 内部チェック → 日本人監修という3段階のチェック工程を経て納品されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "品質チェックは誰が最終確認を行いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "最終確認は日本人監修者（建築士・電気工事士）が行います。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "納品後に図面のミスが見つかった場合はどうなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "納品後に問題が発覚した場合も迅速に対応します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "品質面で国内正社員と比べて差はありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "日本人監修者による全件チェック体制により、国内同等の品質を目指しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "担当するCADオペレーターはどのような訓練を受けていますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "担当するCADオペレーターは、電気CAD専門訓練を修了したスタッフです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "案件ごとに専任のオペレーターがつきますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "案件の要件に応じて適切な人材がアサインされます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "通訳コーディネーターはどのような役割を担っていますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "通訳コーディネーターは、日本語の指示を正確にオペレーターへ伝達する役割を担っています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "日本人監修者はどのような資格・経歴を持っていますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "日本人監修者は、建築士や電気工事士としての資格・経歴を持つスタッフです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "スタッフの体制はどのくらいの規模ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "100名以上の外国人設計士（CADオペレーター）が在籍しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NDAは依頼の初期段階で締結してもらえますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NDAは即時に締結する体制を整えています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ファイル共有はどのような環境で行われますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ファイル共有は権限管理されたクラウド環境に限定して行われます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "図面データへのアクセス権限はどのように管理されていますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "図面データへのアクセスは、権限管理されたクラウド上で制御されています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "データの保管期間や保管ルールは定められていますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "データ保管ルールが定められています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "契約終了後のデータ削除には対応してもらえますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "データ削除ルールに基づき、契約終了後のデータ削除に対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "スタッフの私物PCでの作業は行われていますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "私物PCの利用は禁止されています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "図面データや資料の社外持ち出しに関するルールはありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PCの持ち出しは禁止されています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "スタッフへのセキュリティ教育は実施されていますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "スタッフへのセキュリティ教育を徹底しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "3回目以降の修正にも対応してもらえますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "3回目以降の修正についても対応可能ですが、内容によっては別途ご相談とさせていただく場合があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "継続案件の場合、修正対応のルールは変わりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "継続案件については専用の修正対応ルールが設けられています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "納品後に仕様変更が発生した場合はどうなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "納品後の仕様変更は、内容に応じて個別にご相談のうえ対応します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "竣工図の反転などの後工程も依頼できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "竣工図反転を含む基礎作図の後工程にも対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "過去に依頼した図面データを再度参照してもらうことはできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "データ保管ルールの範囲内で、過去に依頼した図面データを参照した対応が可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tfas以外のソフトを使っている場合でも対応できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tfas以外のソフトをお使いの場合でも対応可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "御社で使用しているCAD環境にそのまま合わせてもらえますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "御社のルールや設定ファイルに合わせた作図に対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jw_cadでの図面作成にも対応していますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jw_cadでの図面作成にも対応しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "異なるCADソフト間でのデータ変換にも対応していますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "案件内容に応じて、CADソフト間のデータ変換にも対応可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "トレースやプロット図の作成など基礎作図だけの依頼はできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "トレース、竣工図反転、プロット図といった基礎作図だけの依頼が可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "系統図作成や負荷計算といった設計補助業務だけを依頼できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "系統図作成、単線結線図、負荷計算、照度計算、器具配置といった設計補助業務だけの依頼が可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "自立作図やBIMモデル作成まで一括して任せることはできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "施工図作成、自立作図、プロット計画、BIMモデル作成、干渉チェックまで一括して任せることが可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "3案件までの無料トライアルとはどのような内容ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "最初の3案件を無料でお試しいただけるトライアル制度です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "トライアル後、本稼働にはどのように移行しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "トライアルで整理した作図ルールをもとに御社専用のマニュアルを構築したうえで、本稼働へ移行します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "繁忙期だけ一時的に外部リソースを増やすことはできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "繁忙期だけ一時的に外部リソースを増やすことが可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "海外スタッフとのやり取りは英語が必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "英語は不要です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "通訳コーディネーターを介したやり取りはどのように進みますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "通訳コーディネーターが日本語の指示を正確にCADオペレーターへ伝達する形で進みます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "海外拠点のスタッフに直接指示を伝える必要がありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "海外拠点のスタッフへ直接指示を伝える必要はありません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "時差により納期に影響が出ることはありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "時差は約2〜3時間程度のため、日本のビジネス時間内のご連絡であれば当日・翌日対応が可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "社内に電気設計者を採用するのと外注するのでは何が違いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "外注はコスト最適化とスピード対応の両面でメリットがあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "繁忙期だけ外注し、通常期は内製に戻すといった使い方はできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "繁忙期だけスポット契約を利用し、それ以外の時期は柔軟に対応を変えるという使い方が可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "若手設計者の育成負担を軽減する目的で活用できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "若手育成に時間を取られているという課題の解決策として活用できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "一部の工程だけ内製に残し、それ以外を外注することはできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "基礎作図・設計補助・自立作図/BIMという3つの工程のうち、必要な工程だけを選んで外注することができます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "外注によって固定費（人件費・採用コスト）はどの程度抑えられますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "最大40%の人件費・採用コスト削減が見込めます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "外注先とのやり取りで意思疎通のトラブルが起きないか心配です",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "通訳コーディネーターが常駐しており、打合せ・図面確認・修正まですべて日本語で完結する体制のため、意思疎通のトラブルは起きにくい仕組みになっています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "依頼内容と違う図面が納品された場合はどうすればよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "依頼内容と異なる納品があった場合は、初回・2回目の修正が無料で対応されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "担当オペレーターの変更は可能ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "案件の状況に応じて、アサインされる担当オペレーターの調整が可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "繁忙期に依頼が集中して対応してもらえなくなることはありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "急な案件増加・繁忙期にも柔軟に対応できる体制を整えていますが、依頼のタイミングによっては調整が必要になる場合があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "初めての外注で失敗しないためのポイントはありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "3案件までの無料トライアルを活用し、品質・スピード・やり取りを確認したうえで本稼働に移行することが、失敗を避けるポイントです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "海外CADオペレーター会社と比べてどのような違いがありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "日本人監修者による品質チェック体制の有無が、海外の競合他社との大きな違いです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "国内正社員を雇用する場合と比べてコスト面でどう違いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "国内正社員を雇用する場合と比べて、時給・月額ともに抑えられた料金設定を目指しています。具体的な料金はご依頼内容により異なるため、まずはご相談ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "国内フリーランスに依頼する場合と比べた際のメリットは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "国内フリーランスに依頼する場合と比べて、時給・月額ともに抑えた料金設定である点がメリットです。具体的な料金はご依頼内容により異なるため、まずはご相談ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "料金が同程度の他社と比較する際、どこを見ればよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "料金だけでなく、Tfas・Rebro対応の可否と日本人監修の有無を確認することをおすすめします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "小規模スタートのしやすさは他社と比べてどう違いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1案件からの依頼と3案件無料トライアルにより、小規模スタートのしやすさを重視した設計になっています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "外注が初めてで不安なのですが相談だけでも可能ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "発注を前提としない相談だけでも問題なく対応してもらえます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "海外スタッフに図面を任せることに品質面の不安があります",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "日本人監修者による全件チェック体制により、品質面の不安を軽減する仕組みが整っています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "情報漏洩が心配なのですが対策はありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NDAの即時締結や、権限管理されたクラウド共有、アクセスログ管理といった対策により情報漏洩リスクを低減しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "トライアルで満足できなかった場合、そのまま契約しなくてもよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "トライアルはお試しでの利用を前提としており、無理に本契約へ進める必要はありません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "小規模な会社でも継続して依頼できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1案件からの依頼が可能で、小規模な会社でも継続して依頼しやすい料金体系になっています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ゼネコンが電気設備図面の外注先として活用する場合、どのような依頼が多いですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ゼネコンからは、電気設備図面の外注先として、品質を落とさずに人手不足を補う目的での依頼が多くあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "サブコンがTfas対応の外部パートナーを探している場合、どのように活用できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tfas対応の外部パートナーを探しているサブコンからの依頼にも対応できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "電気設備専門会社が繁忙期だけ設計リソースを増やしたい場合、どう活用できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "繁忙期だけ設計業務の柔軟なリソースとして活用できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "設計人材の採用・定着に悩む会社でも活用できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "設計人材の採用・定着・リソース不足という課題の解決策として活用できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "若手育成に時間を取られている会社が活用するメリットは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "若手育成に割く時間を確保しながら、定型的な作図業務を外部に任せられる点がメリットです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "残業の常態化を解消する目的で活用することはできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "残業の常態化や図面作成の納期対応に追われている状況の解消を目的として活用できます。"
       }
     }
   ]
@@ -917,18 +1885,50 @@
       <p class="page-eyebrow">FAQ</p>
       <h1 class="page-title">よくあるご質問</h1>
       <p class="page-desc">
-        電気設備設計のCAD外注・代行サービスについて、よくいただくご質問をまとめました。<br>
+        電気設備設計のCAD外注・代行サービスについて、よくいただくご質問を125件まとめました。<br>
         解決しない場合はLINEよりお気軽にお問い合わせください。
       </p>
     </div>
   </section>
+
+
+  <!-- FAQ CATEGORY JUMP NAV -->
+  <nav class="faq-toc" aria-label="カテゴリ一覧">
+    <div class="faq-toc-inner">
+      <p class="faq-toc-label">カテゴリから探す</p>
+      <div class="faq-toc-links">
+          <a href="#cat-usage">ご利用方法</a>
+          <a href="#cat-quality">品質・セキュリティ</a>
+          <a href="#cat-pricing">料金・契約</a>
+          <a href="#cat-delivery">納期・対応範囲</a>
+          <a href="#cat-n1">1. サービス内容・対応範囲</a>
+          <a href="#cat-n2">2. 対応業界・実績</a>
+          <a href="#cat-n3">3. 依頼の流れ・進め方</a>
+          <a href="#cat-n4">4. 必要書類・仕様確定の進め方</a>
+          <a href="#cat-n5">5. 料金・見積り・契約形態</a>
+          <a href="#cat-n6">6. 納期・スケジュール管理</a>
+          <a href="#cat-n7">7. 品質管理・設計レビュー体制</a>
+          <a href="#cat-n8">8. 設計者のスキル・体制・アサイン方法</a>
+          <a href="#cat-n9">9. 秘密保持（NDA）・情報セキュリティ・データ管理</a>
+          <a href="#cat-n10">10. 納品後の対応</a>
+          <a href="#cat-n11">11. 対応CADソフト・データ形式・互換性</a>
+          <a href="#cat-n12">12. スポット依頼・部分外注・繁忙期対応</a>
+          <a href="#cat-n13">13. 海外対応</a>
+          <a href="#cat-n14">14. 内製設計との違い・使い分け方</a>
+          <a href="#cat-n15">15. トラブル対応・よくある失敗と回避策</a>
+          <a href="#cat-n16">16. 料金以外の比較ポイント</a>
+          <a href="#cat-n17">17. 契約前によくある不安・懸念</a>
+          <a href="#cat-n18">18. 導入事例・活用シーン別のQ&A</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- FAQ MAIN -->
   <main class="faq-main">
     <div class="faq-main-inner">
 
       <!-- カテゴリ1: ご利用方法 -->
-      <div class="faq-category">
+      <div class="faq-category" id="cat-usage">
         <div class="category-header">
           <div class="category-icon">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
@@ -940,7 +1940,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">対応CADソフトは何ですか?</span>
+            <h3 class="q-text">対応CADソフトは何ですか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -951,7 +1951,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">実際に図面を作成しているのはどのような体制ですか?</span>
+            <h3 class="q-text">実際に図面を作成しているのはどのような体制ですか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -962,7 +1962,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">少人数・小規模案件からでも依頼できますか?</span>
+            <h3 class="q-text">少人数・小規模案件からでも依頼できますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -973,7 +1973,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">どのような図面に対応していますか?</span>
+            <h3 class="q-text">どのような図面に対応していますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -984,7 +1984,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">打ち合わせやファイルのやり取りはどのように行いますか?</span>
+            <h3 class="q-text">打ち合わせやファイルのやり取りはどのように行いますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -995,7 +1995,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">BIMやRevitを使った設計にも対応できますか?</span>
+            <h3 class="q-text">BIMやRevitを使った設計にも対応できますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1006,7 +2006,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">施工図以外の申請図面の作成代行も依頼できますか?</span>
+            <h3 class="q-text">施工図以外の申請図面の作成代行も依頼できますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1016,7 +2016,7 @@
       </div>
 
       <!-- カテゴリ2: 品質・セキュリティ -->
-      <div class="faq-category">
+      <div class="faq-category" id="cat-quality">
         <div class="category-header">
           <div class="category-icon">
             <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
@@ -1028,7 +2028,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">品質はどう管理されていますか?</span>
+            <h3 class="q-text">品質はどう管理されていますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1039,7 +2039,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">機密保持はどうなっていますか?</span>
+            <h3 class="q-text">機密保持はどうなっていますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1050,7 +2050,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">修正対応はどうなっていますか?</span>
+            <h3 class="q-text">修正対応はどうなっていますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1061,7 +2061,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">スタッフのスキルレベルはどの程度ですか?</span>
+            <h3 class="q-text">スタッフのスキルレベルはどの程度ですか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1072,7 +2072,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">これまでにどのような案件の実績がありますか?</span>
+            <h3 class="q-text">これまでにどのような案件の実績がありますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1082,7 +2082,7 @@
       </div>
 
       <!-- カテゴリ3: 料金・契約 -->
-      <div class="faq-category">
+      <div class="faq-category" id="cat-pricing">
         <div class="category-header">
           <div class="category-icon">
             <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
@@ -1094,18 +2094,18 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">料金体系はどうなっていますか?</span>
+            <h3 class="q-text">料金体系はどうなっていますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
-            <p>図面1枚からお見積もり制となっています。1名あたりの時給は2,100円〜（税込）。月額契約の場合は1名あたり336,000円〜（税込）です。まずは3案件無料のトライアルからお試しいただけます。</p>
+            <p>料金はご依頼内容・作業量・納期などによって異なります。まずはLINEよりお気軽にご相談ください。お見積りは無料です。</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">契約形態はどのようなものがありますか?</span>
+            <h3 class="q-text">契約形態はどのようなものがありますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1116,7 +2116,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">支払い方法と支払いサイクルを教えてください。</span>
+            <h3 class="q-text">支払い方法と支払いサイクルを教えてください。</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1127,7 +2127,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">途中でプランを変更または解約できますか?</span>
+            <h3 class="q-text">途中でプランを変更または解約できますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1138,7 +2138,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">お見積もりは無料ですか?</span>
+            <h3 class="q-text">お見積もりは無料ですか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1148,7 +2148,7 @@
       </div>
 
       <!-- カテゴリ4: 納期・対応範囲 -->
-      <div class="faq-category">
+      <div class="faq-category" id="cat-delivery">
         <div class="category-header">
           <div class="category-icon">
             <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
@@ -1160,7 +2160,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">納期はどの程度ですか?</span>
+            <h3 class="q-text">納期はどの程度ですか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1171,7 +2171,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">急ぎの案件にも対応できますか?</span>
+            <h3 class="q-text">急ぎの案件にも対応できますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1182,7 +2182,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">全国どこでも対応できますか?</span>
+            <h3 class="q-text">全国どこでも対応できますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1193,7 +2193,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">海外オペレーターとの時差はどの程度ありますか?</span>
+            <h3 class="q-text">海外オペレーターとの時差はどの程度ありますか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
@@ -1204,11 +2204,1233 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <div class="q-badge"><span>Q</span></div>
-            <span class="q-text">深夜や早朝の緊急対応は可能ですか?</span>
+            <h3 class="q-text">深夜や早朝の緊急対応は可能ですか?</h3>
             <div class="q-toggle">+</div>
           </button>
           <div class="faq-answer">
             <p>案件内容やタイミングによりますが、LINEでご相談いただければ柔軟に対応を検討いたします。緊急のご依頼はまずお気軽にご連絡ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 追加カテゴリ: サービス詳細・料金・体制・セキュリティなど -->
+      <div class="faq-more-heading">
+        <p class="faq-more-eyebrow">MORE FAQ</p>
+        <h2 class="faq-more-title">さらに詳しく知りたい方へ</h2>
+        <p class="faq-more-desc">サービス内容・料金・体制・セキュリティなど、カテゴリ別にさらに詳しいご質問をまとめました。</p>
+      </div>
+
+      <div class="faq-category" id="cat-n1">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">1. サービス内容・対応範囲</h2>
+          <span class="category-count">7 件</span>
+        </div>
+        <p class="category-lead">電気設備設計アウトソーシングでは、照明・動力・受変電といった電気設備設計から、弱電設備・防災設備・再生可能エネルギー設備の設計、CAD図面作成まで幅広く委託できます。このカテゴリでは、依頼できる業務範囲を具体的に解説します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">電気設備設計とは具体的にどのような業務を指しますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>電気設備設計とは、建物内の照明・動力・受変電・電灯コンセント・非常用電源など、電気設備全般の設計図面を作成する業務です。</strong> 具体的には次のような分野が含まれます。</p>
+            <ul class="faq-list"><li>照明設備、動力設備、受変電設備</li><li>電灯・コンセント設備、非常用電源設備</li><li>太陽光発電設備、EV充電設備</li></ul>
+            <p>ゼネコン・サブコン・電気設備専門会社・設計事務所からの依頼に対応しています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">照明設備や動力設備の設計にも対応していますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>照明設備・動力設備の設計に対応しています。</strong> 電灯・コンセント計画や動力回路の検討など、建物の電気設備設計における基本的な工程を委託できます。受変電設備や非常用電源設備とあわせて依頼することも可能です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">受変電設備の設計は依頼できますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>受変電設備の設計にも対応しています。</strong> 照明・動力設備とセットで依頼されることが多く、建物全体の電気設備設計の一部として一括して任せることができます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">弱電設備設計（LAN・監視カメラなど）は依頼できますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>LAN設備、監視カメラ、入退室管理、インターホン、テレビ共聴、放送設備といった弱電設備設計に対応しています。</strong> 電気設備設計とあわせて依頼することで、強電・弱電を横断した図面の整合性を取りやすくなります。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">防災設備設計（自動火災報知設備など）は依頼できますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>自動火災報知設備、非常放送設備、誘導灯設備、防排煙連動といった防災設備の設計に対応しています。</strong> 建築基準法・消防法に関わる防災設備は、電気設備・弱電設備と密接に関連するため、あわせて依頼するケースが一般的です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">太陽光発電やEV充電設備など再生可能エネルギー関連の設計も対応していますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>太陽光発電設備、EV充電設備、蓄電設備、エネルギー管理システムといった再生可能エネルギー関連の設計に対応しています。</strong> 近年増えているEV充電設備の新設や、太陽光発電設備の設計案件にも対応可能です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">基本設計図・実施設計図・竣工図といった各段階の図面作成に対応していますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>基本設計図から実施設計図、施工図、竣工図まで、設計の各段階の図面作成に対応しています。</strong> あわせて系統図、プロット図、単線結線図といった個別図面の作成も依頼できます。案件の進行段階に応じて、必要な図面種類だけを依頼することも可能です。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n2">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">2. 対応業界・実績</h2>
+          <span class="category-count">9 件</span>
+        </div>
+        <p class="category-lead">ゼネコン、サブコン、電気設備専門会社、設計事務所など、電気設備設計を必要とする発注元の立場によって求める依頼内容は異なります。このカテゴリでは、対応している発注元の種類と実績について解説します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">ゼネコンからの電気設備図面の外注依頼にも対応していますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>ゼネコンからの電気設備図面の外注依頼に対応しています。</strong> 「図面の品質は落とせないが人手が足りない」といった課題を持つゼネコンの外注先として、電気設備図面の作図業務を受託しています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">サブコン（専門工事会社）からの設計依頼は可能ですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>サブコン（専門工事会社）からの設計依頼にも対応しています。</strong> 専門工事の設計パートナーとして、Tfas対応の外部パートナーを探しているサブコンからの依頼実績があります。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">電気設備専門会社からのスポット的な設計依頼にも対応していますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>電気設備専門会社からのスポット的な設計依頼にも対応しています。</strong> 設計業務の柔軟なリソースとして、繁忙期だけでも設計を任せたいというニーズに応える形での利用実績があります。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">設計事務所からの継続的な外注依頼は可能ですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>設計事務所からの継続的な外注依頼にも対応しています。</strong> 月額契約（専任チーム制）を利用することで、継続的な図面作成業務を安定して任せることができます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">実際の納品図面のサンプルを見ることはできますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>NDA（秘密保持契約）締結後に、実績図面を開示しています。</strong> 公開されているサンプルはすべて実際の納品図面であり、機密情報は伏字処理されています。具体的な図面種類としては、電灯コンセント図・単線結線図・幹線系統図・負荷計算書などが含まれます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">施工図・竣工図の実績はどのくらいありますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>施工図・竣工図を含む電気設備設計全般で豊富な実績があります。</strong> 基本設計図から実施設計図、施工図、竣工図まで、設計の各段階に対応した実績があります。詳細な件数などの数値は、個別のご相談時にご案内可能です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">在籍している設計士の人数はどのくらいですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>100名以上の外国人設計士（CADオペレーター）が在籍しています。</strong> 専門訓練を修了したスタッフが、日本人監修者のチェックを受けながら作図を担当する体制です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">業務提携先はありますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>CAD外注・設計図面作成のパートナー企業として、Plus358社と業務提携しています。</strong> 電気設備・建築分野における作図業務を中心に、高品質な図面作成を支援する体制を構築しています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">全国のどのエリアの案件実績がありますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>東京・神奈川・千葉・埼玉・愛知・大阪・京都・兵庫・福岡など、全国のエリアで対応実績があります。</strong> オンライン打ち合わせを中心とした進行のため、掲載エリア以外の案件にも対応可能です。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n3">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">3. 依頼の流れ・進め方</h2>
+          <span class="category-count">9 件</span>
+        </div>
+        <p class="category-lead">外注が初めての場合、「何から始めればよいか分からない」という声が多く聞かれます。このカテゴリでは、問い合わせから作図開始までの標準的な流れを解説します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">依頼から納品までの基本的な流れを教えてください</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>依頼の流れは、問い合わせ→契約・お申込み→人材供給・進行管理→作図・品質チェック→納品という順序で進みます。</strong> 具体的なステップは次のとおりです。</p>
+            <div class="faq-table-wrap"><table class="faq-table"><thead><tr><th>ステップ</th><th>内容</th></tr></thead><tbody><tr><td>1. お問い合わせ</td><td>メール・フォームからご相談</td></tr><tr><td>2. ご契約・お申込み</td><td>オンラインで手続き完了</td></tr><tr><td>3. 人材供給・進行管理</td><td>要件に応じた人材をアサイン</td></tr><tr><td>4. 作図・品質チェック</td><td>担当オペレーターが作図、品質チェックまで対応</td></tr></tbody></table></div>
+            <p>ご契約・進行管理はすべて当社が一括対応します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">問い合わせはどのような方法で行えますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>メール・フォーム、またはLINEからお問い合わせいただけます。</strong> ご質問・ご相談があれば、まずはお気軽にご連絡いただく形で進めます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">契約手続きはオンラインだけで完結しますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>契約手続きはオンラインで完結します。</strong> 契約内容をご確認いただいたうえで、オンライン上での手続きのみでお申込みが完了します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">依頼後、実際に作図を担当するのはどのようなスタッフですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>専門訓練を修了したCADオペレーターが作図を担当し、日本人監修者が品質チェックを行います。</strong> 要件に応じて適切な人材がアサインされ、進行管理も当社側で一括対応します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">初めての依頼でも希望通りの仕上がりにできますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>初めての依頼でも、ヒアリングとフィードバックを重ねることで希望通りの仕上がりに近づけていきます。</strong> 特に最初の依頼では、3案件までの無料トライアルを通じて作図ルールをすり合わせる進め方が一般的です（詳細は<a href="#cat-n12">スポット依頼・部分外注・繁忙期対応</a>を参照）。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">依頼内容の指示はどの言語で行えばよいですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>依頼内容の指示は日本語で行っていただけます。</strong> 通訳コーディネーターが常駐しており、打ち合わせ・図面確認・修正指示まで日本語で完結する体制です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">進行中の案件の進捗はどのように確認できますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>進行中の案件については、担当窓口を通じて進捗を確認できます。</strong> オンライン打ち合わせやクラウド共有を通じて、作図状況を随時確認しながら進める形が基本です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">複数の案件を同時に依頼することはできますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>体制に応じて、複数の案件を同時に依頼することが可能です。</strong> 継続案件が多い場合は、専任チーム制の月額契約を利用することで、複数案件を並行して任せやすくなります。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">依頼した図面の修正指示はどのように伝えればよいですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>修正指示は日本語でお伝えいただければ、通訳コーディネーターを介して正確に反映されます。</strong> 打合せ・図面確認・修正まですべて日本語で完結する体制のため、指示内容を英語に翻訳する必要はありません。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n4">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">4. 必要書類・仕様確定の進め方</h2>
+          <span class="category-count">7 件</span>
+        </div>
+        <p class="category-lead">依頼時に完璧な仕様書がなくても相談は可能です。このカテゴリでは、依頼時に準備しておくとよい資料や、仕様の詰め方について解説します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">依頼時に必ず用意しなければならない書類はありますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>必須の書類フォーマットは定められていません。</strong> 既存の竣工図や設計基準があれば準備しておくとスムーズですが、ヒアリングを通じて必要な情報を整理していく進め方も可能です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">既存の竣工図や設計基準がなくても依頼できますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>既存の竣工図や設計基準がない状態からでも依頼は可能です。</strong> ヒアリングをもとに、必要な仕様を整理しながら作図を進めます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">御社独自の作図ルールに合わせてもらうことはできますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>御社独自の作図ルールに合わせて対応可能です。</strong> 3案件の無料トライアルを通じてフィードバックを重ね、御社のルール・仕様を整理したうえで、専用マニュアルを構築する進め方が用意されています（詳細は<a href="#cat-n12">スポット依頼・部分外注・繁忙期対応</a>を参照）。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">手書きの指示やラフな指定だけでも作図を進めてもらえますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>手書きの指示やラフな指定からでも作図を進めることが可能です。</strong> 日本人監修者と通訳コーディネーターを介して、指示内容を正確にオペレーターへ伝達する体制のため、細かい仕様書がない段階からでも相談できます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">負荷計算や照度計算を依頼する際、条件はどの程度詳しく伝える必要がありますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>負荷計算・照度計算は設計補助業務の一部として依頼可能で、必要な条件はヒアリングを通じて確認します。</strong> 器具配置などの関連情報とあわせて依頼することで、より精度の高い計算結果につながります。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">依頼内容が途中で固まっていく形でも対応してもらえますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>依頼内容が進行中に固まっていく形でも対応可能です。</strong> 最初の3案件を無料トライアルとして依頼し、フィードバックを重ねながら仕様を整理していく進め方が用意されています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">図面のフォーマットやレイヤー構成の指定はできますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>御社のルールや設定ファイルに合わせた作図に対応しています。</strong> Tfas・Rebro・AutoCAD・Jw_cad・Revitなど主要CADソフトの環境にそのまま合わせられるため、レイヤー構成などの指定も相談可能です。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n5">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">5. 料金・見積り・契約形態</h2>
+          <span class="category-count">5 件</span>
+        </div>
+        <p class="category-lead">外注費用の相場感や契約形態は、発注可否を判断するうえで最も気になるポイントの一つです。このカテゴリでは、料金体系・契約形態を整理します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">スポット契約と月額契約はどちらを選べばよいですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>単発・小規模な依頼はスポット契約、継続的な依頼は月額契約（専任チーム制）が適しています。</strong> 繁忙期だけスポット契約に切り替えるといった柔軟な使い方も可能です。まずはトライアルで依頼量の見通しを立ててから選ぶ進め方もおすすめです。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">2名未満（1名）でも時給契約は可能ですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>時給プランの小規模スタートは2名以上のご契約が前提となっています。</strong> 1名のみでの依頼を希望する場合は、まずトライアル（3案件無料）や月額契約など、他のプランで対応できないかご相談ください。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">月額契約の専任チーム制とはどのような体制ですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>月額契約の専任チーム制とは、継続案件向けに専任のオペレーターチームを確保する契約形態です。</strong> 料金はご依頼内容によって異なりますので、まずはお気軽にご相談ください。繁忙期の増員や解約も1ヶ月前の連絡で柔軟に対応できます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">見積り依頼から回答までどのくらいの期間がかかりますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>見積り回答までの具体的な期間は案件内容によって異なるため、個別のご相談時にご案内します。</strong> 図面1枚からのお見積もりに対応しているため、小規模な依頼ほど短期間での回答が期待できます。急ぎの場合はLINEでのご相談がスムーズです。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">繁忙期だけスポット契約に切り替えることはできますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>繁忙期だけスポット契約に切り替えることが可能です。</strong> 月額契約からスポット契約への切り替え、あるいはその逆も、事前のご相談により柔軟に対応しています。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n6">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">6. 納期・スケジュール管理</h2>
+          <span class="category-count">3 件</span>
+        </div>
+        <p class="category-lead">設計外注では、納期対応力とスピードが選定の重要な判断材料になります。このカテゴリでは、標準的な納期対応や全国対応の範囲について解説します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">図面の枚数が多い場合、納期はどう変わりますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>図面の枚数が多い案件は、通常の目安（2〜3枚で2〜3営業日）より納期が長くなる傾向があります。</strong> 案件規模に応じた具体的なスケジュールは、見積り時に個別にご案内します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">地方の案件でも現地訪問は必要ですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>オンライン打ち合わせとクラウド共有により、現地訪問なしで進行できる体制です。</strong> 全国どこの案件でも、対面での打ち合わせを前提とせずに依頼を完結できます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">繁忙期で依頼が集中している場合でも納期は守られますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>繁忙期の急な案件増加にも柔軟に対応できる体制を整えています。</strong> ただし依頼のタイミングによっては調整が必要になる場合があるため、繁忙期の依頼はできるだけ早めのご相談をおすすめします。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n7">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">7. 品質管理・設計レビュー体制</h2>
+          <span class="category-count">5 件</span>
+        </div>
+        <p class="category-lead">海外スタッフが作図を行う体制だからこそ、品質担保の仕組みが重要になります。このカテゴリでは、日本人監修者を含めたチェック体制について解説します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">日本人監修者とはどのような役割の人ですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>日本人監修者は、建築士や電気工事会社の資格・経歴を持つスタッフが担当する品質チェック役です。</strong> 図面監修や技術指導も行い、国内基準に沿った作図品質を保証する役割を担っています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">作図した図面はどのようなチェック工程を経て納品されますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>作図 → 内部チェック → 日本人監修という3段階のチェック工程を経て納品されます。</strong> 専門訓練を受けたCADオペレーターが作図を担当し、納品前には必ず日本人監修者が確認します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">品質チェックは誰が最終確認を行いますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>最終確認は日本人監修者（建築士・電気工事士）が行います。</strong> 納品前に必ず日本人が確認するため、品質基準が統一されています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">納品後に図面のミスが見つかった場合はどうなりますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>納品後に問題が発覚した場合も迅速に対応します。</strong> 初回・2回目の修正は無料で対応しており、継続案件については専用ルールが設けられています（詳細は<a href="#cat-n10">納品後の対応</a>を参照）。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">品質面で国内正社員と比べて差はありますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>日本人監修者による全件チェック体制により、国内同等の品質を目指しています。</strong> 経験スタッフが全件チェックを行うことで、安心の日本品質を掲げています。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n8">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">8. 設計者のスキル・体制・アサイン方法</h2>
+          <span class="category-count">5 件</span>
+        </div>
+        <p class="category-lead">「誰が設計するのか」は品質と信頼性を左右する重要なポイントです。このカテゴリでは、CADオペレーター・監修者・通訳コーディネーターの体制について解説します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">担当するCADオペレーターはどのような訓練を受けていますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>担当するCADオペレーターは、電気CAD専門訓練を修了したスタッフです。</strong> Tfas、Rebro、AutoCAD、Revitといった複数のCADソフトに対応できるスキルを備えています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">案件ごとに専任のオペレーターがつきますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>案件の要件に応じて適切な人材がアサインされます。</strong> 継続案件では月額契約（専任チーム制）を選択することで、専任に近い形で対応するオペレーターを確保しやすくなります。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">通訳コーディネーターはどのような役割を担っていますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>通訳コーディネーターは、日本語の指示を正確にオペレーターへ伝達する役割を担っています。</strong> 電気設備専門用語への対応、進行管理、技術通訳を行う日英バイリンガルのスタッフで、常駐体制が敷かれています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">日本人監修者はどのような資格・経歴を持っていますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>日本人監修者は、建築士や電気工事士としての資格・経歴を持つスタッフです。</strong> 品質チェック、図面監修、技術指導を担当し、事業全体の監修も建築士・電気工事会社が行っています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">スタッフの体制はどのくらいの規模ですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>100名以上の外国人設計士（CADオペレーター）が在籍しています。</strong> これに加えて、日本人監修者と通訳コーディネーターがチーム体制でサポートする構成です。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n9">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">9. 秘密保持（NDA）・情報セキュリティ・データ管理</h2>
+          <span class="category-count">8 件</span>
+        </div>
+        <p class="category-lead">図面には発注元のノウハウが詰まっているため、情報管理体制の確認は外注検討における重要な論点です。このカテゴリではNDAとデータ管理の具体的な取り組みを解説します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">NDAは依頼の初期段階で締結してもらえますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>NDAは即時に締結する体制を整えています。</strong> 詳細な仕様や実績図面を共有する前の段階で、秘密保持契約を結ぶことが可能です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">ファイル共有はどのような環境で行われますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>ファイル共有は権限管理されたクラウド環境に限定して行われます。</strong> アクセスログの管理も行われており、誰がいつアクセスしたかを追跡できる体制です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">図面データへのアクセス権限はどのように管理されていますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>図面データへのアクセスは、権限管理されたクラウド上で制御されています。</strong> アクセスログを管理することで、不要なアクセスや情報の持ち出しを防止しています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">データの保管期間や保管ルールは定められていますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>データ保管ルールが定められています。</strong> あわせてデータ削除ルールも設けられており、案件終了後のデータの取り扱いについてもルールに基づいて運用されています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">契約終了後のデータ削除には対応してもらえますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>データ削除ルールに基づき、契約終了後のデータ削除に対応しています。</strong> 具体的な削除のタイミングや方法については、契約時にご案内します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">スタッフの私物PCでの作業は行われていますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>私物PCの利用は禁止されています。</strong> 業務用に管理されたPC環境でのみ作業が行われる体制です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">図面データや資料の社外持ち出しに関するルールはありますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>PCの持ち出しは禁止されています。</strong> あわせて入退室管理も行われており、物理的なセキュリティ対策も講じられています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">スタッフへのセキュリティ教育は実施されていますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>スタッフへのセキュリティ教育を徹底しています。</strong> NDA即時締結、権限管理されたクラウド共有、アクセスログ管理、データ保管・削除ルール、私物PC利用禁止、PC持ち出し禁止、入退室管理とあわせて、設計データを日本基準で守る体制を構築しています。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n10">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">10. 納品後の対応</h2>
+          <span class="category-count">5 件</span>
+        </div>
+        <p class="category-lead">納品して終わりではなく、その後の修正対応も外注先選定の重要な判断材料です。このカテゴリでは、納品後の修正ルールについて解説します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">3回目以降の修正にも対応してもらえますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>3回目以降の修正についても対応可能ですが、内容によっては別途ご相談とさせていただく場合があります。</strong> 初回・2回目の修正は無料である一方、それ以降の取り扱いは案件ごとに個別にご案内します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">継続案件の場合、修正対応のルールは変わりますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>継続案件については専用の修正対応ルールが設けられています。</strong> 単発の依頼と異なり、月額契約（専任チーム制）を通じて継続的な修正対応がしやすい体制です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">納品後に仕様変更が発生した場合はどうなりますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>納品後の仕様変更は、内容に応じて個別にご相談のうえ対応します。</strong> 軽微な修正は無料対応の範囲に含まれる場合がありますが、大幅な仕様変更は追加のご相談が必要です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">竣工図の反転などの後工程も依頼できますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>竣工図反転を含む基礎作図の後工程にも対応しています。</strong> トレースやプロット図の作成とあわせて、必要な工程だけを切り出して依頼することも可能です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">過去に依頼した図面データを再度参照してもらうことはできますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>データ保管ルールの範囲内で、過去に依頼した図面データを参照した対応が可能です。</strong> 継続的に依頼いただく場合、過去案件の情報を踏まえた作図につなげやすくなります。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n11">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">11. 対応CADソフト・データ形式・互換性</h2>
+          <span class="category-count">4 件</span>
+        </div>
+        <p class="category-lead">CADソフトの違いによるデータ互換性の問題は、外注先選定時によく相談される実務的な論点です。このカテゴリでは対応ソフトについて解説します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">Tfas以外のソフトを使っている場合でも対応できますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>Tfas以外のソフトをお使いの場合でも対応可能です。</strong> Rebro、AutoCAD、Jw_cad、Revitなど主要5ソフトすべてに対応しており、その他のソフトについても個別にご相談いただけます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">御社で使用しているCAD環境にそのまま合わせてもらえますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>御社のルールや設定ファイルに合わせた作図に対応しています。</strong> 主要5ソフトすべてに対応しているため、御社の環境にそのまま導入できる体制です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">Jw_cadでの図面作成にも対応していますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>Jw_cadでの図面作成にも対応しています。</strong> 建築CADとしてのJw_cadを含め、主要5ソフト（Tfas、Rebro、AutoCAD、Jw_cad、Revit）すべてに対応しています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">異なるCADソフト間でのデータ変換にも対応していますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>案件内容に応じて、CADソフト間のデータ変換にも対応可能です。</strong> BIMモデル作成時の干渉チェックなど、Rebro・Revitを用いた連携作業にも対応しています。詳細な変換可否は依頼時にご確認ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n12">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">12. スポット依頼・部分外注・繁忙期対応</h2>
+          <span class="category-count">6 件</span>
+        </div>
+        <p class="category-lead">すべての工程を丸ごと外注する必要はなく、基礎作図だけ、設計補助だけといった部分的な切り出しも可能です。このカテゴリでは、単発依頼や無料トライアルの活用方法を解説します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">トレースやプロット図の作成など基礎作図だけの依頼はできますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>トレース、竣工図反転、プロット図といった基礎作図だけの依頼が可能です。</strong> まずはお試しで基礎作図だけ頼みたいという段階からご依頼いただけます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">系統図作成や負荷計算といった設計補助業務だけを依頼できますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>系統図作成、単線結線図、負荷計算、照度計算、器具配置といった設計補助業務だけの依頼が可能です。</strong> 基礎作図に慣れてきた段階で、依頼範囲を広げる形で利用されることが多い工程です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">自立作図やBIMモデル作成まで一括して任せることはできますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>施工図作成、自立作図、プロット計画、BIMモデル作成、干渉チェックまで一括して任せることが可能です。</strong> 「トータルで全部任せたい」という段階の依頼に対応する工程です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">3案件までの無料トライアルとはどのような内容ですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>最初の3案件を無料でお試しいただけるトライアル制度です。</strong> 実案件で品質・スピード・やり取りのすべてをご確認いただき、フィードバックを通じて御社のルール・仕様を整理する流れになっています。</p>
+            <div class="faq-table-wrap"><table class="faq-table"><thead><tr><th>ステップ</th><th>内容</th></tr></thead><tbody><tr><td>STEP1</td><td>3案件を無料で依頼</td></tr><tr><td>STEP2</td><td>フィードバックで作図ルールを整理</td></tr><tr><td>STEP3</td><td>御社専用マニュアル構築</td></tr><tr><td>STEP4</td><td>本稼働（品質保証のもと本格サポート開始）</td></tr></tbody></table></div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">トライアル後、本稼働にはどのように移行しますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>トライアルで整理した作図ルールをもとに御社専用のマニュアルを構築したうえで、本稼働へ移行します。</strong> 「ゼロから指示しなくても伝わる」状態を作ってから本格的なサポートを開始する流れです。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">繁忙期だけ一時的に外部リソースを増やすことはできますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>繁忙期だけ一時的に外部リソースを増やすことが可能です。</strong> 急な案件増加・繁忙期にも柔軟に対応できる体制を整えており、スポット契約・月額契約を状況に応じて切り替えることもできます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n13">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">13. 海外対応</h2>
+          <span class="category-count">4 件</span>
+        </div>
+        <p class="category-lead">海外スタッフとのやり取りに不安を感じる方も多いですが、通訳コーディネーターの常駐によって日本語だけで完結する体制が整っています。このカテゴリでは海外オペレーターとの連携について解説します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">海外スタッフとのやり取りは英語が必要ですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>英語は不要です。</strong> 通訳コーディネーターが常駐しており、打合せ・図面確認・修正まで日本語で完結する体制のため、日本語での指示のみでやり取りが可能です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">通訳コーディネーターを介したやり取りはどのように進みますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>通訳コーディネーターが日本語の指示を正確にCADオペレーターへ伝達する形で進みます。</strong> 電気設備専門用語にも対応した日英バイリンガルのスタッフが、進行管理と技術通訳を兼ねて常駐しています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">海外拠点のスタッフに直接指示を伝える必要がありますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>海外拠点のスタッフへ直接指示を伝える必要はありません。</strong> 日本人監修者・通訳コーディネーターを介して指示が伝達される体制のため、依頼者は日本語での意思疎通のみで完結します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">時差により納期に影響が出ることはありますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>時差は約2〜3時間程度のため、日本のビジネス時間内のご連絡であれば当日・翌日対応が可能です。</strong> ただし、時差がある分、余裕を持ったスケジュールでのご依頼をお勧めします。緊急時はLINEでの相談も可能です。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n14">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">14. 内製設計との違い・使い分け方</h2>
+          <span class="category-count">5 件</span>
+        </div>
+        <p class="category-lead">「すべて内製すべきか、外注すべきか」は多くの企業が悩むポイントです。このカテゴリでは内製と外注の使い分け方を解説します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">社内に電気設計者を採用するのと外注するのでは何が違いますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>外注はコスト最適化とスピード対応の両面でメリットがあります。</strong> 経験スタッフが全件チェックする体制のもと、最大40%の人件費・採用コスト削減と、最短24時間対応というスピード対応を両立できる点が、内製とは異なる特長です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">繁忙期だけ外注し、通常期は内製に戻すといった使い方はできますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>繁忙期だけスポット契約を利用し、それ以外の時期は柔軟に対応を変えるという使い方が可能です。</strong> 急な案件増加や繁忙期にも柔軟に対応できる体制のため、社内リソースの過不足に応じた使い分けができます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">若手設計者の育成負担を軽減する目的で活用できますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>若手育成に時間を取られているという課題の解決策として活用できます。</strong> 定型的な作図業務を外部に任せることで、社内の設計者はより上流の業務や育成に時間を割きやすくなります。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">一部の工程だけ内製に残し、それ以外を外注することはできますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>基礎作図・設計補助・自立作図/BIMという3つの工程のうち、必要な工程だけを選んで外注することができます。</strong> 「まずはお試しで基礎作図だけ」「慣れてきたら依頼範囲を広げる」といった段階的な使い方も可能です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">外注によって固定費（人件費・採用コスト）はどの程度抑えられますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>最大40%の人件費・採用コスト削減が見込めます。</strong> 経験スタッフが全件チェックする体制により、コストを抑えながら国内同等の品質を維持することを目指しています。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n15">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">15. トラブル対応・よくある失敗と回避策</h2>
+          <span class="category-count">5 件</span>
+        </div>
+        <p class="category-lead">外注にまつわる不安の多くは、体制とコミュニケーションフローを理解することで解消できます。このカテゴリでは、トラブル回避につながる仕組みを紹介します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">外注先とのやり取りで意思疎通のトラブルが起きないか心配です</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>通訳コーディネーターが常駐しており、打合せ・図面確認・修正まですべて日本語で完結する体制のため、意思疎通のトラブルは起きにくい仕組みになっています。</strong> 電気設備専門用語にも対応した日英バイリンガルスタッフが、指示内容を正確に伝達します。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">依頼内容と違う図面が納品された場合はどうすればよいですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>依頼内容と異なる納品があった場合は、初回・2回目の修正が無料で対応されます。</strong> 納品後に問題が発覚した場合も迅速に対応する体制が整っています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">担当オペレーターの変更は可能ですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>案件の状況に応じて、アサインされる担当オペレーターの調整が可能です。</strong> 要件に応じて適切な人材をアサインし、進行管理を行う体制のため、相性や品質面での相談があれば窓口にお伝えください。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">繁忙期に依頼が集中して対応してもらえなくなることはありますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>急な案件増加・繁忙期にも柔軟に対応できる体制を整えていますが、依頼のタイミングによっては調整が必要になる場合があります。</strong> 繁忙期に依頼が集中しそうな場合は、早めのご相談をおすすめします。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">初めての外注で失敗しないためのポイントはありますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>3案件までの無料トライアルを活用し、品質・スピード・やり取りを確認したうえで本稼働に移行することが、失敗を避けるポイントです。</strong> トライアルのフィードバックを通じて作図ルールを整理し、御社専用マニュアルを構築してから本格運用に入る流れが用意されています。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n16">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">16. 料金以外の比較ポイント</h2>
+          <span class="category-count">5 件</span>
+        </div>
+        <p class="category-lead">外注先選定では価格だけでなく、対応力や品質保証の仕組みも重要な判断材料です。このカテゴリでは、公開されている競合比較の観点を紹介します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">海外CADオペレーター会社と比べてどのような違いがありますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>日本人監修者による品質チェック体制の有無が、海外の競合他社との大きな違いです。</strong> 公開されている比較情報によれば、フィリピンの競合他社はTfas・Rebro対応や日本人監修の有無が不明とされる一方、当社はTfas・Rebro対応、日本人監修、小規模スタートのいずれも対応しています。料金については、まずはお気軽にご相談ください。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">国内正社員を雇用する場合と比べてコスト面でどう違いますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>国内正社員を雇用する場合と比べて、時給・月額ともに抑えられた料金設定を目指しています。</strong> 具体的な料金はご依頼内容により異なるため、まずはご相談ください。また、正社員採用のような小規模スタートのしにくさがなく、1案件からの依頼が可能な点も異なります。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">国内フリーランスに依頼する場合と比べた際のメリットは何ですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>国内フリーランスに依頼する場合と比べて、時給・月額ともに抑えた料金設定である点がメリットです。</strong> 具体的な料金はご依頼内容により異なるため、まずはご相談ください。あわせて日本人監修による品質チェック体制が整っている点も違いとして挙げられます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">料金が同程度の他社と比較する際、どこを見ればよいですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>料金だけでなく、Tfas・Rebro対応の可否と日本人監修の有無を確認することをおすすめします。</strong> 公開されている比較情報では、ベトナムの競合他社はTfas・Rebro対応は○である一方、日本人監修の有無は不明とされています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">小規模スタートのしやすさは他社と比べてどう違いますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>1案件からの依頼と3案件無料トライアルにより、小規模スタートのしやすさを重視した設計になっています。</strong> 比較情報上、フィリピンの競合他社は小規模スタートが△、ベトナムの競合他社と国内正社員は✕とされており、この点が差別化ポイントとなっています。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n17">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">17. 契約前によくある不安・懸念</h2>
+          <span class="category-count">5 件</span>
+        </div>
+        <p class="category-lead">外注が初めての企業ほど、契約前に多くの不安を抱えるものです。このカテゴリでは、よくある懸念とその解消方法を紹介します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">外注が初めてで不安なのですが相談だけでも可能ですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>発注を前提としない相談だけでも問題なく対応してもらえます。</strong> メール・フォームからの問い合わせや、LINEでの無料相談窓口が用意されており、疑問点を解消したうえで発注可否を判断できます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">海外スタッフに図面を任せることに品質面の不安があります</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>日本人監修者による全件チェック体制により、品質面の不安を軽減する仕組みが整っています。</strong> 作図 → 内部チェック → 日本人監修という3段階のチェック工程を経て納品されるため、国内同等の品質を目指した体制です。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">情報漏洩が心配なのですが対策はありますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>NDAの即時締結や、権限管理されたクラウド共有、アクセスログ管理といった対策により情報漏洩リスクを低減しています。</strong> 私物PCの利用禁止、PC持ち出し禁止、入退室管理、セキュリティ教育など、複数の対策を組み合わせた体制です（詳細は<a href="#cat-n9">秘密保持（NDA）・情報セキュリティ・データ管理</a>を参照）。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">トライアルで満足できなかった場合、そのまま契約しなくてもよいですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>トライアルはお試しでの利用を前提としており、無理に本契約へ進める必要はありません。</strong> 「外注は試してみないと分からない」という考えのもと、まず3案件を無料でお試しいただき、品質・スピード・やり取りを確認してから判断できる仕組みです。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">小規模な会社でも継続して依頼できますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>1案件からの依頼が可能で、小規模な会社でも継続して依頼しやすい料金体系になっています。</strong> スポット契約からスタートし、依頼が安定してきた段階で月額契約（専任チーム制）へ移行するといった使い方もできます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-category" id="cat-n18">
+        <div class="category-header">
+          <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h2 class="category-title">18. 導入事例・活用シーン別のQ&A</h2>
+          <span class="category-count">6 件</span>
+        </div>
+        <p class="category-lead">実際にどのような立場・課題を持つ発注元が活用しているかを知ることは、自社での活用イメージを持つうえで参考になります。このカテゴリでは、シーン別の活用例をQ&A形式で紹介します。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">ゼネコンが電気設備図面の外注先として活用する場合、どのような依頼が多いですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>ゼネコンからは、電気設備図面の外注先として、品質を落とさずに人手不足を補う目的での依頼が多くあります。</strong> 「図面の品質は落とせないが人手が足りない」という課題に対して、日本人監修者によるチェック体制のもとで対応しています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">サブコンがTfas対応の外部パートナーを探している場合、どのように活用できますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>Tfas対応の外部パートナーを探しているサブコンからの依頼にも対応できます。</strong> 専門工事の設計パートナーとして、Tfas・Rebro・AutoCAD・Jw_cad・Revitといった主要ソフトに対応した作図を提供しています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">電気設備専門会社が繁忙期だけ設計リソースを増やしたい場合、どう活用できますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>繁忙期だけ設計業務の柔軟なリソースとして活用できます。</strong> スポット契約を利用することで、繁忙期だけでも設計を任せたいという電気設備専門会社のニーズに対応しています。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">設計人材の採用・定着に悩む会社でも活用できますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>設計人材の採用・定着・リソース不足という課題の解決策として活用できます。</strong> 外部のCADオペレーターと日本人監修者によるチーム体制を活用することで、採用や定着に依存しない設計リソースの確保が可能になります。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">若手育成に時間を取られている会社が活用するメリットは何ですか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>若手育成に割く時間を確保しながら、定型的な作図業務を外部に任せられる点がメリットです。</strong> 基礎作図・設計補助といった工程から段階的に依頼範囲を広げられるため、社内の育成体制を圧迫せずに設計業務を進められます。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <div class="q-badge"><span>Q</span></div>
+            <h3 class="q-text">残業の常態化を解消する目的で活用することはできますか？</h3>
+            <div class="q-toggle">+</div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>残業の常態化や図面作成の納期対応に追われている状況の解消を目的として活用できます。</strong> 最短24時間対応というスピード対応と、繁忙期の柔軟なリソース増強を組み合わせることで、社内の負荷を軽減する使い方が可能です。</p>
           </div>
         </div>
       </div>
