@@ -544,16 +544,16 @@
     .col-bullet-item { display: flex; align-items: flex-start; gap: 8px; padding-top: 8px; }
     .col-bullet-item:first-child { padding-top: 0; }
     .bullet-dot { display: block; width: 6px; height: 6px; background: #fff; flex-shrink: 0; margin-top: 7px; }
-    .bullet-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #fff; letter-spacing: 0.6px; line-height: 19.5px; }
+    .bullet-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #fff; letter-spacing: 0.6px; line-height: 19.5px; white-space: nowrap; }
     .col-section-head { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; padding-bottom: 16px; }
-    .col-company-name, .col-company-addr { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 22.75px; }
+    .col-company-name, .col-company-addr { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 22.75px; white-space: nowrap; }
     .col-company-addr { padding-top: 4px; }
     .col-line-link { display: flex; align-items: center; gap: 8px; margin-top: 16px; text-decoration: none; }
     .col-line-link:hover { opacity: 0.8; }
-    .line-link-icon { width: 20px; height: 20px; object-fit: contain; transform: rotate(180deg) scaleX(-1); flex-shrink: 0; }
-    .line-link-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; }
+    .line-link-icon { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
+    .line-link-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; white-space: nowrap; }
     .col-links { display: flex; flex-direction: column; }
-    .col-links a { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; text-decoration: none; padding-top: 12px; }
+    .col-links a { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; text-decoration: none; white-space: nowrap; padding-top: 12px; }
     .col-links a:first-child { padding-top: 0; }
     .col-links a:hover { opacity: 0.75; }
     .footer-partner { display: flex; flex-direction: column; gap: 8px; }
@@ -562,7 +562,7 @@
     .partner-logo { width: 182px; height: 42px; object-fit: cover; display: block; }
     .partner-link-icon { position: absolute; bottom: 11px; right: 11px; width: 24px; height: 24px; object-fit: contain; }
     .footer-copyright { width: 100%; border-top: 1px solid #fff; padding-top: 33px; display: flex; align-items: center; justify-content: center; }
-    .copyright-text { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 12px; color: #fff; letter-spacing: 0.6px; line-height: 16px; text-align: center; }
+    .copyright-text { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 12px; color: #fff; letter-spacing: 0.6px; line-height: 16px; text-align: center; white-space: nowrap; }
 
     /* ========================================
        RESPONSIVE — TABLET (≤768px)
@@ -589,6 +589,9 @@
 
       .footer-section { padding: 60px 0; }
       .footer-inner { padding: 0 24px; }
+      .footer-columns { flex-direction: column; gap: 32px; }
+      .partner-card { width: 100%; }
+      .copyright-text { white-space: normal; }
       .bullet-text { white-space: normal; }
       .col-company-name, .col-company-addr { white-space: normal; }
     }
@@ -623,7 +626,8 @@
       .line-text-block { gap: 12px; }
       .line-title { font-size: 26px; letter-spacing: 1px; }
       .line-eyebrow { white-space: normal; }
-      .line-desc { white-space: normal; }
+      .line-desc { white-space: normal; width: 100%; max-width: 100%; box-sizing: border-box; }
+      .line-desc p { word-break: normal; overflow-wrap: anywhere; }
       .line-cta-btn { width: 100%; justify-content: center; padding: 0 24px 0 68px; }
 
       .footer-inner { padding: 0 20px; gap: 24px; }
@@ -3448,7 +3452,7 @@
           <p class="col-company-name">OTEMOTO株式会社</p>
           <p class="col-company-addr">愛知県西尾市新村町郷東5番地</p>
           <a href="#" class="col-line-link">
-            <img class="line-link-icon" src="https://www.figma.com/api/mcp/asset/163c73c9-c159-4f99-8173-e3878ee1104f" alt="LINE">
+            <img class="line-link-icon" src="./images/icon-line-footer.png" alt="LINE">
             <span class="line-link-text">LINEでお問い合わせ</span>
           </a>
         </div>
@@ -3459,16 +3463,16 @@
             <a href="#">会社概要</a>
             <a href="#">品質保証</a>
             <a href="#">実績紹介</a>
-            <a href="#">プライバシーポリシー</a>
+            <a href="privacy.html">プライバシーポリシー</a>
           </div>
         </div>
       </div>
       <div class="footer-partner">
         <p class="partner-label">業務提携 : CAD外注・設計図面作成のパートナー企業</p>
-        <div class="partner-card">
-          <img class="partner-logo" src="https://www.figma.com/api/mcp/asset/c277fef3-e251-44dd-92b7-421436be6f15" alt="Plus358">
-          <img class="partner-link-icon" src="https://www.figma.com/api/mcp/asset/2f1313ea-6bb9-4fcc-b6dd-986d213d69b8" alt="">
-        </div>
+        <a href="https://plus358.com/" target="_blank" rel="noopener noreferrer" class="partner-card">
+          <img class="partner-logo" src="./images/partner-plus358-logo.png" alt="Plus358">
+          <img class="partner-link-icon" src="./images/icon-link-simple.png" alt="">
+        </a>
       </div>
       <div class="footer-copyright">
         <p class="copyright-text">© 2026 OTEMOTO株式会社 All Rights Reserved.</p>
