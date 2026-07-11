@@ -1296,14 +1296,15 @@
       /* DRAWINGS */
       .drawings-section { padding: 40px 20px 56px; }
       .drawings-title { font-size: 26px; letter-spacing: 2px; white-space: normal; }
-      .drawings-desc { font-size: 15px; }
+      .drawings-desc { font-size: 15px; width: 100%; max-width: 100%; box-sizing: border-box; word-break: normal; overflow-wrap: anywhere; }
       .drawings-grid { flex-direction: column; gap: 16px; }
       .drawing-card { flex: none; min-width: 0; width: 100%; }
 
       /* SECURITY */
       .security-section { padding: 40px 20px 56px; }
       .security-title { font-size: 26px; letter-spacing: 2px; }
-      .security-desc { white-space: normal; }
+      .security-desc { white-space: normal; width: 100%; max-width: 100%; box-sizing: border-box; }
+      .security-desc p { word-break: normal; overflow-wrap: anywhere; }
       .security-grid { gap: 10px; }
       .security-item { width: 100%; padding: 20px 16px; height: auto; }
       .item-title { font-size: 16px; white-space: normal; }
