@@ -101,14 +101,14 @@
       gap: 12px;
       height: 68px;
       padding: 0 38px;
-      background-color: #0ab394;
+      background-color: #E8873A; /* CTA: orange */
       border-radius: 8px;
       text-decoration: none;
       position: relative;
       white-space: nowrap;
     }
 
-    .cv-button:hover { background-color: #2B9589; }
+    .cv-button:hover { background-color: #D1732A; }
 
     .cv-button .cv-icon {
       width: 22px;
@@ -230,7 +230,7 @@
       justify-content: center;
       gap: 12px;
       height: 64px;
-      background: #0ab394;
+      background: #E8873A;
       border-radius: 8px;
       text-decoration: none;
       width: 100%;
@@ -248,7 +248,7 @@
       letter-spacing: 0.32px;
       line-height: 1;
     }
-    .sp-menu-line-btn:hover { background: #2B9589; }
+    .sp-menu-line-btn:hover { background: #D1732A; }
 
     /* ========================================
        FOOTER
@@ -269,8 +269,8 @@
     .col-company-addr { padding-top: 4px; }
     .col-line-link { display: flex; align-items: center; gap: 8px; margin-top: 16px; text-decoration: none; }
     .col-line-link:hover { opacity: 0.8; }
-    .col-line-link svg { width: 18px; height: 18px; color: #fff; flex-shrink: 0; }
-    .line-link-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; white-space: nowrap; }
+    .col-line-link svg { width: 18px; height: 18px; color: #E8873A; flex-shrink: 0; }
+    .line-link-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #E8873A; letter-spacing: 0.7px; line-height: 20px; white-space: nowrap; }
     .col-links { display: flex; flex-direction: column; }
     .col-links a { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; text-decoration: none; white-space: nowrap; padding-top: 12px; }
     .col-links a:first-child { padding-top: 0; }
@@ -387,7 +387,7 @@
       width: 100%;
       max-width: 320px;
       height: 64px;
-      background: #0ab394;
+      background: #1a1a1a;
       border: none;
       border-radius: 8px;
       font-family: 'Noto Sans JP', sans-serif;
@@ -398,7 +398,7 @@
       cursor: pointer;
       transition: background 0.15s;
     }
-    .form-submit-btn:hover { background: #2B9589; }
+    .form-submit-btn:hover { background: #333333; }
     .form-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
     .form-submit-error {
@@ -830,6 +830,9 @@
     })();
   </script>
 
+  <!-- EmailJS SDK (自動返信メール用) -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <!-- CONTACT FORM LOGIC -->
   <script>
     (function() {
@@ -837,6 +840,32 @@
       const successBox = document.getElementById('contact-success');
       const submitBtn = document.getElementById('submit-btn');
       const submitError = document.getElementById('submit-error');
+
+      // ▼▼▼ ここにEmailJSのPublic Key/Service ID/Template IDを設定してください ▼▼▼
+      const EMAILJS_PUBLIC_KEY = '8H2bTkxasHu5qc0SN';
+      const EMAILJS_SERVICE_ID = 'service_c9pcjge';
+      const EMAILJS_TEMPLATE_ID = 'template_c59q9uj';
+      // ▲▲▲ ここにEmailJSのPublic Key/Service ID/Template IDを設定してください ▲▲▲
+
+      if (window.emailjs) {
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+      }
+
+      // お客様への自動返信メール送信（補助機能）。失敗しても送信完了フローには影響させない。
+      function sendAutoReply() {
+        if (!window.emailjs) return;
+
+        const templateParams = {
+          to_email: document.getElementById('email').value.trim(),
+          to_name: document.getElementById('name').value.trim(),
+          inquiry_message: document.getElementById('message').value.trim()
+        };
+
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+          .catch(function(err) {
+            console.error('EmailJS自動返信メールの送信に失敗しました:', err);
+          });
+      }
 
       function showError(fieldId) {
         const row = document.getElementById('row-' + fieldId) || document.getElementById(fieldId).closest('.form-row, .consent-row');
@@ -965,6 +994,7 @@
           .then(function(res) { return res.json(); })
           .then(function(data) {
             if (data.success) {
+              sendAutoReply();
               form.hidden = true;
               successBox.hidden = false;
               successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
