@@ -845,6 +845,7 @@
       const EMAILJS_PUBLIC_KEY = '8H2bTkxasHu5qc0SN';
       const EMAILJS_SERVICE_ID = 'service_c9pcjge';
       const EMAILJS_TEMPLATE_ID = 'template_c59q9uj';
+      const INTERNAL_TEMPLATE_ID = 'template_ulp7sfg';
       // ▲▲▲ ここにEmailJSのPublic Key/Service ID/Template IDを設定してください ▲▲▲
 
       if (window.emailjs) {
@@ -864,6 +865,52 @@
         emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
           .catch(function(err) {
             console.error('EmailJS自動返信メールの送信に失敗しました:', err);
+          });
+      }
+
+      function formatSubmittedAt(date) {
+        const y = date.getFullYear();
+        const m = date.getMonth() + 1;
+        const d = date.getDate();
+        const hh = String(date.getHours()).padStart(2, '0');
+        const mm = String(date.getMinutes()).padStart(2, '0');
+        return y + '年' + m + '月' + d + '日 ' + hh + ':' + mm;
+      }
+
+      function getReferrerSummary() {
+        const checked = Array.from(document.querySelectorAll('input[name="きっかけ[]"]:checked'))
+          .map(function(el) { return el.value; });
+        const detail = document.getElementById('referrer-detail').value.trim();
+        let summary = checked.join('、');
+        if (detail) {
+          summary = summary ? summary + '（' + detail + '）' : detail;
+        }
+        return summary || '未回答';
+      }
+
+      // 社内向け通知メール送信(補助機能)。失敗しても送信完了フローには影響させない。
+      function sendInternalNotification() {
+        if (!window.emailjs) return;
+
+        const templateParams = {
+          inquiry_type: document.getElementById('inquiry-type').value,
+          company: document.getElementById('company').value.trim(),
+          department: document.getElementById('department').value.trim(),
+          customer_name: document.getElementById('name').value.trim(),
+          furigana: document.getElementById('kana').value.trim(),
+          customer_email: document.getElementById('email').value.trim(),
+          phone: document.getElementById('tel').value.trim(),
+          fax: document.getElementById('fax').value.trim(),
+          zipcode: document.getElementById('zip').value.trim(),
+          address: document.getElementById('address').value.trim(),
+          referrer: getReferrerSummary(),
+          inquiry_message: document.getElementById('message').value.trim(),
+          submitted_at: formatSubmittedAt(new Date())
+        };
+
+        emailjs.send(EMAILJS_SERVICE_ID, INTERNAL_TEMPLATE_ID, templateParams)
+          .catch(function(err) {
+            console.error('EmailJS社内通知メールの送信に失敗しました:', err);
           });
       }
 
@@ -995,6 +1042,7 @@
           .then(function(data) {
             if (data.success) {
               sendAutoReply();
+              sendInternalNotification();
               form.hidden = true;
               successBox.hidden = false;
               successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
