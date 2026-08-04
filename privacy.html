@@ -240,10 +240,14 @@
     .col-section-head { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; padding-bottom: 16px; }
     .col-company-name, .col-company-addr { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 22.75px; white-space: nowrap; }
     .col-company-addr { padding-top: 4px; }
-    .col-line-link { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 52px; padding: 0 24px; margin-top: 16px; background-color: #E8873A; border-radius: 8px; text-decoration: none; transition: background-color 0.15s; }
-    .col-line-link:hover { background-color: #D1732A; }
-    .line-link-icon { width: 20px; height: 20px; flex-shrink: 0; color: #fff; }
-    .line-link-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 14px; color: #fff; letter-spacing: 0.32px; line-height: 1; white-space: nowrap; }
+    .cv-button.footer-cv-button {
+      height: 54px;
+      padding: 0 30px;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .cv-button.footer-cv-button .cv-icon { width: 18px; height: 18px; }
+    .cv-button.footer-cv-button span { font-size: 13px; }
     .col-links { display: flex; flex-direction: column; }
     .col-links a { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; text-decoration: none; white-space: nowrap; padding-top: 12px; }
     .col-links a:first-child { padding-top: 0; }
@@ -472,9 +476,9 @@
           <h4 class="col-section-head">運営</h4>
           <p class="col-company-name">OTEMOTO株式会社</p>
           <p class="col-company-addr">愛知県西尾市新村町郷東5番地</p>
-          <a href="contact.html" class="col-line-link">
-            <svg class="line-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
-            <span class="line-link-text">お問い合わせはこちら</span>
+          <a href="contact.html" class="cv-button footer-cv-button">
+            <svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+            <span>お問い合わせはこちら</span>
           </a>
         </div>
         <div class="footer-col">

@@ -458,10 +458,6 @@
        SHARED: CTA BUTTON
     ======================================== */
     .cta-wrap { display: flex; justify-content: center; }
-    .cta-button { display: flex; align-items: center; justify-content: center; position: relative; width: 448px; height: 72px; background: #fff; border: 1px solid #000; border-radius: 36px; text-decoration: none; cursor: pointer; }
-    .cta-button:hover { background: #f5f5f5; }
-    .cta-button span { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 16px; color: #000; letter-spacing: 0.32px; line-height: 1.6; white-space: nowrap; }
-    .cta-arrow { position: absolute; right: 23px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; object-fit: contain; }
 
     /* ========================================
        SHARED: STEP CARDS (flow + portfolio)
@@ -824,10 +820,14 @@
     .col-section-head { font-family: 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; padding-bottom: 16px; }
     .col-company-name, .col-company-addr { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 22.75px; white-space: nowrap; }
     .col-company-addr { padding-top: 4px; }
-    .col-line-link { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 52px; padding: 0 24px; margin-top: 16px; background-color: #E8873A; border-radius: 8px; text-decoration: none; transition: background-color 0.15s; }
-    .col-line-link:hover { background-color: #D1732A; }
-    .line-link-icon { width: 20px; height: 20px; flex-shrink: 0; color: #fff; }
-    .line-link-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 14px; color: #fff; letter-spacing: 0.32px; line-height: 1; white-space: nowrap; }
+    .cv-button.footer-cv-button {
+      height: 54px;
+      padding: 0 30px;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .cv-button.footer-cv-button .cv-icon { width: 18px; height: 18px; }
+    .cv-button.footer-cv-button span { font-size: 13px; }
     .col-links { display: flex; flex-direction: column; }
     .col-links a { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; text-decoration: none; white-space: nowrap; padding-top: 12px; }
     .col-links a:first-child { padding-top: 0; }
@@ -1053,7 +1053,6 @@
       .steps-wrap { flex-wrap: wrap; justify-content: center; gap: 24px; }
       .step-unit { flex: 1 1 calc(50% - 12px); max-width: calc(50% - 12px); }
       .step-card { width: 100%; }
-      .cta-button { width: 100%; max-width: 400px; }
 
       /* SERVICES */
       .services-section { padding: 60px 40px 80px; }
@@ -1138,7 +1137,6 @@
       .left-col { width: 100%; flex-shrink: 1; }
       .right-col { width: 100%; flex-shrink: 1; }
       .row-label { width: auto; flex-shrink: 1; }
-      .cta-button { width: 100%; max-width: 400px; box-sizing: border-box; }
       .step-unit { flex-shrink: 1; }
       .step-card { width: 100%; }
       .card-photo { flex-shrink: 1; }
@@ -1161,6 +1159,7 @@
       .logo { height: 56px; }
       nav { display: none; }
       .cv-button { display: none; }
+      .cta-wrap .cv-button { display: flex; }
       .hamburger-btn { display: flex; }
 
       /* HERO */
@@ -1358,8 +1357,6 @@
       /* OVERFLOW FIX — 固定幅・flex-shrink:0 リセット */
       .left-col, .right-col { width: 100%; flex-shrink: 1; max-width: 100%; }
       .row-label { width: auto; max-width: 100%; flex-shrink: 1; }
-      .cta-wrap { width: 100%; }
-      .cta-button { width: 100%; max-width: 100%; box-sizing: border-box; }
       .step-unit { flex-shrink: 1; max-width: 100%; }
       .step-card { width: 100%; box-sizing: border-box; }
       .card-photo { width: 100%; flex-shrink: 1; }
@@ -1594,7 +1591,7 @@
         </div>
       </div>
       <div class="cta-wrap">
-        <a href="#" class="cta-button"><span>無料で相談する</span><img class="cta-arrow" src="./images/icon-cta-arrow-team.png" alt=""></a>
+        <a href="contact.html" class="cv-button"><svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg><span>無料で相談する</span></a>
       </div>
     </div>
   </section>
@@ -1696,7 +1693,7 @@
         </div>
       </div>
       <div class="cta-wrap">
-        <a href="#" class="cta-button"><span>無料で相談する</span><img class="cta-arrow" src="./images/icon-cta-arrow-flow.png" alt=""></a>
+        <a href="contact.html" class="cv-button"><svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg><span>無料で相談する</span></a>
       </div>
     </div>
   </section>
@@ -1821,7 +1818,7 @@
         </div>
       </div>
       <div class="cta-wrap">
-        <a href="#" class="cta-button"><span>無料で相談する</span><img class="cta-arrow" src="./images/icon-cta-arrow-onboarding.png" alt=""></a>
+        <a href="contact.html" class="cv-button"><svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg><span>無料で相談する</span></a>
       </div>
     </div>
   </section>
@@ -1981,9 +1978,9 @@
           <h4 class="col-section-head">運営</h4>
           <p class="col-company-name">OTEMOTO株式会社</p>
           <p class="col-company-addr">愛知県西尾市新村町郷東5番地</p>
-          <a href="contact.html" class="col-line-link">
-            <svg class="line-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
-            <span class="line-link-text">お問い合わせはこちら</span>
+          <a href="contact.html" class="cv-button footer-cv-button">
+            <svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+            <span>お問い合わせはこちら</span>
           </a>
         </div>
         <div class="footer-col">
