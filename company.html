@@ -98,26 +98,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 12px;
       height: 68px;
-      padding-left: 82px;
-      padding-right: 38px;
-      background-color: #06C755;
+      padding: 0 38px;
+      background-color: #0ab394;
       border-radius: 8px;
       text-decoration: none;
       position: relative;
       white-space: nowrap;
     }
 
-    .cv-button:hover { background-color: #05b04c; }
+    .cv-button:hover { background-color: #2B9589; }
 
-    .cv-button .line-icon {
-      position: absolute;
-      left: calc(82px - 53px);
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 39px;
-      object-fit: contain;
+    .cv-button .cv-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      color: #fff;
     }
 
     .cv-button span {
@@ -233,15 +230,15 @@
       justify-content: center;
       gap: 12px;
       height: 64px;
-      background: #06C755;
+      background: #0ab394;
       border-radius: 8px;
       text-decoration: none;
       width: 100%;
     }
-    .sp-menu-line-btn img {
-      width: 34px;
-      height: 33px;
-      object-fit: contain;
+    .sp-menu-line-btn svg {
+      width: 26px;
+      height: 26px;
+      color: #fff;
     }
     .sp-menu-line-btn span {
       font-family: 'Noto Sans JP', sans-serif;
@@ -251,7 +248,7 @@
       letter-spacing: 0.32px;
       line-height: 1;
     }
-    .sp-menu-line-btn:hover { background: #05b04c; }
+    .sp-menu-line-btn:hover { background: #2B9589; }
 
     /* ========================================
        FOOTER
@@ -272,7 +269,7 @@
     .col-company-addr { padding-top: 4px; }
     .col-line-link { display: flex; align-items: center; gap: 8px; margin-top: 16px; text-decoration: none; }
     .col-line-link:hover { opacity: 0.8; }
-    .line-link-icon { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
+    .line-link-icon { width: 18px; height: 18px; flex-shrink: 0; color: #fff; }
     .line-link-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; white-space: nowrap; }
     .col-links { display: flex; flex-direction: column; }
     .col-links a { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; text-decoration: none; white-space: nowrap; padding-top: 12px; }
@@ -348,7 +345,7 @@
       .header-right { gap: 24px; }
       nav { gap: 16px; }
       nav a { font-size: 12px; }
-      .cv-button { height: 52px; padding-left: 64px; padding-right: 20px; }
+      .cv-button { height: 52px; padding: 0 20px; }
       .cv-button span { font-size: 14px; }
 
       .footer-section { padding: 60px 0; }
@@ -409,11 +406,9 @@
         <a href="index.html#portfolio">料金</a>
         <a href="index.html#faq">FAQ</a>
       </nav>
-      <a href="#" class="cv-button">
-        <img class="line-icon"
-          src="./images/icon-line-header.png"
-          alt="LINE">
-        <span>LINEで無料相談する</span>
+      <a href="contact.html" class="cv-button">
+        <svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+        <span>お問い合わせはこちら</span>
       </a>
       <button class="hamburger-btn" id="hamburger-btn" aria-label="メニューを開く">
         <span></span>
@@ -492,9 +487,9 @@
           <h4 class="col-section-head">運営</h4>
           <p class="col-company-name">OTEMOTO株式会社</p>
           <p class="col-company-addr">愛知県西尾市新村町郷東5番地</p>
-          <a href="#" class="col-line-link">
-            <img class="line-link-icon" src="./images/icon-line-footer.png" alt="LINE">
-            <span class="line-link-text">LINEでお問い合わせ</span>
+          <a href="contact.html" class="col-line-link">
+            <svg class="line-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+            <span class="line-link-text">お問い合わせはこちら</span>
           </a>
         </div>
         <div class="footer-col">
@@ -504,6 +499,7 @@
             <a href="company.html">会社概要</a>
             <a href="index.html">品質保証</a>
             <a href="index.html#drawings">実績紹介</a>
+            <a href="contact.html">お問い合わせ</a>
             <a href="privacy.html">プライバシーポリシー</a>
           </div>
         </div>
@@ -540,9 +536,9 @@
         <a href="index.html#faq">よくあるご質問</a>
       </nav>
       <div class="sp-menu-line-card">
-        <a href="#" class="sp-menu-line-btn">
-          <img src="./images/icon-line-header.png" alt="LINE">
-          <span>LINEで無料相談する</span>
+        <a href="contact.html" class="sp-menu-line-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+          <span>お問い合わせはこちら</span>
         </a>
       </div>
     </div>

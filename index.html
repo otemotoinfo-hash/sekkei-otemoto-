@@ -177,26 +177,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 12px;
       height: 68px;
-      padding-left: 82px;
-      padding-right: 38px;
-      background-color: #06C755;
+      padding: 0 38px;
+      background-color: #0ab394;
       border-radius: 8px;
       text-decoration: none;
       position: relative;
       white-space: nowrap;
     }
 
-    .cv-button:hover { background-color: #05b04c; }
+    .cv-button:hover { background-color: #2B9589; }
 
-    .cv-button .line-icon {
-      position: absolute;
-      left: calc(82px - 53px);
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 39px;
-      object-fit: contain;
+    .cv-button .cv-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      color: #fff;
     }
 
     .cv-button span {
@@ -794,20 +791,20 @@
     .faq-more-arrow { font-family: 'Inter', sans-serif; font-size: 16px; color: #000; line-height: 24px; }
 
     /* ========================================
-       LINE CTA
+       CONTACT CTA
     ======================================== */
     .line-section { background: #f4fdfc; padding: 80px 0; }
     .line-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; height: 124px; margin: 0 auto; padding: 0 32px; }
     .line-left { display: flex; align-items: center; gap: 20px; height: 124px; }
     .line-icon-circle { width: 104px; height: 104px; background: #fff; border-radius: 9999px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .line-icon-circle img { width: 50.8px; height: 58.5px; object-fit: contain; }
+    .line-icon-circle svg { width: 44px; height: 44px; color: #0ab394; }
     .line-text-block { display: flex; flex-direction: column; gap: 16px; justify-content: center; height: 100%; }
     .line-eyebrow { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 12px; color: #000; letter-spacing: 0.6px; line-height: 16px; white-space: nowrap; }
     .line-title { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 36px; color: #000; letter-spacing: 1.8px; line-height: 40px; white-space: nowrap; }
     .line-desc { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #000; letter-spacing: 0.7px; line-height: 20px; white-space: nowrap; }
-    .line-cta-btn { position: relative; display: flex; align-items: center; gap: 12px; height: 68px; padding: 0 38px 0 82px; background: #06c755; border-radius: 8px; text-decoration: none; flex-shrink: 0; transition: opacity 0.15s; }
-    .line-cta-btn:hover { opacity: 0.88; }
-    .line-btn-logo { position: absolute; left: 29px; top: 50%; transform: translateY(-50%); width: 40px; height: 39px; object-fit: contain; }
+    .line-cta-btn { display: flex; align-items: center; justify-content: center; gap: 12px; height: 68px; padding: 0 38px; background: #0ab394; border-radius: 8px; text-decoration: none; flex-shrink: 0; transition: background 0.15s; }
+    .line-cta-btn:hover { background: #2B9589; }
+    .line-btn-icon { width: 24px; height: 24px; flex-shrink: 0; color: #fff; }
     .line-btn-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 600; font-size: 16px; color: #fff; letter-spacing: 0.32px; line-height: 1; white-space: nowrap; }
 
     /* ========================================
@@ -829,7 +826,7 @@
     .col-company-addr { padding-top: 4px; }
     .col-line-link { display: flex; align-items: center; gap: 8px; margin-top: 16px; text-decoration: none; }
     .col-line-link:hover { opacity: 0.8; }
-    .line-link-icon { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
+    .line-link-icon { width: 18px; height: 18px; flex-shrink: 0; color: #fff; }
     .line-link-text { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; white-space: nowrap; }
     .col-links { display: flex; flex-direction: column; }
     .col-links a { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #fff; letter-spacing: 0.7px; line-height: 20px; text-decoration: none; white-space: nowrap; padding-top: 12px; }
@@ -960,15 +957,15 @@
       justify-content: center;
       gap: 12px;
       height: 64px;
-      background: #06C755;
+      background: #0ab394;
       border-radius: 8px;
       text-decoration: none;
       width: 100%;
     }
-    .sp-menu-line-btn img {
-      width: 34px;
-      height: 33px;
-      object-fit: contain;
+    .sp-menu-line-btn svg {
+      width: 26px;
+      height: 26px;
+      color: #fff;
     }
     .sp-menu-line-btn span {
       font-family: 'Noto Sans JP', sans-serif;
@@ -978,7 +975,7 @@
       letter-spacing: 0.32px;
       line-height: 1;
     }
-    .sp-menu-line-btn:hover { background: #05b04c; }
+    .sp-menu-line-btn:hover { background: #2B9589; }
 
     /* ========================================
        RESPONSIVE — TABLET (≤768px)
@@ -989,7 +986,7 @@
       .header-right { gap: 24px; }
       nav { gap: 16px; }
       nav a { font-size: 12px; }
-      .cv-button { height: 52px; padding-left: 64px; padding-right: 20px; }
+      .cv-button { height: 52px; padding: 0 20px; }
       .cv-button span { font-size: 14px; }
 
       /* HERO */
@@ -1116,13 +1113,13 @@
       .faq-list { width: 100%; }
       .q-text { white-space: normal; }
 
-      /* LINE CTA */
+      /* CONTACT CTA */
       .line-section { padding: 60px 24px; }
       .line-inner { width: 100%; height: auto; flex-direction: column; gap: 28px; align-items: flex-start; }
       .line-left { height: auto; }
       .line-title { font-size: 30px; }
       .line-desc { white-space: normal; }
-      .line-cta-btn { width: 100%; justify-content: center; }
+      .line-cta-btn { width: 100%; }
 
       /* FOOTER */
       .footer-section { padding: 60px 0; }
@@ -1329,7 +1326,7 @@
       .faq-item.is-open .faq-answer { padding: 0 16px 20px 64px; }
       .faq-more-btn { width: 100%; justify-content: center; }
 
-      /* LINE CTA */
+      /* CONTACT CTA */
       .line-section { padding: 40px 20px; }
       .line-left { gap: 16px; flex-wrap: wrap; }
       .line-text-block { gap: 12px; }
@@ -1337,7 +1334,7 @@
       .line-eyebrow { white-space: normal; }
       .line-desc { white-space: normal; width: 100%; max-width: 100%; box-sizing: border-box; }
       .line-desc p { word-break: normal; overflow-wrap: anywhere; }
-      .line-cta-btn { padding: 0 24px 0 68px; }
+      .line-cta-btn { padding: 0 24px; }
 
       /* FOOTER */
       .footer-inner { padding: 0 20px; gap: 24px; }
@@ -1401,11 +1398,9 @@
         <a href="#portfolio">料金</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a href="#" class="cv-button">
-        <img class="line-icon"
-          src="./images/icon-line-header.png"
-          alt="LINE">
-        <span>LINEで無料相談する</span>
+      <a href="contact.html" class="cv-button">
+        <svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+        <span>お問い合わせはこちら</span>
       </a>
       <button class="hamburger-btn" id="hamburger-btn" aria-label="メニューを開く">
         <span></span>
@@ -1948,25 +1943,25 @@
     </div>
   </section>
 
-  <!-- LINE CTA -->
+  <!-- CONTACT CTA -->
   <section class="line-section">
     <div class="line-inner">
       <div class="line-left">
         <div class="line-icon-circle">
-          <img src="./images/icon-line-circle.png" alt="">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
         </div>
         <div class="line-text-block">
-          <p class="line-eyebrow">LINE CONSULTATION</p>
-          <h2 class="line-title">LINEで無料相談</h2>
+          <p class="line-eyebrow">CONTACT</p>
+          <h2 class="line-title">お問い合わせ</h2>
           <div class="line-desc">
             <p>「この案件は依頼できるのか?」<br class="sp-br">「費用感を知りたい」<br class="sp-br">「まずは一部だけお願いしたい」</p>
-            <p>そのようなご相談も歓迎。まずはLINEよりお問い合わせください。</p>
+            <p>そのようなご相談も歓迎。まずはフォームよりお問い合わせください。</p>
           </div>
         </div>
       </div>
-      <a href="#" class="line-cta-btn">
-        <img class="line-btn-logo" src="./images/icon-line-cta-button.png" alt="LINE">
-        <span class="line-btn-text">LINEで無料相談する</span>
+      <a href="contact.html" class="line-cta-btn">
+        <svg class="line-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+        <span class="line-btn-text">お問い合わせはこちら</span>
       </a>
     </div>
   </section>
@@ -1987,9 +1982,9 @@
           <h4 class="col-section-head">運営</h4>
           <p class="col-company-name">OTEMOTO株式会社</p>
           <p class="col-company-addr">愛知県西尾市新村町郷東5番地</p>
-          <a href="#" class="col-line-link">
-            <img class="line-link-icon" src="./images/icon-line-footer.png" alt="LINE">
-            <span class="line-link-text">LINEでお問い合わせ</span>
+          <a href="contact.html" class="col-line-link">
+            <svg class="line-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+            <span class="line-link-text">お問い合わせはこちら</span>
           </a>
         </div>
         <div class="footer-col">
@@ -1999,6 +1994,7 @@
             <a href="company.html">会社概要</a>
             <a href="#">品質保証</a>
             <a href="#">実績紹介</a>
+            <a href="contact.html">お問い合わせ</a>
             <a href="privacy.html">プライバシーポリシー</a>
           </div>
         </div>
@@ -2035,9 +2031,9 @@
         <a href="#faq">よくあるご質問</a>
       </nav>
       <div class="sp-menu-line-card">
-        <a href="#" class="sp-menu-line-btn">
-          <img src="./images/icon-line-header.png" alt="LINE">
-          <span>LINEで無料相談する</span>
+        <a href="contact.html" class="sp-menu-line-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+          <span>お問い合わせはこちら</span>
         </a>
       </div>
     </div>
