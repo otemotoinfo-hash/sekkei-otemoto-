@@ -19,4 +19,26 @@ Disallow: /stats.html
 Disallow: /strengths.html
 Disallow: /team.html
 
-Sitemap: https://otemotoinfo-hash.github.io/sekkei-otemoto-/sitemap.xml
+# AI検索エンジン・AIクローラー向け設定(AEO)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://design-otemoto.jp/sitemap.xml
